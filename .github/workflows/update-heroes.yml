@@ -16,62 +16,67 @@ jobs:
       - name: Fetch hero data from Moonton API
         run: |
           python3 << 'PY'
-          import json, urllib.request, ssl
+          import json, urllib.request, ssl, concurrent.futures, sys
 
           ctx = ssl.create_default_context()
           ctx.check_hostname = False
           ctx.verify_mode = ssl.CERT_NONE
 
-          url = "https://api.gms.moontontech.com/api/gms/source/2669606/2756564"
-          body = json.dumps({
-              "pageSize": 200,
-              "pageIndex": 1,
-              "filters": [
-                  {"field": "<hero.data.sortid>", "operator": "hasAnyOf", "value": [1,2,3,4,5,6]},
-                  {"field": "<hero.data.roadsort>", "operator": "hasAnyOf", "value": [1,2,3,4,5]}
-              ],
-              "sorts": [{"data": {"field": "hero_id", "order": "desc"}, "type": "sequence"}],
-              "fields": ["id","hero_id","hero.data.name","hero.data.smallmap","hero.data.sortid","hero.data.roadsort"],
-              "object": []
-          }).encode()
+          API = "https://api.gms.moontontech.com/api/gms/source/2669606"
+          HEADERS = {"Content-Type":"application/json;charset=UTF-8","x-appid":"2669606","x-actid":"2669607","x-lang":"en"}
 
-          req = urllib.request.Request(url, data=body, method="POST", headers={
-              "Content-Type": "application/json;charset=UTF-8",
-              "x-appid": "2669606",
-              "x-actid": "2669607",
-              "x-lang": "en"
+          def api_post(endpoint, body):
+              req = urllib.request.Request(f"{API}/{endpoint}", data=json.dumps(body).encode(), method="POST", headers=HEADERS)
+              with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
+                  return json.loads(r.read())
+
+          # Fetch hero list
+          list_data = api_post("2756564", {
+              "pageSize":200,"pageIndex":1,
+              "filters":[{"field":"<hero.data.sortid>","operator":"hasAnyOf","value":[1,2,3,4,5,6]},{"field":"<hero.data.roadsort>","operator":"hasAnyOf","value":[1,2,3,4,5]}],
+              "sorts":[{"data":{"field":"hero_id","order":"desc"},"type":"sequence"}],
+              "fields":["id","hero_id","hero.data.name","hero.data.smallmap","hero.data.sortid","hero.data.roadsort"],"object":[]
           })
+          records = list_data["data"]["records"]
+          print(f"Heroes: {len(records)}")
 
-          with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
-              data = json.loads(r.read())
+          # Fetch stats per hero
+          def fetch_stats(hero_id):
+              try:
+                  d = api_post("2756567", {"pageSize":20,"pageIndex":1,"filters":[{"field":"main_heroid","operator":"eq","value":hero_id},{"field":"bigrank","operator":"eq","value":101},{"field":"match_type","operator":"eq","value":1}],"sorts":[]})
+                  recs = d["data"]["records"]
+                  return hero_id, recs[0]["data"] if recs else None
+              except: return hero_id, None
 
-          def parse_roles(sortid):
-              if not sortid: return []
-              return [s["data"]["sort_title"] for s in sortid if isinstance(s, dict) and s.get("data", {}).get("sort_title")]
+          stats = {}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+              for hid, data in ex.map(lambda r: fetch_stats(r["data"]["hero_id"]), records):
+                  if data: stats[hid] = data
+          print(f"Stats: {len(stats)}/{len(records)}")
 
-          def parse_lanes(roadsort):
-              if not roadsort: return []
-              return [s["data"]["road_sort_title"] for s in roadsort if isinstance(s, dict) and s.get("data", {}).get("road_sort_title")]
+          def parse_list(arr, key):
+              if not arr: return []
+              return [s["data"][key] for s in arr if isinstance(s, dict) and s.get("data",{}).get(key)]
 
           heroes = []
-          for rec in data["data"]["records"]:
-              d = rec["data"]
-              hero_data = d.get("hero", {}).get("data", {})
-              rel = d.get("relation", {})
+          for rec in records:
+              d = rec["data"]; hd = d.get("hero",{}).get("data",{}); rel = d.get("relation",{}); hid = d["hero_id"]; st = stats.get(hid,{})
+              best_with = [{"id":str(sh["heroid"]),"win_rate":round(sh.get("increase_win_rate",0)*100,2),"head":sh.get("hero",{}).get("data",{}).get("head","")} for sh in st.get("sub_hero",[])]
+              countered_by = [{"id":str(sh["heroid"]),"win_rate":round(sh.get("increase_win_rate",0)*100,2),"head":sh.get("hero",{}).get("data",{}).get("head","")} for sh in st.get("sub_hero_last",[])]
               heroes.append({
-                  "id": str(d["hero_id"]),
-                  "name": hero_data.get("name", ""),
-                  "icon": hero_data.get("smallmap", ""),
-                  "roles": parse_roles(hero_data.get("sortid")),
-                  "lanes": parse_lanes(hero_data.get("roadsort")),
-                  "strong": [str(x) for x in (rel.get("strong", {}).get("target_hero_id") or [])],
-                  "weak": [str(x) for x in (rel.get("weak", {}).get("target_hero_id") or [])],
-                  "assist": [str(x) for x in (rel.get("assist", {}).get("target_hero_id") or [])],
+                  "id":str(hid),"name":hd.get("name",""),"icon":hd.get("smallmap",""),
+                  "roles":parse_list(hd.get("sortid"),"sort_title"),"lanes":parse_list(hd.get("roadsort"),"road_sort_title"),
+                  "strong":[str(x) for x in (rel.get("strong",{}).get("target_hero_id") or [])],
+                  "weak":[str(x) for x in (rel.get("weak",{}).get("target_hero_id") or [])],
+                  "assist":[str(x) for x in (rel.get("assist",{}).get("target_hero_id") or [])],
+                  "win_rate":round((st.get("main_hero_win_rate") or 0)*100,2),
+                  "ban_rate":round((st.get("main_hero_ban_rate") or 0)*100,2),
+                  "pick_rate":round((st.get("main_hero_appearance_rate") or 0)*100,2),
+                  "best_with":best_with,"countered_by_stats":countered_by,
               })
-
           heroes.sort(key=lambda x: x["name"])
-          json.dump(heroes, open("heroes.json", "w"), ensure_ascii=False, indent=2)
-          print(f"Updated: {len(heroes)} heroes")
+          json.dump(heroes, open("heroes.json","w"), ensure_ascii=False, indent=2)
+          print(f"Written: {len(heroes)} heroes")
           PY
 
       - name: Commit and push if changed

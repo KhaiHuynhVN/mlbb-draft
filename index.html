@@ -6,197 +6,95 @@
     <title>MLBB Draft Pick</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: #0a0e1a;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        .header {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(180deg, #1a1f3a 0%, #0a0e1a 100%);
-            border-bottom: 2px solid #2a3060;
-        }
-        .header h1 {
-            font-size: 28px;
-            background: linear-gradient(90deg, #4fc3f7, #ab47bc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 3px;
-        }
+        body { background: #0a0e1a; color: #fff; font-family: 'Segoe UI', Tahoma, sans-serif; min-height: 100vh; }
+        .header { text-align: center; padding: 20px; background: linear-gradient(180deg, #1a1f3a 0%, #0a0e1a 100%); border-bottom: 2px solid #2a3060; }
+        .header h1 { font-size: 28px; background: linear-gradient(90deg, #4fc3f7, #ab47bc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px; }
         .header p { color: #8892b0; font-size: 13px; margin-top: 6px; }
         .header .update-info { color: #4a5090; font-size: 11px; margin-top: 4px; }
 
-        .draft-container {
-            display: flex; justify-content: center; align-items: flex-start;
-            gap: 40px; padding: 30px 20px; max-width: 1400px; margin: 0 auto;
-        }
+        .draft-container { display: flex; justify-content: center; align-items: flex-start; gap: 40px; padding: 30px 20px; max-width: 1400px; margin: 0 auto; }
         .team { flex: 1; max-width: 420px; }
-        .team-title {
-            text-align: center; font-size: 18px; font-weight: 700;
-            padding: 12px; border-radius: 10px 10px 0 0; letter-spacing: 2px;
-        }
+        .team-title { text-align: center; font-size: 18px; font-weight: 700; padding: 12px; border-radius: 10px 10px 0 0; letter-spacing: 2px; }
         .team-blue .team-title { background: linear-gradient(135deg, #1565c0, #0d47a1); color: #90caf9; }
         .team-red .team-title { background: linear-gradient(135deg, #c62828, #b71c1c); color: #ef9a9a; }
 
-        .pick-slots {
-            display: flex; flex-direction: column; gap: 10px; padding: 15px;
-            background: #111630; border-radius: 0 0 10px 10px;
-            border: 1px solid #1e2550; border-top: none;
-        }
-        .pick-slot {
-            display: flex; align-items: center; gap: 14px; padding: 10px 14px;
-            background: #161b3a; border: 2px solid #252b55; border-radius: 10px;
-            cursor: pointer; transition: all 0.2s; min-height: 72px;
-        }
+        .pick-slots { display: flex; flex-direction: column; gap: 10px; padding: 15px; background: #111630; border-radius: 0 0 10px 10px; border: 1px solid #1e2550; border-top: none; }
+        .pick-slot { display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: #161b3a; border: 2px solid #252b55; border-radius: 10px; cursor: pointer; transition: all 0.2s; min-height: 72px; }
         .pick-slot:hover { border-color: #4a5090; background: #1c2248; }
         .pick-slot.active { border-color: #ffd740; box-shadow: 0 0 15px rgba(255, 215, 64, 0.2); }
         .pick-slot.filled { border-color: #4caf50; }
         .team-red .pick-slot.filled { border-color: #ef5350; }
 
-        .slot-number {
-            width: 28px; height: 28px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 13px; font-weight: 700; flex-shrink: 0;
-        }
+        .slot-number { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
         .team-blue .slot-number { background: #1565c0; }
         .team-red .slot-number { background: #c62828; }
 
-        .slot-avatar {
-            width: 50px; height: 50px; border-radius: 8px; background: #252b55;
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden; flex-shrink: 0;
-        }
+        .slot-avatar { width: 50px; height: 50px; border-radius: 8px; background: #252b55; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
         .slot-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .slot-avatar .placeholder { font-size: 22px; color: #4a5090; }
 
         .slot-info { flex: 1; min-width: 0; }
         .slot-info .hero-name { font-size: 15px; font-weight: 600; color: #e0e6ff; }
         .slot-info .hero-role { font-size: 12px; color: #7882a4; margin-top: 2px; }
+        .slot-info .hero-stats { font-size: 11px; color: #4fc3f7; margin-top: 2px; }
         .slot-info .hint { font-size: 12px; color: #4a5090; font-style: italic; }
 
-        .slot-remove {
-            width: 26px; height: 26px; border-radius: 50%; border: none;
-            background: #3a2040; color: #ef5350; font-size: 14px;
-            cursor: pointer; display: none; align-items: center;
-            justify-content: center; flex-shrink: 0;
-        }
+        .slot-remove { width: 26px; height: 26px; border-radius: 50%; border: none; background: #3a2040; color: #ef5350; font-size: 14px; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0; }
         .slot-remove:hover { background: #5a2040; }
         .pick-slot.filled .slot-remove { display: flex; }
 
-        .vs-divider {
-            display: flex; align-items: center; justify-content: center;
-            font-size: 36px; font-weight: 900; color: #ffd740;
-            text-shadow: 0 0 20px rgba(255, 215, 64, 0.4);
-            padding-top: 60px; letter-spacing: 4px; flex-shrink: 0;
-        }
+        .vs-divider { display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; color: #ffd740; text-shadow: 0 0 20px rgba(255, 215, 64, 0.4); padding-top: 60px; letter-spacing: 4px; flex-shrink: 0; }
 
-        /* Picker Modal */
-        .picker-overlay {
-            display: none; position: fixed; inset: 0;
-            background: rgba(0, 0, 0, 0.85); z-index: 1000;
-            justify-content: center; align-items: center; padding: 20px;
-        }
+        .picker-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
         .picker-overlay.show { display: flex; }
-
-        .picker-modal {
-            background: #111630; border: 1px solid #2a3060; border-radius: 16px;
-            width: 100%; max-width: 950px; max-height: 90vh;
-            display: flex; flex-direction: column;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-        }
-        .picker-header {
-            padding: 18px 24px; border-bottom: 1px solid #1e2550;
-            display: flex; align-items: center; gap: 16px;
-        }
+        .picker-modal { background: #111630; border: 1px solid #2a3060; border-radius: 16px; width: 100%; max-width: 950px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+        .picker-header { padding: 18px 24px; border-bottom: 1px solid #1e2550; display: flex; align-items: center; gap: 16px; }
         .picker-header h2 { font-size: 18px; color: #e0e6ff; flex-shrink: 0; }
-        .picker-search {
-            flex: 1; padding: 10px 16px; background: #0a0e1a;
-            border: 1px solid #252b55; border-radius: 8px;
-            color: #fff; font-size: 14px; outline: none;
-        }
+        .picker-search { flex: 1; padding: 10px 16px; background: #0a0e1a; border: 1px solid #252b55; border-radius: 8px; color: #fff; font-size: 14px; outline: none; }
         .picker-search:focus { border-color: #4fc3f7; }
         .picker-search::placeholder { color: #4a5090; }
-        .picker-close {
-            width: 36px; height: 36px; border-radius: 50%; border: none;
-            background: #1e2550; color: #8892b0; font-size: 20px;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-        }
+        .picker-close { width: 36px; height: 36px; border-radius: 50%; border: none; background: #1e2550; color: #8892b0; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .picker-close:hover { background: #2a3060; color: #fff; }
 
-        .picker-section {
-            padding: 10px 20px 4px; font-size: 13px; font-weight: 600;
-            color: #8892b0; border-bottom: 1px solid #1a1f40;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .picker-section .badge {
-            display: inline-block; padding: 2px 8px; border-radius: 10px;
-            font-size: 11px; font-weight: 700;
-        }
+        .picker-section { padding: 10px 20px 4px; font-size: 13px; font-weight: 600; color: #8892b0; border-bottom: 1px solid #1a1f40; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
         .badge-counter { background: #ff980020; color: #ff9800; }
+        .badge-compat { background: #4caf5020; color: #4caf50; }
         .badge-all { background: #4fc3f720; color: #4fc3f7; }
 
         .picker-scroll { overflow-y: auto; flex: 1; padding-bottom: 10px; }
+        .picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 10px; padding: 10px 20px; }
 
-        .picker-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 10px; padding: 10px 20px;
-        }
-
-        .hero-card {
-            display: flex; flex-direction: column; align-items: center;
-            padding: 10px 6px; background: #161b3a; border: 2px solid #252b55;
-            border-radius: 10px; cursor: pointer; transition: all 0.2s; position: relative;
-        }
+        .hero-card { display: flex; flex-direction: column; align-items: center; padding: 10px 6px 8px; background: #161b3a; border: 2px solid #252b55; border-radius: 10px; cursor: pointer; transition: all 0.2s; position: relative; }
         .hero-card:hover { border-color: #4fc3f7; background: #1c2248; transform: translateY(-2px); }
         .hero-card.disabled { opacity: 0.3; pointer-events: none; }
-        .hero-card.counter-pick { border-color: #ff9800; box-shadow: 0 0 10px rgba(255, 152, 0, 0.25); }
+        .hero-card.counter-pick { border-color: #ff9800; box-shadow: 0 0 10px rgba(255,152,0,0.25); }
+        .hero-card.compat-pick { border-color: #4caf50; box-shadow: 0 0 10px rgba(76,175,80,0.25); }
 
-        .hero-card-avatar {
-            width: 60px; height: 60px; border-radius: 8px;
-            overflow: hidden; background: #252b55; margin-bottom: 4px;
-        }
+        .hero-card-avatar { width: 60px; height: 60px; border-radius: 8px; overflow: hidden; background: #252b55; margin-bottom: 4px; }
         .hero-card-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .hero-card-name { font-size: 11px; text-align: center; color: #c0c8e8; line-height: 1.2; word-break: break-word; }
-        .hero-card-counters-info {
-            font-size: 9px; color: #ffb74d; text-align: center;
-            margin-top: 2px; line-height: 1.2;
-        }
+        .hero-card-sub { font-size: 9px; text-align: center; margin-top: 2px; line-height: 1.2; }
+        .hero-card-sub.counter { color: #ffb74d; }
+        .hero-card-sub.compat { color: #81c784; }
+        .hero-card-wr { font-size: 10px; color: #4fc3f7; margin-top: 1px; }
 
-        .hero-card .tooltip {
-            display: none; position: absolute; bottom: 100%; left: 50%;
-            transform: translateX(-50%); background: #1a1f3a; border: 1px solid #3a4080;
-            border-radius: 8px; padding: 10px 14px; width: 240px; z-index: 10;
-            pointer-events: none; margin-bottom: 8px;
-        }
+        .hero-card .tooltip { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a1f3a; border: 1px solid #3a4080; border-radius: 8px; padding: 10px 14px; width: 260px; z-index: 10; pointer-events: none; margin-bottom: 8px; font-size: 11px; line-height: 1.5; }
         .hero-card:hover .tooltip { display: block; }
         .tooltip .t-name { font-size: 14px; font-weight: 700; color: #ffd740; }
-        .tooltip .t-role { font-size: 11px; color: #7882a4; }
-        .tooltip .t-lane { font-size: 11px; color: #4fc3f7; margin-top: 2px; }
-        .tooltip .t-counter { font-size: 11px; margin-top: 4px; line-height: 1.5; }
+        .tooltip .t-role { color: #7882a4; }
+        .tooltip .t-lane { color: #4fc3f7; margin-top: 2px; }
+        .tooltip .t-wr { margin-top: 4px; color: #8892b0; }
+        .tooltip .t-wr span { color: #4fc3f7; font-weight: 600; }
+        .tooltip .t-counter { margin-top: 4px; }
 
-        .loading-overlay {
-            position: fixed; inset: 0; background: #0a0e1a;
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: center; z-index: 2000;
-        }
+        .loading-overlay { position: fixed; inset: 0; background: #0a0e1a; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; }
         .loading-overlay.hidden { display: none; }
-        .spinner {
-            width: 50px; height: 50px; border: 4px solid #252b55;
-            border-top-color: #4fc3f7; border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
+        .spinner { width: 50px; height: 50px; border: 4px solid #252b55; border-top-color: #4fc3f7; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .loading-text { margin-top: 16px; color: #8892b0; font-size: 14px; }
 
-        .reset-btn {
-            display: block; margin: 0 auto 30px; padding: 12px 32px;
-            background: linear-gradient(135deg, #1e2550, #2a3060);
-            border: 1px solid #3a4080; border-radius: 8px;
-            color: #8892b0; font-size: 14px; cursor: pointer;
-        }
+        .reset-btn { display: block; margin: 0 auto 30px; padding: 12px 32px; background: linear-gradient(135deg, #1e2550, #2a3060); border: 1px solid #3a4080; border-radius: 8px; color: #8892b0; font-size: 14px; cursor: pointer; }
         .reset-btn:hover { background: linear-gradient(135deg, #2a3060, #3a4080); color: #fff; }
 
         @media (max-width: 768px) {
@@ -209,7 +107,6 @@
     </style>
 </head>
 <body>
-
 <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
     <div class="loading-text" id="loadingText">Đang tải danh sách tướng...</div>
@@ -217,17 +114,17 @@
 
 <div class="header">
     <h1>MLBB DRAFT PICK</h1>
-    <p>Chọn tướng cho cả 2 team → Xem gợi ý tướng khắc chế cho từng tướng đối phương</p>
+    <p>Chọn tướng cho cả 2 team → Xem gợi ý tướng khắc chế & đồng đội phù hợp</p>
     <div class="update-info" id="updateInfo"></div>
 </div>
 
 <div class="draft-container">
-    <div class="team team-blue" id="teamBlue">
+    <div class="team team-blue">
         <div class="team-title">🔵 TEAM CỦA BẠN</div>
         <div class="pick-slots" id="blueSlots"></div>
     </div>
     <div class="vs-divider">VS</div>
-    <div class="team team-red" id="teamRed">
+    <div class="team team-red">
         <div class="team-title">🔴 TEAM ĐỐI THỦ</div>
         <div class="pick-slots" id="redSlots"></div>
     </div>
@@ -247,341 +144,254 @@
 </div>
 
 <script>
-    const API_URL = "https://api.gms.moontontech.com/api/gms/source/2669606/2756564";
-    const API_HEADERS = {
-        "Content-Type": "application/json;charset=UTF-8",
-        "x-appid": "2669606",
-        "x-actid": "2669607",
-        "x-lang": "en"
-    };
-    const API_BODY = {
-        pageSize: 200,
-        pageIndex: 1,
-        filters: [
-            { field: "<hero.data.sortid>", operator: "hasAnyOf", value: [1,2,3,4,5,6] },
-            { field: "<hero.data.roadsort>", operator: "hasAnyOf", value: [1,2,3,4,5] }
-        ],
-        sorts: [{ data: { field: "hero_id", order: "desc" }, type: "sequence" }],
-        fields: ["id","hero_id","hero.data.name","hero.data.smallmap","hero.data.sortid","hero.data.roadsort"],
-        object: []
-    };
+let allHeroes=[], heroMap={}, bluePicks=[null,null,null,null,null], redPicks=[null,null,null,null,null], activeSlot=null;
 
-    let allHeroes = [];
-    let heroMap = {};
-    let bluePicks = [null, null, null, null, null];
-    let redPicks = [null, null, null, null, null];
-    let activeSlot = null;
-
-    function parseRoles(sortid) {
-        if (!sortid) return [];
-        return sortid.filter(s => s && typeof s === "object" && s.data)
-            .map(s => s.data.sort_title)
-            .filter(Boolean);
+async function init() {
+    try {
+        const res = await fetch("heroes.json");
+        allHeroes = await res.json();
+        heroMap = {};
+        allHeroes.forEach(h => heroMap[h.id] = h);
+        document.getElementById("updateInfo").textContent = allHeroes.length + " tướng";
+        renderSlots();
+        document.getElementById("loadingOverlay").classList.add("hidden");
+    } catch(e) {
+        document.getElementById("loadingText").textContent = "Lỗi tải dữ liệu.";
     }
+}
 
-    function parseLanes(roadsort) {
-        if (!roadsort) return [];
-        return roadsort.filter(s => s && typeof s === "object" && s.data)
-            .map(s => s.data.road_sort_title)
-            .filter(Boolean);
-    }
+// Build full counter map: who counters heroId?
+function getCountersFor(heroId) {
+    const s = new Set();
+    const hero = heroMap[heroId];
+    // From relation: hero.weak = heroes that counter this hero
+    if (hero?.weak) hero.weak.forEach(id => { if(id!=="0") s.add(id); });
+    // From relation: any hero whose strong includes heroId
+    allHeroes.forEach(h => { if(h.strong?.includes(heroId)) s.add(h.id); });
+    // From stats: countered_by_stats
+    if (hero?.countered_by_stats) hero.countered_by_stats.forEach(c => s.add(c.id));
+    return s;
+}
 
-    function parseHeroRecord(record) {
-        const d = record.data;
-        const heroData = d.hero?.data || {};
-        const rel = d.relation || {};
-        return {
-            id: String(d.hero_id),
-            name: heroData.name || "",
-            icon: heroData.smallmap || "",
-            roles: parseRoles(heroData.sortid),
-            lanes: parseLanes(heroData.roadsort),
-            strong: (rel.strong?.target_hero_id || []).map(String),   // heroes this hero counters
-            weak: (rel.weak?.target_hero_id || []).map(String),       // heroes that counter this hero
-            assist: (rel.assist?.target_hero_id || []).map(String),   // best teammates
-        };
-    }
-
-    async function init() {
-        try {
-            // Try live API first
-            const loadingText = document.getElementById("loadingText");
-            loadingText.textContent = "Đang tải từ API Moonton...";
-
-            let heroes;
-            try {
-                const res = await fetch(API_URL, {
-                    method: "POST",
-                    headers: API_HEADERS,
-                    body: JSON.stringify(API_BODY)
-                });
-                const json = await res.json();
-                heroes = json.data.records.map(parseHeroRecord);
-                document.getElementById("updateInfo").textContent = `Live data · ${heroes.length} tướng · ${new Date().toLocaleDateString("vi")}`;
-            } catch (e) {
-                // Fallback to cached heroes.json
-                loadingText.textContent = "API không khả dụng, dùng dữ liệu cache...";
-                const res = await fetch("heroes.json");
-                heroes = await res.json();
-                document.getElementById("updateInfo").textContent = `Cached data · ${heroes.length} tướng`;
-            }
-
-            allHeroes = heroes.sort((a, b) => a.name.localeCompare(b.name));
-            heroMap = {};
-            allHeroes.forEach(h => heroMap[h.id] = h);
-
-            renderSlots();
-            document.getElementById("loadingOverlay").classList.add("hidden");
-        } catch (e) {
-            console.error("Failed to load heroes:", e);
-            document.getElementById("loadingText").textContent = "Lỗi tải dữ liệu. Vui lòng refresh trang.";
-        }
-    }
-
-    // Get all heroes that counter a specific hero
-    function getCountersFor(heroId) {
-        const counters = new Set();
-        // 1. Heroes whose "strong" list includes this hero (they counter it)
-        allHeroes.forEach(h => {
-            if (h.strong.includes(heroId)) counters.add(h.id);
+// Get best teammates for heroes already picked on same team
+function getBestWith(teamPicks) {
+    const scores = {}; // heroId -> { score, withWhich }
+    teamPicks.filter(p=>p).forEach(hero => {
+        (hero.best_with || []).forEach(bw => {
+            if (!scores[bw.id]) scores[bw.id] = { score: 0, withWhich: [], totalWR: 0 };
+            scores[bw.id].score++;
+            scores[bw.id].withWhich.push(hero.name);
+            scores[bw.id].totalWR += bw.win_rate;
         });
-        // 2. Heroes in this hero's "weak" list (they counter it)
-        const hero = heroMap[heroId];
-        if (hero) {
-            hero.weak.forEach(id => counters.add(id));
-        }
-        return counters;
-    }
-
-    function renderSlots() {
-        renderTeamSlots("blue", bluePicks, "blueSlots");
-        renderTeamSlots("red", redPicks, "redSlots");
-    }
-
-    function renderTeamSlots(team, picks, containerId) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = "";
-        const enemyPicks = team === "blue" ? redPicks : bluePicks;
-        const hasEnemy = enemyPicks.some(p => p);
-
-        picks.forEach((pick, i) => {
-            const slot = document.createElement("div");
-            slot.className = "pick-slot" + (pick ? " filled" : "") +
-                (activeSlot && activeSlot.team === team && activeSlot.index === i ? " active" : "");
-            slot.onclick = () => openPicker(team, i);
-
-            const num = document.createElement("div");
-            num.className = "slot-number";
-            num.textContent = i + 1;
-
-            const avatar = document.createElement("div");
-            avatar.className = "slot-avatar";
-            if (pick) {
-                const img = document.createElement("img");
-                img.src = pick.icon;
-                img.alt = pick.name;
-                img.loading = "lazy";
-                avatar.appendChild(img);
-            } else {
-                const ph = document.createElement("div");
-                ph.className = "placeholder";
-                ph.textContent = "+";
-                avatar.appendChild(ph);
-            }
-
-            const info = document.createElement("div");
-            info.className = "slot-info";
-            if (pick) {
-                const roleStr = pick.roles ? pick.roles.join(", ") : "";
-                info.innerHTML = `<div class="hero-name">${pick.name}</div><div class="hero-role">${roleStr}</div>`;
-            } else {
-                const hint = hasEnemy ? "Click để chọn tướng khắc chế" : "Click để chọn tướng";
-                info.innerHTML = `<div class="hint">${hint}</div>`;
-            }
-
-            slot.appendChild(num);
-            slot.appendChild(avatar);
-            slot.appendChild(info);
-
-            if (pick) {
-                const removeBtn = document.createElement("button");
-                removeBtn.className = "slot-remove";
-                removeBtn.textContent = "✕";
-                removeBtn.onclick = (e) => { e.stopPropagation(); removePick(team, i); };
-                slot.appendChild(removeBtn);
-            }
-            container.appendChild(slot);
+        // Also from relation assist
+        (hero.assist || []).forEach(id => {
+            if(id==="0") return;
+            if (!scores[id]) scores[id] = { score: 0, withWhich: [], totalWR: 0 };
+            scores[id].score++;
+            if(!scores[id].withWhich.includes(hero.name)) scores[id].withWhich.push(hero.name);
+            scores[id].totalWR += 1;
         });
-    }
-
-    function openPicker(team, index) {
-        activeSlot = { team, index };
-        renderSlots();
-        document.getElementById("pickerSearch").value = "";
-        document.getElementById("pickerOverlay").classList.add("show");
-        document.getElementById("pickerSearch").focus();
-
-        const title = document.getElementById("pickerTitle");
-        title.textContent = team === "blue" ? "🔵 Chọn tướng cho Team bạn" : "🔴 Chọn tướng cho Team đối thủ";
-        renderPickerContent();
-    }
-
-    function renderPickerContent() {
-        const scroll = document.getElementById("pickerScroll");
-        const search = document.getElementById("pickerSearch").value.toLowerCase();
-        const team = activeSlot.team;
-
-        const pickedIds = new Set([
-            ...bluePicks.filter(p => p).map(p => p.id),
-            ...redPicks.filter(p => p).map(p => p.id)
-        ]);
-
-        const enemyPicks = (team === "blue" ? redPicks : bluePicks).filter(p => p);
-        let filtered = allHeroes.filter(h => h.name.toLowerCase().includes(search));
-
-        // Build counter scores: heroId -> { score, countersWhich: [enemyName] }
-        const heroScores = {};
-        enemyPicks.forEach(enemy => {
-            const counterIds = getCountersFor(enemy.id);
-            counterIds.forEach(cid => {
-                if (pickedIds.has(cid)) return;
-                if (!heroScores[cid]) heroScores[cid] = { score: 0, countersWhich: [] };
-                heroScores[cid].score++;
-                heroScores[cid].countersWhich.push(enemy.name);
-            });
-        });
-
-        scroll.innerHTML = "";
-
-        if (enemyPicks.length > 0 && Object.keys(heroScores).length > 0) {
-            // Per-enemy counter sections
-            enemyPicks.forEach(enemy => {
-                const counterIds = getCountersFor(enemy.id);
-                const counterHeroes = filtered.filter(h => counterIds.has(h.id) && !pickedIds.has(h.id));
-                if (counterHeroes.length === 0) return;
-
-                const section = document.createElement("div");
-                section.className = "picker-section";
-                section.innerHTML = `⚔️ Khắc chế <strong style="color:#ff9800">${enemy.name}</strong> <span class="badge badge-counter">${counterHeroes.length} tướng</span>`;
-                scroll.appendChild(section);
-
-                const grid = document.createElement("div");
-                grid.className = "picker-grid";
-                counterHeroes.forEach(hero => grid.appendChild(createHeroCard(hero, pickedIds, heroScores)));
-                scroll.appendChild(grid);
-            });
-
-            // Top 10 multi-counters
-            const topCounters = filtered
-                .filter(h => heroScores[h.id] && heroScores[h.id].score >= 2 && !pickedIds.has(h.id))
-                .sort((a, b) => heroScores[b.id].score - heroScores[a.id].score)
-                .slice(0, 10);
-
-            if (topCounters.length > 0) {
-                const section = document.createElement("div");
-                section.className = "picker-section";
-                section.innerHTML = `🏆 Khắc chế nhiều tướng đối thủ <span class="badge badge-counter">Top ${topCounters.length}</span>`;
-                scroll.appendChild(section);
-
-                const grid = document.createElement("div");
-                grid.className = "picker-grid";
-                topCounters.forEach(hero => grid.appendChild(createHeroCard(hero, pickedIds, heroScores)));
-                scroll.appendChild(grid);
-            }
-        }
-
-        // All heroes section
-        const section = document.createElement("div");
-        section.className = "picker-section";
-        section.innerHTML = `📋 Tất cả tướng <span class="badge badge-all">${filtered.length}</span>`;
-        scroll.appendChild(section);
-
-        const grid = document.createElement("div");
-        grid.className = "picker-grid";
-        filtered.sort((a, b) => {
-            const sa = heroScores[a.id]?.score || 0;
-            const sb = heroScores[b.id]?.score || 0;
-            if (sb !== sa) return sb - sa;
-            return a.name.localeCompare(b.name);
-        });
-        filtered.forEach(hero => grid.appendChild(createHeroCard(hero, pickedIds, heroScores)));
-        scroll.appendChild(grid);
-    }
-
-    function createHeroCard(hero, pickedIds, heroScores) {
-        const card = document.createElement("div");
-        card.className = "hero-card";
-        if (pickedIds.has(hero.id)) card.classList.add("disabled");
-
-        const score = heroScores[hero.id];
-        if (score && score.score > 0) card.classList.add("counter-pick");
-
-        let counterInfo = "";
-        if (score && score.countersWhich.length > 0) {
-            counterInfo = `<div class="hero-card-counters-info">⚔️ vs ${score.countersWhich.join(", ")}</div>`;
-        }
-
-        // Tooltip content
-        const roleStr = hero.roles?.join(", ") || "";
-        const laneStr = hero.lanes?.join(", ") || "";
-        const strongNames = hero.strong?.map(id => heroMap[id]?.name).filter(Boolean).join(", ") || "-";
-        const weakNames = hero.weak?.map(id => heroMap[id]?.name).filter(Boolean).join(", ") || "-";
-        const assistNames = hero.assist?.map(id => heroMap[id]?.name).filter(Boolean).join(", ") || "-";
-
-        card.innerHTML = `
-            <div class="tooltip">
-                <div class="t-name">${hero.name}</div>
-                <div class="t-role">${roleStr}</div>
-                <div class="t-lane">🗺️ ${laneStr}</div>
-                <div class="t-counter">
-                    <div style="color:#ff9800">⚔️ Khắc chế: ${strongNames}</div>
-                    <div style="color:#ef5350">💀 Bị khắc chế: ${weakNames}</div>
-                    <div style="color:#4caf50">👥 Đồng đội tốt: ${assistNames}</div>
-                </div>
-            </div>
-            <div class="hero-card-avatar">
-                <img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'">
-            </div>
-            <div class="hero-card-name">${hero.name}</div>
-            ${counterInfo}
-        `;
-
-        card.onclick = () => selectHero(hero);
-        return card;
-    }
-
-    function selectHero(hero) {
-        if (!activeSlot) return;
-        const picks = activeSlot.team === "blue" ? bluePicks : redPicks;
-        picks[activeSlot.index] = hero;
-        renderSlots();
-        closePicker();
-    }
-
-    function closePicker() {
-        document.getElementById("pickerOverlay").classList.remove("show");
-        activeSlot = null;
-        renderSlots();
-    }
-
-    function removePick(team, index) {
-        if (team === "blue") bluePicks[index] = null;
-        else redPicks[index] = null;
-        renderSlots();
-    }
-
-    function resetDraft() {
-        bluePicks = [null, null, null, null, null];
-        redPicks = [null, null, null, null, null];
-        renderSlots();
-    }
-
-    document.getElementById("pickerOverlay").addEventListener("click", (e) => {
-        if (e.target === document.getElementById("pickerOverlay")) closePicker();
     });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePicker(); });
+    return scores;
+}
 
-    init();
+function renderSlots() {
+    renderTeamSlots("blue", bluePicks, "blueSlots");
+    renderTeamSlots("red", redPicks, "redSlots");
+}
+
+function renderTeamSlots(team, picks, cid) {
+    const c = document.getElementById(cid);
+    c.innerHTML = "";
+    const enemy = team==="blue" ? redPicks : bluePicks;
+    const hasEnemy = enemy.some(p=>p);
+    const hasFriend = picks.some(p=>p);
+
+    picks.forEach((pick, i) => {
+        const slot = document.createElement("div");
+        slot.className = "pick-slot" + (pick?" filled":"") + (activeSlot?.team===team&&activeSlot?.index===i?" active":"");
+        slot.onclick = () => openPicker(team, i);
+
+        const num = document.createElement("div");
+        num.className = "slot-number";
+        num.textContent = i+1;
+
+        const avatar = document.createElement("div");
+        avatar.className = "slot-avatar";
+        if(pick) { const img=document.createElement("img"); img.src=pick.icon; img.alt=pick.name; img.loading="lazy"; avatar.appendChild(img); }
+        else { const ph=document.createElement("div"); ph.className="placeholder"; ph.textContent="+"; avatar.appendChild(ph); }
+
+        const info = document.createElement("div");
+        info.className = "slot-info";
+        if(pick) {
+            const wr = pick.win_rate ? ` · WR ${pick.win_rate}%` : "";
+            info.innerHTML = `<div class="hero-name">${pick.name}</div><div class="hero-role">${(pick.roles||[]).join(", ")}</div><div class="hero-stats">${(pick.lanes||[]).join(", ")}${wr}</div>`;
+        } else {
+            let hint = "Click để chọn tướng";
+            if(hasEnemy) hint = "Click để chọn tướng khắc chế";
+            else if(hasFriend) hint = "Click để chọn đồng đội phù hợp";
+            info.innerHTML = `<div class="hint">${hint}</div>`;
+        }
+
+        slot.appendChild(num); slot.appendChild(avatar); slot.appendChild(info);
+        if(pick) {
+            const rb = document.createElement("button"); rb.className="slot-remove"; rb.textContent="✕";
+            rb.onclick = e => { e.stopPropagation(); removePick(team,i); };
+            slot.appendChild(rb);
+        }
+        c.appendChild(slot);
+    });
+}
+
+function openPicker(team, index) {
+    activeSlot = {team, index};
+    renderSlots();
+    document.getElementById("pickerSearch").value = "";
+    document.getElementById("pickerOverlay").classList.add("show");
+    document.getElementById("pickerSearch").focus();
+    document.getElementById("pickerTitle").textContent = team==="blue" ? "🔵 Chọn tướng cho Team bạn" : "🔴 Chọn tướng cho Team đối thủ";
+    renderPickerContent();
+}
+
+function renderPickerContent() {
+    const scroll = document.getElementById("pickerScroll");
+    const search = document.getElementById("pickerSearch").value.toLowerCase();
+    const team = activeSlot.team;
+    const myPicks = team==="blue" ? bluePicks : redPicks;
+    const enemyPicks = (team==="blue" ? redPicks : bluePicks).filter(p=>p);
+    const friendPicks = myPicks.filter(p=>p);
+
+    const pickedIds = new Set([...bluePicks.filter(p=>p).map(p=>p.id), ...redPicks.filter(p=>p).map(p=>p.id)]);
+    let filtered = allHeroes.filter(h => h.name.toLowerCase().includes(search));
+
+    // Counter scores for enemy
+    const counterScores = {};
+    enemyPicks.forEach(enemy => {
+        const cids = getCountersFor(enemy.id);
+        cids.forEach(cid => {
+            if(pickedIds.has(cid)) return;
+            if(!counterScores[cid]) counterScores[cid] = {score:0, vs:[]};
+            counterScores[cid].score++;
+            counterScores[cid].vs.push(enemy.name);
+        });
+    });
+
+    // Compatibility scores for same team
+    const compatScores = getBestWith(friendPicks);
+
+    scroll.innerHTML = "";
+
+    // Section: Per-enemy counters
+    if(enemyPicks.length > 0) {
+        enemyPicks.forEach(enemy => {
+            const cids = getCountersFor(enemy.id);
+            const counterHeroes = filtered.filter(h => cids.has(h.id) && !pickedIds.has(h.id));
+            if(!counterHeroes.length) return;
+            // Sort by stats win rate impact
+            counterHeroes.sort((a,b) => {
+                const sa = counterScores[a.id]?.score||0, sb = counterScores[b.id]?.score||0;
+                return sb-sa || a.name.localeCompare(b.name);
+            });
+
+            const sec = document.createElement("div"); sec.className="picker-section";
+            sec.innerHTML = `⚔️ Khắc chế <strong style="color:#ff9800">${enemy.name}</strong> <span class="badge badge-counter">${counterHeroes.length}</span>`;
+            scroll.appendChild(sec);
+            const grid = document.createElement("div"); grid.className="picker-grid";
+            counterHeroes.slice(0,10).forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+            scroll.appendChild(grid);
+        });
+
+        // Top multi-counters
+        const top = filtered.filter(h => counterScores[h.id]?.score>=2 && !pickedIds.has(h.id))
+            .sort((a,b) => counterScores[b.id].score - counterScores[a.id].score).slice(0,10);
+        if(top.length) {
+            const sec = document.createElement("div"); sec.className="picker-section";
+            sec.innerHTML = `🏆 Khắc chế nhiều tướng nhất <span class="badge badge-counter">Top ${top.length}</span>`;
+            scroll.appendChild(sec);
+            const grid = document.createElement("div"); grid.className="picker-grid";
+            top.forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+            scroll.appendChild(grid);
+        }
+    }
+
+    // Section: Best teammates
+    if(friendPicks.length > 0 && Object.keys(compatScores).length > 0) {
+        const topCompat = filtered.filter(h => compatScores[h.id] && !pickedIds.has(h.id))
+            .sort((a,b) => (compatScores[b.id]?.totalWR||0) - (compatScores[a.id]?.totalWR||0)).slice(0,10);
+        if(topCompat.length) {
+            const sec = document.createElement("div"); sec.className="picker-section";
+            sec.innerHTML = `👥 Đồng đội phù hợp nhất <span class="badge badge-compat">Top ${topCompat.length}</span>`;
+            scroll.appendChild(sec);
+            const grid = document.createElement("div"); grid.className="picker-grid";
+            topCompat.forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+            scroll.appendChild(grid);
+        }
+    }
+
+    // All heroes
+    const sec = document.createElement("div"); sec.className="picker-section";
+    sec.innerHTML = `📋 Tất cả tướng <span class="badge badge-all">${filtered.length}</span>`;
+    scroll.appendChild(sec);
+    const grid = document.createElement("div"); grid.className="picker-grid";
+    filtered.sort((a,b) => {
+        const sa = counterScores[a.id]?.score||0, sb = counterScores[b.id]?.score||0;
+        if(sb!==sa) return sb-sa;
+        return a.name.localeCompare(b.name);
+    });
+    filtered.forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+    scroll.appendChild(grid);
+}
+
+function mkCard(hero, pickedIds, counterScores, compatScores) {
+    const card = document.createElement("div");
+    card.className = "hero-card";
+    if(pickedIds.has(hero.id)) card.classList.add("disabled");
+    const cs = counterScores[hero.id];
+    const cp = compatScores[hero.id];
+    if(cs?.score>0) card.classList.add("counter-pick");
+    else if(cp?.score>0) card.classList.add("compat-pick");
+
+    let sub = "";
+    if(cs?.vs?.length) sub = `<div class="hero-card-sub counter">⚔️ vs ${cs.vs.join(", ")}</div>`;
+    else if(cp?.withWhich?.length) sub = `<div class="hero-card-sub compat">👥 + ${cp.withWhich.join(", ")}</div>`;
+
+    const wr = hero.win_rate ? `<div class="hero-card-wr">WR ${hero.win_rate}%</div>` : "";
+
+    // Tooltip
+    const roles = (hero.roles||[]).join(", ");
+    const lanes = (hero.lanes||[]).join(", ");
+    const strongN = (hero.strong||[]).filter(x=>x!=="0").map(id=>heroMap[id]?.name||id).join(", ")||"-";
+    const weakN = (hero.weak||[]).filter(x=>x!=="0").map(id=>heroMap[id]?.name||id).join(", ")||"-";
+    const bestN = (hero.best_with||[]).map(b=>`${heroMap[b.id]?.name||b.id} (+${b.win_rate}%)`).join(", ")||"-";
+    const cbyN = (hero.countered_by_stats||[]).map(b=>`${heroMap[b.id]?.name||b.id} (${b.win_rate}%)`).join(", ")||"-";
+
+    card.innerHTML = `
+        <div class="tooltip">
+            <div class="t-name">${hero.name}</div>
+            <div class="t-role">${roles}</div>
+            <div class="t-lane">🗺️ ${lanes}</div>
+            <div class="t-wr">WR: <span>${hero.win_rate||0}%</span> · Ban: <span>${hero.ban_rate||0}%</span> · Pick: <span>${hero.pick_rate||0}%</span></div>
+            <div class="t-counter">
+                <div style="color:#ff9800">⚔️ Khắc chế: ${strongN}</div>
+                <div style="color:#ef5350">💀 Bị khắc chế: ${weakN}</div>
+                <div style="color:#4caf50">👥 Đồng đội tốt: ${bestN}</div>
+                <div style="color:#e57373">📊 Thua nhiều vs: ${cbyN}</div>
+            </div>
+        </div>
+        <div class="hero-card-avatar"><img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="hero-card-name">${hero.name}</div>
+        ${wr}${sub}`;
+    card.onclick = () => selectHero(hero);
+    return card;
+}
+
+function selectHero(hero) { if(!activeSlot) return; (activeSlot.team==="blue"?bluePicks:redPicks)[activeSlot.index]=hero; renderSlots(); closePicker(); }
+function closePicker() { document.getElementById("pickerOverlay").classList.remove("show"); activeSlot=null; renderSlots(); }
+function removePick(team,i) { (team==="blue"?bluePicks:redPicks)[i]=null; renderSlots(); }
+function resetDraft() { bluePicks=[null,null,null,null,null]; redPicks=[null,null,null,null,null]; renderSlots(); }
+document.getElementById("pickerOverlay").addEventListener("click", e => { if(e.target===document.getElementById("pickerOverlay")) closePicker(); });
+document.addEventListener("keydown", e => { if(e.key==="Escape") closePicker(); });
+init();
 </script>
 </body>
 </html>
