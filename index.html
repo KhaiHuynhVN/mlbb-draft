@@ -27,6 +27,7 @@
             letter-spacing: 3px;
         }
         .header p { color: #8892b0; font-size: 13px; margin-top: 6px; }
+        .header .update-info { color: #4a5090; font-size: 11px; margin-top: 4px; }
 
         .draft-container {
             display: flex; justify-content: center; align-items: flex-start;
@@ -125,7 +126,6 @@
         }
         .picker-close:hover { background: #2a3060; color: #fff; }
 
-        /* Counter sections in picker */
         .picker-section {
             padding: 10px 20px 4px; font-size: 13px; font-weight: 600;
             color: #8892b0; border-bottom: 1px solid #1a1f40;
@@ -138,16 +138,7 @@
         .badge-counter { background: #ff980020; color: #ff9800; }
         .badge-all { background: #4fc3f720; color: #4fc3f7; }
 
-        .counter-tag {
-            display: inline-block; padding: 1px 6px; border-radius: 4px;
-            font-size: 9px; font-weight: 700; margin-left: 4px;
-            vertical-align: middle;
-        }
-        .counter-tag.vs { background: #ff980030; color: #ffb74d; }
-
-        .picker-scroll {
-            overflow-y: auto; flex: 1; padding-bottom: 10px;
-        }
+        .picker-scroll { overflow-y: auto; flex: 1; padding-bottom: 10px; }
 
         .picker-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -174,6 +165,18 @@
             margin-top: 2px; line-height: 1.2;
         }
 
+        .hero-card .tooltip {
+            display: none; position: absolute; bottom: 100%; left: 50%;
+            transform: translateX(-50%); background: #1a1f3a; border: 1px solid #3a4080;
+            border-radius: 8px; padding: 10px 14px; width: 240px; z-index: 10;
+            pointer-events: none; margin-bottom: 8px;
+        }
+        .hero-card:hover .tooltip { display: block; }
+        .tooltip .t-name { font-size: 14px; font-weight: 700; color: #ffd740; }
+        .tooltip .t-role { font-size: 11px; color: #7882a4; }
+        .tooltip .t-lane { font-size: 11px; color: #4fc3f7; margin-top: 2px; }
+        .tooltip .t-counter { font-size: 11px; margin-top: 4px; line-height: 1.5; }
+
         .loading-overlay {
             position: fixed; inset: 0; background: #0a0e1a;
             display: flex; flex-direction: column; align-items: center;
@@ -196,20 +199,6 @@
         }
         .reset-btn:hover { background: linear-gradient(135deg, #2a3060, #3a4080); color: #fff; }
 
-        /* Detail tooltip on hover */
-        .hero-card .tooltip {
-            display: none; position: absolute; bottom: 100%; left: 50%;
-            transform: translateX(-50%); background: #1a1f3a; border: 1px solid #3a4080;
-            border-radius: 8px; padding: 10px 14px; width: 220px; z-index: 10;
-            pointer-events: none; margin-bottom: 8px;
-        }
-        .hero-card:hover .tooltip { display: block; }
-        .tooltip .t-name { font-size: 14px; font-weight: 700; color: #ffd740; }
-        .tooltip .t-role { font-size: 11px; color: #7882a4; }
-        .tooltip .t-stats { font-size: 11px; color: #8892b0; margin-top: 4px; }
-        .tooltip .t-stats span { color: #4fc3f7; }
-        .tooltip .t-counter { font-size: 11px; margin-top: 4px; }
-
         @media (max-width: 768px) {
             .draft-container { flex-direction: column; align-items: center; gap: 10px; }
             .vs-divider { padding-top: 0; font-size: 24px; }
@@ -223,12 +212,13 @@
 
 <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
-    <div class="loading-text">Đang tải danh sách tướng...</div>
+    <div class="loading-text" id="loadingText">Đang tải danh sách tướng...</div>
 </div>
 
 <div class="header">
     <h1>MLBB DRAFT PICK</h1>
     <p>Chọn tướng cho cả 2 team → Xem gợi ý tướng khắc chế cho từng tướng đối phương</p>
+    <div class="update-info" id="updateInfo"></div>
 </div>
 
 <div class="draft-container">
@@ -257,45 +247,110 @@
 </div>
 
 <script>
+    const API_URL = "https://api.gms.moontontech.com/api/gms/source/2669606/2756564";
+    const API_HEADERS = {
+        "Content-Type": "application/json;charset=UTF-8",
+        "x-appid": "2669606",
+        "x-actid": "2669607",
+        "x-lang": "en"
+    };
+    const API_BODY = {
+        pageSize: 200,
+        pageIndex: 1,
+        filters: [
+            { field: "<hero.data.sortid>", operator: "hasAnyOf", value: [1,2,3,4,5,6] },
+            { field: "<hero.data.roadsort>", operator: "hasAnyOf", value: [1,2,3,4,5] }
+        ],
+        sorts: [{ data: { field: "hero_id", order: "desc" }, type: "sequence" }],
+        fields: ["id","hero_id","hero.data.name","hero.data.smallmap","hero.data.sortid","hero.data.roadsort"],
+        object: []
+    };
+
     let allHeroes = [];
-    let heroMap = {};       // id -> hero
-    let counterMap = {};    // heroId -> Set of heroIds that counter it
+    let heroMap = {};
     let bluePicks = [null, null, null, null, null];
     let redPicks = [null, null, null, null, null];
     let activeSlot = null;
 
+    function parseRoles(sortid) {
+        if (!sortid) return [];
+        return sortid.filter(s => s && typeof s === "object" && s.data)
+            .map(s => s.data.sort_title)
+            .filter(Boolean);
+    }
+
+    function parseLanes(roadsort) {
+        if (!roadsort) return [];
+        return roadsort.filter(s => s && typeof s === "object" && s.data)
+            .map(s => s.data.road_sort_title)
+            .filter(Boolean);
+    }
+
+    function parseHeroRecord(record) {
+        const d = record.data;
+        const heroData = d.hero?.data || {};
+        const rel = d.relation || {};
+        return {
+            id: String(d.hero_id),
+            name: heroData.name || "",
+            icon: heroData.smallmap || "",
+            roles: parseRoles(heroData.sortid),
+            lanes: parseLanes(heroData.roadsort),
+            strong: (rel.strong?.target_hero_id || []).map(String),   // heroes this hero counters
+            weak: (rel.weak?.target_hero_id || []).map(String),       // heroes that counter this hero
+            assist: (rel.assist?.target_hero_id || []).map(String),   // best teammates
+        };
+    }
+
     async function init() {
         try {
-            const res = await fetch("heroes.json");
-            allHeroes = await res.json();
+            // Try live API first
+            const loadingText = document.getElementById("loadingText");
+            loadingText.textContent = "Đang tải từ API Moonton...";
+
+            let heroes;
+            try {
+                const res = await fetch(API_URL, {
+                    method: "POST",
+                    headers: API_HEADERS,
+                    body: JSON.stringify(API_BODY)
+                });
+                const json = await res.json();
+                heroes = json.data.records.map(parseHeroRecord);
+                document.getElementById("updateInfo").textContent = `Live data · ${heroes.length} tướng · ${new Date().toLocaleDateString("vi")}`;
+            } catch (e) {
+                // Fallback to cached heroes.json
+                loadingText.textContent = "API không khả dụng, dùng dữ liệu cache...";
+                const res = await fetch("heroes.json");
+                heroes = await res.json();
+                document.getElementById("updateInfo").textContent = `Cached data · ${heroes.length} tướng`;
+            }
+
+            allHeroes = heroes.sort((a, b) => a.name.localeCompare(b.name));
             heroMap = {};
-            counterMap = {};
-            allHeroes.forEach(h => {
-                heroMap[h.id] = h;
-            });
-            // Build reverse counter map: for each hero, which heroes counter it?
-            // Source 1: if hero A has countered_by: B → B counters A
-            // Source 2: if hero A has counters: C → A counters C
-            allHeroes.forEach(h => {
-                const c = h.counters || {};
-                // B counters this hero (h)
-                if (c.countered_by) {
-                    if (!counterMap[h.id]) counterMap[h.id] = new Set();
-                    counterMap[h.id].add(c.countered_by.id);
-                }
-                // This hero (h) counters C
-                if (c.counters) {
-                    const targetId = c.counters.id;
-                    if (!counterMap[targetId]) counterMap[targetId] = new Set();
-                    counterMap[targetId].add(h.id);
-                }
-            });
+            allHeroes.forEach(h => heroMap[h.id] = h);
+
             renderSlots();
             document.getElementById("loadingOverlay").classList.add("hidden");
         } catch (e) {
             console.error("Failed to load heroes:", e);
-            document.querySelector(".loading-text").textContent = "Lỗi tải dữ liệu. Vui lòng refresh trang.";
+            document.getElementById("loadingText").textContent = "Lỗi tải dữ liệu. Vui lòng refresh trang.";
         }
+    }
+
+    // Get all heroes that counter a specific hero
+    function getCountersFor(heroId) {
+        const counters = new Set();
+        // 1. Heroes whose "strong" list includes this hero (they counter it)
+        allHeroes.forEach(h => {
+            if (h.strong.includes(heroId)) counters.add(h.id);
+        });
+        // 2. Heroes in this hero's "weak" list (they counter it)
+        const hero = heroMap[heroId];
+        if (hero) {
+            hero.weak.forEach(id => counters.add(id));
+        }
+        return counters;
     }
 
     function renderSlots() {
@@ -337,7 +392,8 @@
             const info = document.createElement("div");
             info.className = "slot-info";
             if (pick) {
-                info.innerHTML = `<div class="hero-name">${pick.name}</div><div class="hero-role">${pick.type || ""}</div>`;
+                const roleStr = pick.roles ? pick.roles.join(", ") : "";
+                info.innerHTML = `<div class="hero-name">${pick.name}</div><div class="hero-role">${roleStr}</div>`;
             } else {
                 const hint = hasEnemy ? "Click để chọn tướng khắc chế" : "Click để chọn tướng";
                 info.innerHTML = `<div class="hint">${hint}</div>`;
@@ -366,39 +422,8 @@
         document.getElementById("pickerSearch").focus();
 
         const title = document.getElementById("pickerTitle");
-        if (team === "blue") {
-            title.textContent = "🔵 Chọn tướng cho Team bạn";
-        } else {
-            title.textContent = "🔴 Chọn tướng cho Team đối thủ";
-        }
+        title.textContent = team === "blue" ? "🔵 Chọn tướng cho Team bạn" : "🔴 Chọn tướng cho Team đối thủ";
         renderPickerContent();
-    }
-
-    // Get counters for enemy team: returns Map<enemyHeroId, Set<counterHeroId>>
-    function getCountersForEnemyTeam(enemyPicks) {
-        const result = new Map();
-        enemyPicks.filter(p => p).forEach(enemy => {
-            const counters = counterMap[enemy.id];
-            if (counters && counters.size > 0) {
-                result.set(enemy.id, new Set(counters));
-            }
-        });
-        return result;
-    }
-
-    // Score each hero: how many enemy heroes does it counter?
-    function scoreHeroes(enemyCounterMap, pickedIds) {
-        const scores = {}; // heroId -> { score, countersWhich: [enemyName, ...] }
-        for (const [enemyId, counterSet] of enemyCounterMap) {
-            const enemyName = heroMap[enemyId]?.name || enemyId;
-            counterSet.forEach(cid => {
-                if (pickedIds.has(cid)) return;
-                if (!scores[cid]) scores[cid] = { score: 0, countersWhich: [] };
-                scores[cid].score++;
-                scores[cid].countersWhich.push(enemyName);
-            });
-        }
-        return scores;
     }
 
     function renderPickerContent() {
@@ -411,24 +436,28 @@
             ...redPicks.filter(p => p).map(p => p.id)
         ]);
 
-        const enemyPicks = team === "blue" ? redPicks : bluePicks;
-        const enemyCounterMap = getCountersForEnemyTeam(enemyPicks);
-        const heroScores = scoreHeroes(enemyCounterMap, pickedIds);
-
+        const enemyPicks = (team === "blue" ? redPicks : bluePicks).filter(p => p);
         let filtered = allHeroes.filter(h => h.name.toLowerCase().includes(search));
+
+        // Build counter scores: heroId -> { score, countersWhich: [enemyName] }
+        const heroScores = {};
+        enemyPicks.forEach(enemy => {
+            const counterIds = getCountersFor(enemy.id);
+            counterIds.forEach(cid => {
+                if (pickedIds.has(cid)) return;
+                if (!heroScores[cid]) heroScores[cid] = { score: 0, countersWhich: [] };
+                heroScores[cid].score++;
+                heroScores[cid].countersWhich.push(enemy.name);
+            });
+        });
 
         scroll.innerHTML = "";
 
-        const hasEnemyPicks = enemyPicks.some(p => p);
-
-        if (hasEnemyPicks && Object.keys(heroScores).length > 0) {
-            // Section 1: Per-enemy counter suggestions
-            const enemyHeroes = enemyPicks.filter(p => p);
-            enemyHeroes.forEach(enemy => {
-                const counters = counterMap[enemy.id];
-                if (!counters || counters.size === 0) return;
-
-                const counterHeroes = filtered.filter(h => counters.has(h.id) && !pickedIds.has(h.id));
+        if (enemyPicks.length > 0 && Object.keys(heroScores).length > 0) {
+            // Per-enemy counter sections
+            enemyPicks.forEach(enemy => {
+                const counterIds = getCountersFor(enemy.id);
+                const counterHeroes = filtered.filter(h => counterIds.has(h.id) && !pickedIds.has(h.id));
                 if (counterHeroes.length === 0) return;
 
                 const section = document.createElement("div");
@@ -438,34 +467,30 @@
 
                 const grid = document.createElement("div");
                 grid.className = "picker-grid";
-                counterHeroes.forEach(hero => {
-                    grid.appendChild(createHeroCard(hero, pickedIds, heroScores, true));
-                });
+                counterHeroes.forEach(hero => grid.appendChild(createHeroCard(hero, pickedIds, heroScores)));
                 scroll.appendChild(grid);
             });
 
-            // Section 2: Top counters (counter nhiều tướng nhất)
+            // Top 10 multi-counters
             const topCounters = filtered
-                .filter(h => heroScores[h.id] && !pickedIds.has(h.id))
-                .sort((a, b) => (heroScores[b.id]?.score || 0) - (heroScores[a.id]?.score || 0))
+                .filter(h => heroScores[h.id] && heroScores[h.id].score >= 2 && !pickedIds.has(h.id))
+                .sort((a, b) => heroScores[b.id].score - heroScores[a.id].score)
                 .slice(0, 10);
 
             if (topCounters.length > 0) {
                 const section = document.createElement("div");
                 section.className = "picker-section";
-                section.innerHTML = `🏆 Top khắc chế nhiều tướng nhất <span class="badge badge-counter">Top ${topCounters.length}</span>`;
+                section.innerHTML = `🏆 Khắc chế nhiều tướng đối thủ <span class="badge badge-counter">Top ${topCounters.length}</span>`;
                 scroll.appendChild(section);
 
                 const grid = document.createElement("div");
                 grid.className = "picker-grid";
-                topCounters.forEach(hero => {
-                    grid.appendChild(createHeroCard(hero, pickedIds, heroScores, true));
-                });
+                topCounters.forEach(hero => grid.appendChild(createHeroCard(hero, pickedIds, heroScores)));
                 scroll.appendChild(grid);
             }
         }
 
-        // Section: All heroes
+        // All heroes section
         const section = document.createElement("div");
         section.className = "picker-section";
         section.innerHTML = `📋 Tất cả tướng <span class="badge badge-all">${filtered.length}</span>`;
@@ -473,22 +498,17 @@
 
         const grid = document.createElement("div");
         grid.className = "picker-grid";
-
-        // Sort: counters first, then alphabetical
         filtered.sort((a, b) => {
             const sa = heroScores[a.id]?.score || 0;
             const sb = heroScores[b.id]?.score || 0;
             if (sb !== sa) return sb - sa;
             return a.name.localeCompare(b.name);
         });
-
-        filtered.forEach(hero => {
-            grid.appendChild(createHeroCard(hero, pickedIds, heroScores, false));
-        });
+        filtered.forEach(hero => grid.appendChild(createHeroCard(hero, pickedIds, heroScores)));
         scroll.appendChild(grid);
     }
 
-    function createHeroCard(hero, pickedIds, heroScores, isCounterSection) {
+    function createHeroCard(hero, pickedIds, heroScores) {
         const card = document.createElement("div");
         card.className = "hero-card";
         if (pickedIds.has(hero.id)) card.classList.add("disabled");
@@ -501,19 +521,23 @@
             counterInfo = `<div class="hero-card-counters-info">⚔️ vs ${score.countersWhich.join(", ")}</div>`;
         }
 
-        // Tooltip
-        const c = hero.counters || {};
-        let tooltipCounter = "";
-        if (c.best_mate) tooltipCounter += `<div style="color:#4caf50">👥 ${c.best_mate.name}</div>`;
-        if (c.counters) tooltipCounter += `<div style="color:#ff9800">⚔️ Khắc chế: ${c.counters.name}</div>`;
-        if (c.countered_by) tooltipCounter += `<div style="color:#ef5350">💀 Bị khắc chế: ${c.countered_by.name}</div>`;
+        // Tooltip content
+        const roleStr = hero.roles?.join(", ") || "";
+        const laneStr = hero.lanes?.join(", ") || "";
+        const strongNames = hero.strong?.map(id => heroMap[id]?.name).filter(Boolean).join(", ") || "-";
+        const weakNames = hero.weak?.map(id => heroMap[id]?.name).filter(Boolean).join(", ") || "-";
+        const assistNames = hero.assist?.map(id => heroMap[id]?.name).filter(Boolean).join(", ") || "-";
 
         card.innerHTML = `
             <div class="tooltip">
                 <div class="t-name">${hero.name}</div>
-                <div class="t-role">${hero.type || ""}</div>
-                <div class="t-stats">PHY: <span>${hero.phy || "-"}</span> · MAG: <span>${hero.mag || "-"}</span> · HP: <span>${hero.alive || "-"}</span></div>
-                <div class="t-counter">${tooltipCounter}</div>
+                <div class="t-role">${roleStr}</div>
+                <div class="t-lane">🗺️ ${laneStr}</div>
+                <div class="t-counter">
+                    <div style="color:#ff9800">⚔️ Khắc chế: ${strongNames}</div>
+                    <div style="color:#ef5350">💀 Bị khắc chế: ${weakNames}</div>
+                    <div style="color:#4caf50">👥 Đồng đội tốt: ${assistNames}</div>
+                </div>
             </div>
             <div class="hero-card-avatar">
                 <img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'">

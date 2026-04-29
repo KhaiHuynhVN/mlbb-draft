@@ -2,3303 +2,3570 @@
   {
     "id": "109",
     "name": "Aamon",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/9d9bd7e99dcaad637c0c7b3280a84a31.png?w=150-150-f6fefd",
-    "type": "Assassin",
-    "phy": "70",
-    "mag": "10",
-    "alive": "30",
-    "diff": "50",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_c9e4d330229c88b1e78ef88ce9db4223.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "115",
+      "91",
+      "0"
+    ],
+    "weak": [
+      "2",
+      "117",
+      "0"
+    ],
+    "assist": [
+      "14",
+      "112",
+      "0"
+    ]
   },
   {
     "id": "9",
     "name": "Akai",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "90",
-    "alive": "90",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Due to their knockup abilities from ULT. However, these have to be perfectly timed so that Akai's ULT is cancelled. "
-      },
-      "counters": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Akai's ULT will knockback a Karina, preventing them from landing a proper attack or proper engage."
-      },
-      "best_mate": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Akai can ULT from behind and push the enemies toward Saber, while Saber can ULT the priority target and finish the job."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_809a19d0ffb6cd1b33d0f6d5715f8952.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "15",
+      "46",
+      "0"
+    ],
+    "weak": [
+      "5",
+      "48",
+      "0"
+    ],
+    "assist": [
+      "3",
+      "15",
+      "0"
+    ]
   },
   {
     "id": "64",
     "name": "Aldous",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_433f9653743e72e1e152428d26838f9e.png",
-    "type": "Fighter",
-    "phy": "30",
-    "mag": "50",
-    "alive": "70",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "62",
-        "name": "Kaja",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7fe2a243687bb024b5728ea4bbf422fe.png",
-        "tip": "Aldous is vulnerable when Skill 2 is not ready. If controlled for a long time Aldous will be easily killed."
-      },
-      "counters": {
-        "id": "53",
-        "name": "Lesley",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/da570e4daad77939a40f93c3c1034b83.png?w=150-150-320f16",
-        "tip": "Aldous could easily kill any squishy heroes when he's fully equipped."
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "Any hero that can protect or drive a wedge into enemy defense works perfect with Aldous."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_c2f6866ffc797395ee35f97a74bbea20.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "16",
+      "67",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "58",
+      "85",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "2",
+      "12",
+      "0"
+    ]
   },
   {
     "id": "4",
     "name": "Alice",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7f0da9c3ddefff4530e8dbe17054c45e.png",
-    "type": "Mage",
-    "phy": "50",
-    "mag": "70",
-    "alive": "50",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "5",
-        "name": "Nana",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_08d0332be76ff7bdd894f7c7227be56c.png",
-        "tip": "Hero with strong CC such as Nana, Eudore and Aurora could make it difficult for Alice to contribute for her team.kontribusi terhadap timnya."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "It's difficult for heroes without mobility such as Layla to run away from Alice."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Aurora's freeze and Alice's ultimate are excellent combination. Not only that, Aurora's freeze could also help Alice to engage with the enemies."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18/100_ec3d5c825e893947a235ea9ea59fff77.png",
+    "roles": [
+      "tank",
+      "mage"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Jungle"
+    ],
+    "strong": [
+      "91",
+      "61",
+      "0"
+    ],
+    "weak": [
+      "87",
+      "58",
+      "0"
+    ],
+    "assist": [
+      "2",
+      "85",
+      "0"
+    ]
   },
   {
     "id": "28",
     "name": "Alpha",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/796cd5f6a8ba0e76226fd0cd6866eb1e.jpg?w=100-100-28181b",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "70",
-    "alive": "60",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Kekurangan Alpha adalah kemampuan untuk mendekati lawan, Layla memiliki jarak serangan yang sangat jauh sehingga dapat dengan mudah melakukan Free Hit pada Alpha."
-      },
-      "counters": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Attack Speed dan Skill Zilong dapat mengalahkan Alpha dengan mudah. tetap berhati-hati dan lihat situasi apa Zilong musuh dapat benar-benar dikalahkan oleh Alpha Anda."
-      },
-      "best_mate": {
-        "id": "43",
-        "name": "Irithel",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1a30fb8c6fc6086fc2b3c9795e7305e6.png",
-        "tip": "Ketika lawan terkena efek slow atau stun dari Alpha, Irithel dapat maju untuk memberikan banyak serangan pada lawan."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_d3993266ec8b303b02c845f2c75d5e6d.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle",
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "121",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "26",
+      "56",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "38",
+      "63",
+      "0"
+    ]
   },
   {
     "id": "7",
     "name": "Alucard",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2f53289ddd423fa9bc95d380b6d79719.jpg",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "10",
-    "alive": "50",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Karina, You won’t be able to hit her when she procs “1” so yeah basically you can only use your skills to pop her. Pretty much allows her to avoid about ⅓ of your full damage."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Heroes with Low burst skills, Usually Tanks and Fighters, with his Lifesteal abilities, he can pretty much 1v1 and even 1v2 enemies with ease so long as he doesn’t encounter any Hard CCs *Making myself clear, Burst as in ONE HIT WONDERS LIKE EUDORA* Fighters generally has very consistent high damage throughout like Marksmans."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Mages like Kagura or Aurora are ideal partners, Having a good disable allows you to deal more damage to the enemy. Since Mages usually require someone to deal a decent amount of damage early game to farm faster."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_df695a059c0f0a63fe922786098089cd.png",
+    "roles": [
+      "fighter",
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "42",
+      "109",
+      "0"
+    ],
+    "weak": [
+      "10",
+      "32",
+      "0"
+    ],
+    "assist": [
+      "41",
+      "115",
+      "0"
+    ]
   },
   {
     "id": "55",
     "name": "Angela",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-    "type": "Support",
-    "phy": "20",
-    "mag": "50",
-    "alive": "30",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "34",
-        "name": "Estes",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_42b2d76fe927ce57a1d29e220e2b5eea.png",
-        "tip": "Angela’s skill will help the whole team to restore health, but this ability is inferior to Estes. "
-      },
-      "counters": {
-        "id": "45",
-        "name": "Argus",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/14fa1f3db81e6b3507c6bac842b45553.png?w=150-149-30384b",
-        "tip": "Angela’s ability to control the battle ground largely limits the performance of Argus"
-      },
-      "best_mate": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Zilong, Angela’s Ult covers Zilong’s shortage of defense. Be performed Ult by Angela, Zilong has the opportunity to deal great damage to enemies."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_a815a3adad8df99481700c84abaf3c41.png",
+    "roles": [
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "59",
+      "70",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "84",
+      "42",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "47",
+      "109",
+      "0"
+    ]
   },
   {
     "id": "45",
     "name": "Argus",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/14fa1f3db81e6b3507c6bac842b45553.png?w=150-149-30384b",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "50",
-    "alive": "70",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "Akai’s ultimatecan disable Argus during the whole duration of Argus’ ultimate.<br>-Akai’s ultimatecan stop Argus from being able to get near or attack."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "Argus can easily catch Odette with his skills.<br>-Argus is able to cancel Odette’s Ultimate withhis 1st skill, since it has a stun.<br>-Argus’ ultimate can let Argus dive into Odette’sultimate without dying and can kill Odette at the same time."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "-Ranged and can keepyou from being harassed.<br>-Can Harass back.<br>-Has decentmagic damage.<br>-You both haveslow-inducing and stun-inflicting skills, so when skills are used properly, youboth can easily kill enemies or protect yourselves."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_ee4f9ddb2f82ef0dfc99bb72e0a8f557.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "23",
+      "36",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "41",
+      "6",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "14",
+      "0"
+    ]
   },
   {
     "id": "120",
     "name": "Arlott",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/bd640274b1595c6713c5c360c458a740.png?w=150-150-414254",
-    "type": "Fighter",
-    "phy": "60",
-    "mag": "50",
-    "alive": "60",
-    "diff": "50",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_01450fec4397f8780ce0d11ab652c73d.png",
+    "roles": [
+      "fighter",
+      "assassin"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "27",
+      "16",
+      "0"
+    ],
+    "weak": [
+      "72",
+      "117"
+    ],
+    "assist": [
+      "41",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "93",
     "name": "Atlas",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f68d5c30c0198006b2c85b7a5cb48b.png",
-    "type": "Tank",
-    "phy": "10",
-    "mag": "90",
-    "alive": "80",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "73",
-        "name": "Harith",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-        "tip": "Harith, Wanwan, Kadita"
-      },
-      "counters": {
-        "id": "40",
-        "name": "Karrie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2ae89c203ad1488fa1af6b7e51dae488.png",
-        "tip": "Karrie, Bruno, Hanzo"
-      },
-      "best_mate": {
-        "id": "82",
-        "name": "Terizla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_45c908d0d59990c13d229ab22db05ebb.png",
-        "tip": "Terizla, Tigreal, Vale"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_0dc01e8286bc92e5be3a3503dd47229c.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "38",
+      "15",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "57",
+      "31",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "66",
+      "121",
+      "0"
+    ]
   },
   {
     "id": "108",
     "name": "Aulus",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/c5d496ae30a8f83e42e70a80f07240fa.jpg?w=150-150-401a19",
-    "type": "Fighter",
-    "phy": "60",
-    "mag": "10",
-    "alive": "60",
-    "diff": "40",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_60_2/100_4a632ceb1dfcb3aad58a6d02a46a1c9e.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "60",
+      "1",
+      "23"
+    ],
+    "weak": [
+      "10",
+      "114",
+      "8"
+    ],
+    "assist": [
+      "55",
+      "112",
+      "0"
+    ]
   },
   {
     "id": "36",
     "name": "Aurora",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-    "type": "Mage",
-    "phy": "70",
-    "mag": "100",
-    "alive": "40",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "47",
-        "name": "Lancelot",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e20549844522450e535e614538699eb9.png?w=150-150-ffe4db",
-        "tip": "Lancelot can dodge most of Aurora’s skills. "
-      },
-      "counters": {
-        "id": "15",
-        "name": "Eudora",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ed32e3c71ecd41652fc54a7efd02aba4.jpg",
-        "tip": "Aurora’s longer range makes it easy for her to kill Eudora when laning."
-      },
-      "best_mate": {
-        "id": "41",
-        "name": "Gatotkaca",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_8b7e7d0bf164c78553806661deb1d672.png",
-        "tip": "Her ultimate’s long-range slow effect works perfectly with Gatotkaca’s ultimate to control-lock the enemy team."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_1f3f900f917956e81d7764b9e5ffeb3d.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "67",
+      "72",
+      "82",
+      "0"
+    ],
+    "weak": [
+      "84",
+      "75",
+      "80",
+      "0"
+    ],
+    "assist": [
+      "121",
+      "22",
+      "40"
+    ]
   },
   {
     "id": "77",
     "name": "Badang",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_686f5e16b9d129d7012751241943c2c9.png",
-    "type": "Fighter",
-    "phy": "70",
-    "mag": "50",
-    "alive": "40",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": ""
-      },
-      "counters": {
-        "id": "17",
-        "name": "Fanny",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_523a730c11b8c22fc6c3fcc5575c29a2.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "75",
-        "name": "Kadita",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c8bec784a42a812db26ea3f34c029fdc.png",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_484caceb9611d547774d6d936519a7d6.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Roam",
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "46",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "89",
+      "84",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "6",
+      "96",
+      "0"
+    ]
   },
   {
     "id": "2",
     "name": "Balmond",
-    "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_be884c14d560f6bc5827e2a663439f94.png",
-    "type": "",
-    "phy": "",
-    "mag": "",
-    "alive": "",
-    "diff": "",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_6c018674ea709972b4837ec90518e79e.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle",
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "15",
+      "0"
+    ],
+    "weak": [
+      "53",
+      "43",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "14",
+      "0"
+    ]
   },
   {
     "id": "11",
     "name": "Bane",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/4df530323017868ec04315818e9c2954.png?w=150-150-241615",
-    "type": "Fighter",
-    "phy": "60",
-    "mag": "40",
-    "alive": "50",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Fighters, especially Zilong can easily but down bane as bane does not deal much physical damage via auto attacks and his 3rd skill can be easily dodged if enemy heroes are not disabled."
-      },
-      "counters": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "In early game, it is good to go up against natalia or other assasins as his passive ability spams nicely and his tanky nature discourages direct attack. "
-      },
-      "best_mate": {
-        "id": "50",
-        "name": "Zhask",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ca13970038ce4d7590d2f271b6c6f7f5.png",
-        "tip": "Bane is best suited in the lane with the hero Zhask for taking turrets, dominating early game and ending the match at a very quick pace."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_846a816f7905f17c81cb35e7f3ff1c3e.png",
+    "roles": [
+      "fighter",
+      "mage"
+    ],
+    "lanes": [
+      "Jungle",
+      "Exp Lane"
+    ],
+    "strong": [
+      "49",
+      "70"
+    ],
+    "weak": [
+      "66",
+      "115"
+    ],
+    "assist": [
+      "6",
+      "96"
+    ]
   },
   {
     "id": "99",
     "name": "Barats",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_52c80b58ebb105e96295c11d9bfd9a9b.jpg",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "90",
-    "alive": "100",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "63",
-        "name": "Selena",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_0956f8d25d39312d0da5dca2cfca074c.png",
-        "tip": "Wanwan"
-      },
-      "counters": {
-        "id": "89",
-        "name": "Wanwan",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d744e6f02ba1d9b5f246a5532cc2b201.png",
-        "tip": "Selena"
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tigreal"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_2ff4a47ddc77ec9e4e5a522fd696d2c4.png",
+    "roles": [
+      "tank",
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "70",
+      "20",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "9",
+      "31",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "102",
+      "55",
+      "0"
+    ]
   },
   {
     "id": "87",
     "name": "Baxia",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_22474dd14312ea67d5d2caa742bff2ec.png",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "60",
-    "alive": "100",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "64",
-        "name": "Aldous",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_433f9653743e72e1e152428d26838f9e.png",
-        "tip": "Eudora; Aldous; Karrie"
-      },
-      "counters": {
-        "id": "65",
-        "name": "Claude",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_99318a0a409d80f0f2d4b47ee63b6bda.png",
-        "tip": "Gusion; Claude; Kimmy"
-      },
-      "best_mate": {
-        "id": "61",
-        "name": "Chang'e",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1a6b949d43ed33a7ad939ee4a0420b3e.png",
-        "tip": "Chang'e; Masha; Natalia"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_ae43a252fda0fe996322ea8d27a6fe69.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Jungle",
+      "Roam"
+    ],
+    "strong": [
+      "61",
+      "90",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "40",
+      "53",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "72",
+      "28",
+      "0"
+    ]
   },
   {
     "id": "105",
     "name": "Beatrix",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_bc9478f69dafbf6ff27d8e19899637ca.png",
-    "type": "Marksman",
-    "phy": "80",
-    "mag": "10",
-    "alive": "30",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": ""
-      },
-      "counters": {
-        "id": "43",
-        "name": "Irithel",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1a30fb8c6fc6086fc2b3c9795e7305e6.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_c1acd7cbd828f0c5d291e48a0f7c018d.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "49",
+      "70",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "15",
+      "84",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "78",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "70",
     "name": "Belerick",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f9b01617505b9562d3bbc75e9d392c91.jpg",
-    "type": "Tank",
-    "phy": "40",
-    "mag": "100",
-    "alive": "90",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": "Belerick is vulnerable against the heroes that could deal a high amount of damage. His passive won't help that much when facing these kinds of heroes, for he won't have the time to convert his passive into damage."
-      },
-      "counters": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "Belerick is a squishy killer. Do not retreat when using Belerick and just rush to the enemy suqishy heroes face.If those heroes run away, then you're half way to victory."
-      },
-      "best_mate": {
-        "id": "14",
-        "name": "Rafaela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_549ab8159821398b48e7e79ceb298396.png",
-        "tip": "DPS heroes with recovery ability are the perfect matches with Belerick, since they add to Belerick's durability, so he can deal more damage."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_c9aa12fe3c58449075a5ac8b6d691a13.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "47",
+      "84",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "57",
+      "115",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "107",
+      "1",
+      "0"
+    ]
   },
   {
     "id": "97",
     "name": "Benedetta",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f09a3869e4236053915d3757c1ff1f3f.jpg",
-    "type": "Assassin",
-    "phy": "50",
-    "mag": "20",
-    "alive": "60",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "73",
-        "name": "Harith",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-        "tip": "Harith, Kaja, Wanwan"
-      },
-      "counters": {
-        "id": "60",
-        "name": "Hanabi",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e03a3e6f2eb41243b9d9d1cc1f89cadd.png?w=150-150-070b18",
-        "tip": "Karrie, Hanzo, Hanabi"
-      },
-      "best_mate": {
-        "id": "93",
-        "name": "Atlas",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f68d5c30c0198006b2c85b7a5cb48b.png",
-        "tip": "Tigreal, Atlas, Luo Yi"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_eceefa7ba07f093d71a30852f0051b7a.png",
+    "roles": [
+      "assassin",
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "54",
+      "80",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "74",
+      "106",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "32",
+      "41",
+      "0"
+    ]
   },
   {
     "id": "100",
     "name": "Brody",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_b09c321e1766f686935775d11ad22787.jpg",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "50",
-    "alive": "40",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": "Freya"
-      },
-      "counters": {
-        "id": "22",
-        "name": "Freya",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a9a20c5d2a4a94af878a62c07ea373e0.jpg",
-        "tip": "Gusion"
-      },
-      "best_mate": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Karina"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_dc8216bde520fd7be7a2e9e6fad90191.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "109",
+      "113",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "58",
+      "89",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "49",
+      "74",
+      "0"
+    ]
   },
   {
     "id": "12",
     "name": "Bruno",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_46fd4d9fa09a27e61b7481e1aeaa0615.png",
-    "type": "Marksman",
-    "phy": "60",
-    "mag": "20",
-    "alive": "20",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "21",
-        "name": "Hayabusa",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-        "tip": "Hayabusa dapat dengan mudah menjangkau dan membunuh Bruno dalam sekejap tanpa perlawan sedikit pun dari Bruno."
-      },
-      "counters": {
-        "id": "27",
-        "name": "Sun",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_802a9c5f922e63054fcf11aa7d012482.png",
-        "tip": "Clone Sun memudahkan Bruno untuk memaksimalkan efek pantulan dari Ultimate-nya."
-      },
-      "best_mate": {
-        "id": "29",
-        "name": "Ruby",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/c92a3a9d1e83af0503646a8ac26934eb.png?w=150-150-857a9b",
-        "tip": "Bruno sangat terbantu oleh Hero yang memiliki Skill AOE yang memiliki CC dan membuat lawan terkumpul dalam 1 titik, karena dapat membantu Bruno untuk memaksimalkan Damage dari Ultimate Bruno."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_68d7ca30f69cb691125e3f03cd782a53.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "60",
+      "1"
+    ],
+    "weak": [
+      "41",
+      "117"
+    ],
+    "assist": [
+      "10",
+      "78"
+    ]
   },
   {
     "id": "92",
     "name": "Carmilla",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_b7f2851b57e938c41ce32c00c685e0c8.jpg",
-    "type": "Support",
-    "phy": "20",
-    "mag": "80",
-    "alive": "90",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "73",
-        "name": "Harith",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-        "tip": "Harith, Masha, Wanwan"
-      },
-      "counters": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Karrie, Aurora, Pharsa"
-      },
-      "best_mate": {
-        "id": "82",
-        "name": "Terizla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_45c908d0d59990c13d229ab22db05ebb.png",
-        "tip": "Terizla, Odette, Cecilion"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_358d6ad9cff97fc3bfef8a2bd4acbadd.png",
+    "roles": [
+      "support",
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "85",
+      "37",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "60",
+      "89",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "91",
+      "36",
+      "0"
+    ]
   },
   {
     "id": "91",
     "name": "Cecilion",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a66ec3b1b8036839538cc0ade8aff50c.jpg",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "50",
-    "alive": "40",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": "Gusion；Wanwan；Silvanna"
-      },
-      "counters": {
-        "id": "83",
-        "name": "X.Borg",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1d4d7dfe38cb5e0fcfcf06b8af6b2103.png",
-        "tip": "X.Borg；Eudora；Kimmy"
-      },
-      "best_mate": {
-        "id": "91",
-        "name": "Cecilion",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a66ec3b1b8036839538cc0ade8aff50c.jpg",
-        "tip": "Carmilla；Diggie"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_af02ce891528cd3576858589d8d33d8d.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "2",
+      "82",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "84",
+      "17",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "92",
+      "19",
+      "0"
+    ]
   },
   {
     "id": "61",
     "name": "Chang'e",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1a6b949d43ed33a7ad939ee4a0420b3e.png",
-    "type": "Mage",
-    "phy": "80",
-    "mag": "20",
-    "alive": "40",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Since Chang’e does not skills that allow her to blink or boost her movement speed, she is particularly vulnerable to assassin type heroes that kill in an instant. "
-      },
-      "counters": {
-        "id": "54",
-        "name": "Jawhead",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_9bddad128d45821b7fd6abb9773d7c53.png",
-        "tip": "Heroes that often charge towards their targets should be aware of Chang’e. The slow and stun effect of her 1st and 2nd skills will stop fast-moving enemies in their tracks. "
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Chang’e works great with heroes that can concentrate enemy units in a single area. These kinds of heroes can help her 2nd skill reach its maximum DPS potential."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_4a2db83b0fb92b826f039955d1b8b5df.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "15",
+      "46",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "69",
+      "42",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "41",
+      "6",
+      "0"
+    ]
   },
   {
     "id": "124",
     "name": "Chip",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/2daca928703774862b329074220fe7cd.png?w=200-200-23181c",
-    "type": "Support",
-    "phy": "20",
-    "mag": "60",
-    "alive": "80",
-    "diff": "60",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_85e15c66733cab7d8d73f7f725f31f1e.png",
+    "roles": [
+      "support",
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "38",
+      "18",
+      "121"
+    ],
+    "weak": [
+      "99",
+      "6"
+    ],
+    "assist": [
+      "28",
+      "60",
+      "75"
+    ]
   },
   {
     "id": "26",
     "name": "Chou",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a3dd4a2b8bd5b8f25a8dd520f2c1c71a.png",
-    "type": "Fighter",
-    "phy": "30",
-    "mag": "80",
-    "alive": "50",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "5",
-        "name": "Nana",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_08d0332be76ff7bdd894f7c7227be56c.png",
-        "tip": "Nana’s Skill can easily stop Chou's movement, while preventing Chou from approaching you or your teammates."
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Gord lacked mobility and was unable to move when using his Ultimate. Chou can freely Cancels Gord’s Ultimate."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Passive and Slow effects of Aurora makes it easier for Chou to reach an opponent or help to give a continuous Crowd Control effects after Chou kicks an enemy towards a teammate."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_42/100_850c4b51e3dbab3fd12a718917eaaf44.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Roam"
+    ],
+    "strong": [
+      "82",
+      "28"
+    ],
+    "weak": [
+      "53",
+      "52"
+    ],
+    "assist": [
+      "55",
+      "14"
+    ]
   },
   {
     "id": "123",
     "name": "Cici",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/bc77a45f649d36befd844b767a0b66e2.png?w=200-200-4675b1",
-    "type": "Fighter",
-    "phy": "60",
-    "mag": "30",
-    "alive": "50",
-    "diff": "20",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_4f970eb4b44b8c9fff2c511d8e856ff4.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "117",
+      "19",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "62"
+    ],
+    "assist": [
+      "55",
+      "112",
+      "0"
+    ]
   },
   {
     "id": "65",
     "name": "Claude",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_99318a0a409d80f0f2d4b47ee63b6bda.png",
-    "type": "Marksman",
-    "phy": "60",
-    "mag": "10",
-    "alive": "30",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "41",
-        "name": "Gatotkaca",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_8b7e7d0bf164c78553806661deb1d672.png",
-        "tip": "Claude won't be able to utlize the power of Demon Hunter Sword against enemies with low HP, and for some heroes, their ability scales when their HP drops. These heroes are major threats to Claide. As a marksman, Claude is weak against assassins and other heroes with high armor."
-      },
-      "counters": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "By utilizing the Demon Hunter Sword, Claude is able to inflict heavy pressure against enemies with high HP. His mobility and DPS allow him to take Lesley head on when laning."
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "Claude needs to approach the enemies to deal high amount of DPS. With the cover of his tank teammates his durability can be ensured, while assassins could help him reap enemies with low HP."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_808e898e89986b917e146a9b5dcbbb57.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "38",
+      "112",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "15",
+      "10",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "76",
+      "0"
+    ]
   },
   {
     "id": "13",
     "name": "Clint",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_324e2b04393700944b2b54f2f6c939b5.jpg",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "40",
-    "alive": "30",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Clint is easy prey for assassins."
-      },
-      "counters": {
-        "id": "2",
-        "name": "Balmond",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_be884c14d560f6bc5827e2a663439f94.png",
-        "tip": "you Can take advantage with your long range."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Clint and Aurora’s long-range pokes work together perfectly, and Aurora’s control and slow effects can help Clint to land more skill shots."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_ffb96ce8d57c9987401f9c5bfebee3b2.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "31",
+      "1"
+    ],
+    "weak": [
+      "114",
+      "40"
+    ],
+    "assist": [
+      "14",
+      "55"
+    ]
   },
   {
     "id": "33",
     "name": "Cyclops",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_cef4d89fd02965d3aae272c30990dbe8.png",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "70",
-    "alive": "30",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "42",
-        "name": "Harley",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f1d7806d874283c83913f14a533bb0.png",
-        "tip": "Harley can use his skill to probably escape and go back to his hat. Although Harley can be very fragile sometimes, but can really hurt with the appropriate build. <br>Try to use the combos I gave smartly and not using it randomly and understand all the situations deeply."
-      },
-      "counters": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "<br>Karina has a really high burst damage but your damage is better. Attacking Karina with a good combo will be really good for you. <br>Karina is also fragile in the early game without defensive items."
-      },
-      "best_mate": {
-        "id": "10",
-        "name": "Franco",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_07605801972ede9147e9769ac7991aa0.png",
-        "tip": "Franco is a tank, Franco can take all the damage for you or even hook the enemy for you to kill. Not that many reasons but you should go Franco for a better win rate."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_71c31e9801e7d1b40604d54099b30054.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "82",
+      "28",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "47",
+      "7",
+      "25",
+      "0"
+    ],
+    "assist": [
+      "70",
+      "74",
+      "0"
+    ]
   },
   {
     "id": "48",
     "name": "Diggie",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-    "type": "Support",
-    "phy": "40",
-    "mag": "20",
-    "alive": "40",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "The hero with high mobility is Counter Diggie, because it is very difficult to stun them."
-      },
-      "counters": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Diggie can Counter heroes who have CC AOE Skills because his Ultimate can make CC against him immune."
-      },
-      "best_mate": {
-        "id": "29",
-        "name": "Ruby",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/c92a3a9d1e83af0503646a8ac26934eb.png?w=150-150-857a9b",
-        "tip": "Ruby can attract and stun opponents to make it easier for you to throw Bombs."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_7a7a688cf1562a124f7183b2c2957608.png",
+    "roles": [
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "93",
+      "20",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "84",
+      "109",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "18",
+      "1",
+      "0"
+    ]
   },
   {
     "id": "85",
     "name": "Dyrroth",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1604bdeb797af75682b7e3ae3728e3db.png",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "20",
-    "alive": "50",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "32",
-        "name": "Johnson",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_bb588518788b5eefec870813bfdb8944.png",
-        "tip": "Johnson, Thamuz, Harith"
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Gord, Granger, Hanabi"
-      },
-      "best_mate": {
-        "id": "14",
-        "name": "Rafaela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_549ab8159821398b48e7e79ceb298396.png",
-        "tip": "Rafaela, Angela, Terizla<br>"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18/100_bf8dcb20923cee2407563e0fe88aa557.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Jungle"
+    ],
+    "strong": [
+      "23",
+      "60",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "38",
+      "70",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "10",
+      "62",
+      "0"
+    ]
   },
   {
     "id": "111",
     "name": "Edith",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/04d1a3a5e49f6a68604bab57ca96ab5c.png?w=150-150-312b1f",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "100",
-    "alive": "70",
-    "diff": "30",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_352f65059bc1180ae0fc066003d628e0.png",
+    "roles": [
+      "tank",
+      "Marksman"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Roam"
+    ],
+    "strong": [
+      "16",
+      "108",
+      "0"
+    ],
+    "weak": [
+      "60",
+      "89",
+      "0"
+    ],
+    "assist": [
+      "19",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "81",
     "name": "Esmeralda",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_b691012cb168b31b172da8b62552e746.png",
-    "type": "Mage",
-    "phy": "30",
-    "mag": "60",
-    "alive": "90",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "80",
-        "name": "Guinevere",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_0bb9349ff0a17747c126ea107a11e6cd.png",
-        "tip": ""
-      },
-      "counters": {
-        "id": "32",
-        "name": "Johnson",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_bb588518788b5eefec870813bfdb8944.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_f684768281faab70dea48d06fb72979e.png",
+    "roles": [
+      "tank",
+      "mage"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "9",
+      "20",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "40",
+      "53",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "93",
+      "6",
+      "0"
+    ]
   },
   {
     "id": "34",
     "name": "Estes",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_42b2d76fe927ce57a1d29e220e2b5eea.png",
-    "type": "Support",
-    "phy": "10",
-    "mag": "20",
-    "alive": "70",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "21",
-        "name": "Hayabusa",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-        "tip": "We all know that Estes is a long range support mage, there for any short range heroes can easily defeat Estes such as assassin like Saber, Karina and Hayabusa. "
-      },
-      "counters": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Estes can do his part on the battle ground.Protect teammates from assassin."
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Grock has a skill of blocking enemies way, Minotaur his rage skill will make the enemies stop moving while Tigreal has the skill of moving out the enemies."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_a3619b68f415405f0a1ad77be31eb64d.png",
+    "roles": [
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "57",
+      "4",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "15",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "53",
+      "60",
+      "0"
+    ]
   },
   {
     "id": "15",
     "name": "Eudora",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ed32e3c71ecd41652fc54a7efd02aba4.jpg",
-    "type": "Mage",
-    "phy": "80",
-    "mag": "80",
-    "alive": "10",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Aurora’s range is longer than Eudora’s, thus she can easily kill Eudora in seconds."
-      },
-      "counters": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Assassins should be wary of Eudora’s control skills and burst damage in team battles."
-      },
-      "best_mate": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "The range of Eudora’s second skill is relatively short, therefore it can be difficult landing hits on enemies. Zilong can knock enemies back to her, allowing her to unleash her awesome burst damage."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_42/100_1384ce93e5bdb142ea4e5e6b9f941ff1.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "131",
+      "31"
+    ],
+    "weak": [
+      "21",
+      "75"
+    ],
+    "assist": [
+      "48",
+      "6"
+    ]
   },
   {
     "id": "17",
     "name": "Fanny",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_523a730c11b8c22fc6c3fcc5575c29a2.png",
-    "type": "Assassin",
-    "phy": "70",
-    "mag": "10",
-    "alive": "60",
-    "diff": "100",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "Akai"
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Layla"
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Grock"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_8ea3a95fa3c726ed0338c0fdd21ad991.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "40",
+      "43"
+    ],
+    "weak": [
+      "62",
+      "78"
+    ],
+    "assist": [
+      "19",
+      "41"
+    ]
   },
   {
     "id": "76",
     "name": "Faramis",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/977b95bbb8a5dc634d741bdd5bda3b2f.png?w=150-150-2a3e44",
-    "type": "Support",
-    "phy": "60",
-    "mag": "10",
-    "alive": "40",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "79",
-        "name": "Granger",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c7e48401ff0d33cb91ff1b4a59b3c0cf.png",
-        "tip": ""
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_4bed236fc260d9924b030e576793a26b.png",
+    "roles": [
+      "support",
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane",
+      "Roam"
+    ],
+    "strong": [
+      "3",
+      "15",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "119",
+      "52",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "67",
+      "58",
+      "0"
+    ]
   },
   {
     "id": "112",
     "name": "Floryn",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/ddd105d16922b8122368acb0a8f3606f.png?w=150-150-1d2234",
-    "type": "Support",
-    "phy": "10",
-    "mag": "70",
-    "alive": "60",
-    "diff": "10",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_5168f0a54304b2f20f976a1ffa96e1dc.png",
+    "roles": [
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "59",
+      "20",
+      "0"
+    ],
+    "weak": [
+      "8",
+      "3",
+      "0"
+    ],
+    "assist": [
+      "82",
+      "72",
+      "0"
+    ]
   },
   {
     "id": "10",
     "name": "Franco",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_07605801972ede9147e9769ac7991aa0.png",
-    "type": "Tank",
-    "phy": "10",
-    "mag": "100",
-    "alive": "80",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "17",
-        "name": "Fanny",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_523a730c11b8c22fc6c3fcc5575c29a2.png",
-        "tip": "Fanny memiliki mobilitas yang sangat tinggi sehingga Franco sangat sulit untuk melakukan Iron Hook terhadapnya. Bila Fanny berada di dekat Anda, usahakan untuk menggunakan Ultimate Anda terlebih dahulu kemudian Follow up dengan Iron Hook Anda untuk memaksimalkan Iron Hook Anda mengenai target."
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Gord saat mengeluarkan Ultimate tidak dapat bergerak, hal ini memudahkan Franco untuk membidiknya dengan Iron Hook. Tidak hanya itu, Franco juga dapat dengan mudah menggagalkan Ultimate Gord Dengan Iron Hook atau dengan Ultimate Franco sendiri."
-      },
-      "best_mate": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "Odette adalah salah satu Hero Partner terbaik Franco. Saat Franco melancarkan CC terhadap lawan atau berhasil menarik lawan, Odette dapat menghabisi lawan dengan Ultimate-nya atau melakukan Follow Up CC."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_60_2/100_d21e5731e8bf993a9b3271767a3b3b97.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "66",
+      "34",
+      "18"
+    ],
+    "weak": [
+      "89",
+      "17",
+      "77"
+    ],
+    "assist": [
+      "66",
+      "8",
+      "100"
+    ]
   },
   {
     "id": "117",
     "name": "Fredrinn",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/5157d0f32d6032a079d4437d3320dfe1.png?w=150-150-272323",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "60",
-    "alive": "80",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "40",
-        "name": "Karrie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2ae89c203ad1488fa1af6b7e51dae488.png",
-        "tip": ""
-      },
-      "counters": {
-        "id": "98",
-        "name": "Khaleed",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ac05d090c11fe4aefa6a7d004493fb65.jpg",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_3f574825bd9192094f047a4abc6d5d05.png",
+    "roles": [
+      "fighter",
+      "tank"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "66",
+      "15",
+      "0"
+    ],
+    "weak": [
+      "40",
+      "53"
+    ],
+    "assist": [
+      "55",
+      "112",
+      "0"
+    ]
   },
   {
     "id": "22",
     "name": "Freya",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a9a20c5d2a4a94af878a62c07ea373e0.jpg",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "50",
-    "alive": "60",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "Freya relies heavily on her basic attacks to make the damage and Natalia's silence + smoke bomb if done correctly will make Freya unable to deal damage onto her."
-      },
-      "counters": {
-        "id": "7",
-        "name": "Alucard",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2f53289ddd423fa9bc95d380b6d79719.jpg",
-        "tip": "Fighters who don't have enough crowd control to win a 1v1 situation. Even if alucard has insane lifesteal, Freya is strong enough to kill him because she can dish as much damage while stunning him every few seconds. "
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "If she manages to land her ult on a bunch of enemy heroes piled up in one spot, Freya will be able to jump in freely without any hindrance, making the enemy team locked in consecutive crowd controls which will render them useless with no means of fighting back ensuring a successful team fight."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_b95ffc5769380f10a409d864d4162433.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Jungle"
+    ],
+    "strong": [
+      "53",
+      "121"
+    ],
+    "weak": [
+      "106",
+      "130"
+    ],
+    "assist": [
+      "70",
+      "41"
+    ]
   },
   {
     "id": "41",
     "name": "Gatotkaca",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_8b7e7d0bf164c78553806661deb1d672.png",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "90",
-    "alive": "90",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Gatotkaca memiliki Armor yang sangat tinggi.<br>Tetapi itu tidak ada gunanya apabila Anda diserang oleh Karina. Serangan Karina memberikan Magic Damage serta memiliki Penetration yang tinggi, sangat mematikan bahkan untuk Gatot sekalipun."
-      },
-      "counters": {
-        "id": "39",
-        "name": "Roger",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d2f1ce4289d7399177b7f8a25bdf593d.png",
-        "tip": "Roger adalah Hitter yang luar biasa. Saat War mulai, pastikan untuk membuat Roger menyerang Anda kemudian sekutu Anda dapat menghabisi Roger."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Aurora memiliki Skill yang bisa melakukan CC Area secara instan yang membantu Anda untuk memulai Skill Ultimate. Bisa juga Anda menggunakan Skill 2 untuk mengunci lawan kemudian Aurora dapat menghabisi lawan dengan Skill Ultimate-nya."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_e3ccd096c9c4649519d736073acca91a.png",
+    "roles": [
+      "tank",
+      "fighter"
+    ],
+    "lanes": [
+      "Roam",
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "94",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "48",
+      "89",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "25",
+      "66",
+      "0"
+    ]
   },
   {
     "id": "104",
     "name": "Gloo",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/14a44f871e2d9e0aaf35149e6201fb8a.png?w=150-150-e2ddd3",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "100",
-    "alive": "100",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "22",
-        "name": "Freya",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a9a20c5d2a4a94af878a62c07ea373e0.jpg",
-        "tip": ""
-      },
-      "counters": {
-        "id": "4",
-        "name": "Alice",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7f0da9c3ddefff4530e8dbe17054c45e.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_642/100_8b401d50920f2359060a9c7a3c833df1.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam",
+      "Exp Lane"
+    ],
+    "strong": [
+      "91",
+      "61",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "40",
+      "53",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "15",
+      "3",
+      "0"
+    ]
   },
   {
     "id": "23",
     "name": "Gord",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-    "type": "Mage",
-    "phy": "70",
-    "mag": "80",
-    "alive": "10",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Ulti Saber dapat menghentikan Ultimate Gord, diikuti dengan Combo Skill 1 dan 2 Saber yang dapat membunuh Gord atau memberikan Damage yang cukup besar pada Gord."
-      },
-      "counters": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "kebanyakan Marksman lemah dan memiliki HP yang sangat sedikit, namun selalu jaga jarak dan usahakan agar tidak mengenai serangannya, sembunyi di semak-semak gunakan skill 1 pada Miya dan combo yang pas pada lawan."
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Ketika lawan sudah di-ulti oleh Grock kita dapat memberika damage yang besar pada lawan dengan ulti dari Gord."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_47/100_6ba16b4ca438152a629e7706cbd7453d.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "99",
+      "117"
+    ],
+    "weak": [
+      "17",
+      "47"
+    ],
+    "assist": [
+      "49",
+      "70"
+    ]
   },
   {
     "id": "79",
     "name": "Granger",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c7e48401ff0d33cb91ff1b4a59b3c0cf.png",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "10",
-    "alive": "30",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": "Although Granger has many displacement skills, he will still be countered by some assassins with high burst in short duration."
-      },
-      "counters": {
-        "id": "39",
-        "name": "Roger",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d2f1ce4289d7399177b7f8a25bdf593d.png",
-        "tip": "Granger is a hero with high burst. Damage dealers are at risk in front of him."
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tank heroes with control skills can prevent the enemy from attacking Granger, and they can control the enemy to ensure that Granger's skills are more likely to hit the enemy."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_22/100_9ed57f48f91012fd110935258cd1ab61.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "61",
+      "91",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "21",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "10",
+      "62",
+      "0"
+    ]
   },
   {
     "id": "44",
     "name": "Grock",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-    "type": "Tank",
-    "phy": "40",
-    "mag": "80",
-    "alive": "90",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "He is a Hard counter to Grock due to his ultimate that makes Grock immobile, and useless in a team fight."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "Odette's ulitmate can be canceled my Grock's Wild Charge leaving Odette dead."
-      },
-      "best_mate": {
-        "id": "17",
-        "name": "Fanny",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_523a730c11b8c22fc6c3fcc5575c29a2.png",
-        "tip": "Togther they are a lane you do not want to deal with, Grock's Guardian Barrier helps fanny dive towers and be a nuisance in the early game."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_902/100_517b20f98bf1859bc57f5cc1b477b0e8.png",
+    "roles": [
+      "tank",
+      "fighter"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "23",
+      "18"
+    ],
+    "weak": [
+      "71",
+      "42"
+    ],
+    "assist": [
+      "46",
+      "52"
+    ]
   },
   {
     "id": "80",
     "name": "Guinevere",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_0bb9349ff0a17747c126ea107a11e6cd.png",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "70",
-    "alive": "40",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": ""
-      },
-      "counters": {
-        "id": "2",
-        "name": "Balmond",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_be884c14d560f6bc5827e2a663439f94.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "19",
-        "name": "Minotaur",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1ec5d92a9e0981838a6b362cd21cbdb0.jpg?w=100-100-3c0d15",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_a34258a6365097da09d9513b620bc14a.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "16",
+      "90",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "77",
+      "26",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "10",
+      "49",
+      "0"
+    ]
   },
   {
     "id": "56",
     "name": "Gusion",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-    "type": "Assassin",
-    "phy": "90",
-    "mag": "10",
-    "alive": "30",
-    "diff": "80",
-    "counters": {
-      "countered_by": {
-        "id": "20",
-        "name": "Lolita",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_007ce553513122fdab39684dbbe215e3.png",
-        "tip": "Gusion’s daggers of “Sword Spike”and “Shadowblade Slaughter” will be counteracted by the shield provided by Lolita’s “Guardian's Bulwark”. This will largely lower the damage Gusion deal to his enemies."
-      },
-      "counters": {
-        "id": "52",
-        "name": "Pharsa",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_212e59ee7c8490397278ba68c8063a19.png",
-        "tip": "It is hard for Pharsa to escape from Gusion. Even though Pharsa use “Wings by Wings”, Gusion can catch and execute Pharsa by using “Sword Spike” and “Incandescence”."
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "Angela’s “Heartguard” can improve the Durability of Gusion. This will help Gusion to deal damage to enemies after he dash into the battle."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_82dbd20a7d0f274520895007898199e0.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle",
+      "Mid Lane"
+    ],
+    "strong": [
+      "18",
+      "60",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "10",
+      "62",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "38",
+      "52",
+      "0"
+    ]
   },
   {
     "id": "60",
     "name": "Hanabi",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e03a3e6f2eb41243b9d9d1cc1f89cadd.png?w=150-150-070b18",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "80",
-    "alive": "20",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": " With superior burst and movement displacement capabilities, Gusion can quickly advance upon Hanabi whenever she makes a mistake and punish her for it."
-      },
-      "counters": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Zilong's deadly control can be negated by Hanabi's shield effect. In addition to this, Hanabi can use her ultimate skill to immobilize Zilong after he uses his ultimate"
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "The shield provided by her ultimate skill protects Hanabi from being killed before unleashing her damage. The buff provided when attaching to a hero can also help Hanabi achieve better positioning in a fight"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_85d213390613bbc09220cf1d9f64c5c0.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "6",
+      "70",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "47",
+      "16",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "92",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "69",
     "name": "Hanzo",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_94a3512d03632badcf05fb858ac6d573.png",
-    "type": "Assassin",
-    "phy": "80",
-    "mag": "20",
-    "alive": "70",
-    "diff": "80",
-    "counters": {
-      "countered_by": {
-        "id": "32",
-        "name": "Johnson",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_bb588518788b5eefec870813bfdb8944.png",
-        "tip": ""
-      },
-      "counters": {
-        "id": "71",
-        "name": "Kimmy",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c504661df2f22fd56f566402b00f91cd.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_47/100_746725e15c7577be6bb92b2665adf447.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "18",
+      "121",
+      "125"
+    ],
+    "weak": [
+      "17",
+      "47",
+      "120"
+    ],
+    "assist": [
+      "36",
+      "70",
+      "6"
+    ]
   },
   {
     "id": "73",
     "name": "Harith",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-    "type": "Mage",
-    "phy": "50",
-    "mag": "10",
-    "alive": "40",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "62",
-        "name": "Kaja",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7fe2a243687bb024b5728ea4bbf422fe.png",
-        "tip": "Still as a fragile mage, Harith is countered by heroes with strong CC. "
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Counters Heroes without burst damage and high HP."
-      },
-      "best_mate": {
-        "id": "41",
-        "name": "Gatotkaca",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_8b7e7d0bf164c78553806661deb1d672.png",
-        "tip": "With the help of strong CC heroes, Harith can better deal damage."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_0f81a3d82eb05c2c062fc6ea8b3d6578.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Gold Lane",
+      "Jungle"
+    ],
+    "strong": [
+      "70",
+      "32",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "119",
+      "52",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "74",
+      "19",
+      "0"
+    ]
   },
   {
     "id": "42",
     "name": "Harley",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f1d7806d874283c83913f14a533bb0.png",
-    "type": "Assassin",
-    "phy": "90",
-    "mag": "10",
-    "alive": "30",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Biggest threat to harley your 2nd will be waste bcuz of digger's second"
-      },
-      "counters": {
-        "id": "33",
-        "name": "Cyclops",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_cef4d89fd02965d3aae272c30990dbe8.png",
-        "tip": "cyclops use his ultimate you can use your purify to counter it and you have a chance to kill cylops."
-      },
-      "best_mate": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Zilong dash and use his first skill you can use your ulitimate and 1st skill to kill it"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_503566ddaa4727778929dee4b3a01807.png",
+    "roles": [
+      "assassin",
+      "mage"
+    ],
+    "lanes": [
+      "Jungle",
+      "Mid Lane"
+    ],
+    "strong": [
+      "91",
+      "121",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "20",
+      "59",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "9",
+      "78",
+      "0"
+    ]
   },
   {
     "id": "21",
     "name": "Hayabusa",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-    "type": "Assassin",
-    "phy": "50",
-    "mag": "10",
-    "alive": "40",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "The queen on disables. Her freeze makes you unable to do anything, giving her teammates time to kill you. This is where purify comes in handy"
-      },
-      "counters": {
-        "id": "42",
-        "name": "Harley",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f1d7806d874283c83913f14a533bb0.png",
-        "tip": "Harley has no disables, no stuns, just nothing! Don't hestitate to attack him at all. As long as he is not with his teammates, take the chance and kill him with your ultimate. He also can't run from you too as you too can teleport like harley."
-      },
-      "best_mate": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Zilong can move displace the enemy and both of you can proceed to burst down the enemy. Zilong and Hayabusa are really dangerous at ambushing as both of them can deal massive damage quickly"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_63cb1f44bf906b71767a000e38d8ab14.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "61",
+      "91"
+    ],
+    "weak": [
+      "10",
+      "62"
+    ],
+    "assist": [
+      "37",
+      "28"
+    ]
   },
   {
     "id": "51",
     "name": "Helcurt",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2baf1efb2d414acedf4a89b6fa330ad2.png",
-    "type": "Assassin",
-    "phy": "50",
-    "mag": "50",
-    "alive": "30",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "After being controlled, Helcurt dies fairly easily."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "If heroes without displacement skills get too close to Helcurt, it’s very hard for them to escape."
-      },
-      "best_mate": {
-        "id": "21",
-        "name": "Hayabusa",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-        "tip": "After Helcurt uses his ultimate, assassins can advance at will."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_ffd27cd02c46f7075caedcd51de80d9a.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle",
+      "Roam"
+    ],
+    "strong": [
+      "18",
+      "61",
+      "66",
+      "0"
+    ],
+    "weak": [
+      "117",
+      "70",
+      "41",
+      "0"
+    ],
+    "assist": [
+      "6",
+      "81",
+      "82"
+    ]
   },
   {
     "id": "35",
     "name": "Hilda",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_fec6f3923209642a74789e42c41a2038.png",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "40",
-    "alive": "90",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "40",
-        "name": "Karrie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2ae89c203ad1488fa1af6b7e51dae488.png",
-        "tip": "Hilda is countered by heroes who deals damage based on the enemy’s HP such as Balmond and Karina, and by heroes who have lots of armor penetration, mostly marksmen such as Moskov, Karrie and Roger. Support such as Diggie with its crowd control abilities and its ultimate skill which is like a purify for all allies also counters Hilda since her crowd control skills are useless while the skill is in-effect."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Hilda counters heroes which are squishy and has low mobility. Most of them are mages, assassins and marksmen since they deal a lot of damage yet are very easy to kill as well. She can focus on targeting the backline which consists of the said roles since they are to be protected and destroy the enemy’s play since tanks are useless without damage dealers. <br>"
-      },
-      "best_mate": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Hilda can be teamed up with any hero but it would be better if she will be teamed up with heroes who can cope up with her movement speed when she uses Combat Ritual or with heroes who have disables like she does. It would also be better if she is teamed up with assassins who can hide in a bush where she’s also hiding and focus on the backline of the enemy’s team. It would be an easy 4v5 once that their target is dead since Hilda’s cc + Assassins damage is a very deadly combination"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_ee3a714054edf41ae09dd0c33faf07de.png",
+    "roles": [
+      "fighter",
+      "tank"
+    ],
+    "lanes": [
+      "Roam",
+      "Exp Lane"
+    ],
+    "strong": [
+      "16",
+      "18",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "72",
+      "59",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "14",
+      "10",
+      "0"
+    ]
   },
   {
     "id": "49",
     "name": "Hylos",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f3ddb1088279d711417234034024223d.png",
-    "type": "Tank",
-    "phy": "20",
-    "mag": "80",
-    "alive": "100",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Diggie can help teammates survive through Hylos’ control effects."
-      },
-      "counters": {
-        "id": "39",
-        "name": "Roger",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d2f1ce4289d7399177b7f8a25bdf593d.png",
-        "tip": "Hylos’ control skills are an assassin’s greatest nemesis."
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Hylos’ ultimate provides teammates with a huge speed increase, allowing heroes without displacement skills to close in on enemies."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_22d8716de16d99253671c2f9e59d9ef3.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "18",
+      "23",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "40",
+      "53",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "82",
+      "74",
+      "0"
+    ]
   },
   {
     "id": "43",
     "name": "Irithel",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1a30fb8c6fc6086fc2b3c9795e7305e6.png",
-    "type": "Marksman",
-    "phy": "80",
-    "mag": "10",
-    "alive": "10",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Freeze Irithel and can deal damage to Irithel."
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Irithel's passive can avoid from his skill and counter back."
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "His ulti is best combo with Irithel's Ultimate."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_5af934fae1b64f1c689a346741a49858.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "1",
+      "28",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "77",
+      "90",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "57",
+      "49",
+      "0"
+    ]
   },
   {
     "id": "121",
     "name": "Ixia",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/71151817eb86c12a1114508b5aaded13.jpg?w=128-128-fff3d3",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "50",
-    "alive": "30",
-    "diff": "40",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_c5f758bd1141327d36f2c77928268ab7.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "117",
+      "11",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "109"
+    ],
+    "assist": [
+      "117",
+      "11",
+      "0"
+    ]
   },
   {
     "id": "54",
     "name": "Jawhead",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_9bddad128d45821b7fd6abb9773d7c53.png",
-    "type": "Fighter",
-    "phy": "30",
-    "mag": "60",
-    "alive": "60",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Use Sun’s Clone Techniques to limit the damage dealt by Smart Missiles, and Diggie’s ultimate, Time Journey, to prevent your teammates from being thrown!"
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Can restrain most squishy mages and assassins lacking blink or dash skills."
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Throw Tigreal into the middle of the enemy team to launch his ultimate!"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_4448132d3f9d89dc706883d148e50884.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Roam",
+      "Exp Lane"
+    ],
+    "strong": [
+      "3",
+      "15",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "111",
+      "72",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "46",
+      "70",
+      "0"
+    ]
   },
   {
     "id": "32",
     "name": "Johnson",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_bb588518788b5eefec870813bfdb8944.png",
-    "type": "Tank",
-    "phy": "30",
-    "mag": "90",
-    "alive": "80",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Diggie’s ultimate negates the effect of Johnson’s ultimate."
-      },
-      "counters": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "Back line heroes with no dash or blink skills find it hard to survive after being hit by Johnson’s ultimate."
-      },
-      "best_mate": {
-        "id": "45",
-        "name": "Argus",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/14fa1f3db81e6b3507c6bac842b45553.png?w=150-149-30384b",
-        "tip": "Johnson can quickly take an ally for a ride, a unique feature that works well alongside fighters with control skills."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_9939e5cc09011a287a989b7d4b3aec4d.png",
+    "roles": [
+      "tank",
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "7",
+      "16",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "73",
+      "25",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "46",
+      "75",
+      "0"
+    ]
   },
   {
     "id": "118",
     "name": "Joy",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/41ea7c650a26473c193f21e20fd123d6.png?w=500-499-926a2d",
-    "type": "Assassin",
-    "phy": "70",
-    "mag": "10",
-    "alive": "30",
-    "diff": "90",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_6b5570b0e557e36501b4228fcdfcf164.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "115",
+      "38",
+      "0"
+    ],
+    "weak": [
+      "74",
+      "78"
+    ],
+    "assist": [
+      "55",
+      "49",
+      "0"
+    ]
   },
   {
     "id": "116",
     "name": "Julian",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/7eb35b7780eaa94993aaada931b28adb.png?w=150-150-0d1318",
-    "type": "Fighter",
-    "phy": "60",
-    "mag": "70",
-    "alive": "60",
-    "diff": "20",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_44891c699fb1c00fc4a7fa59ea95b8b3.png",
+    "roles": [
+      "assassin",
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle",
+      "Exp Lane"
+    ],
+    "strong": [
+      "91",
+      "64",
+      "0"
+    ],
+    "weak": [
+      "118",
+      "73"
+    ],
+    "assist": [
+      "55",
+      "48",
+      "0"
+    ]
   },
   {
     "id": "75",
     "name": "Kadita",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c8bec784a42a812db26ea3f34c029fdc.png",
-    "type": "Mage",
-    "phy": "80",
-    "mag": "80",
-    "alive": "40",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "51",
-        "name": "Helcurt",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2baf1efb2d414acedf4a89b6fa330ad2.png",
-        "tip": ""
-      },
-      "counters": {
-        "id": "60",
-        "name": "Hanabi",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e03a3e6f2eb41243b9d9d1cc1f89cadd.png?w=150-150-070b18",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_db76619a5d692aff3f78e3ff8d075a35.png",
+    "roles": [
+      "mage",
+      "assassin"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "36",
+      "15",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "13",
+      "105",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "93",
+      "6",
+      "0"
+    ]
   },
   {
     "id": "25",
     "name": "Kagura",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/b7bedaacdacd3de349e538f72fe640c9.png?w=150-150-423c5f",
-    "type": "Mage",
-    "phy": "90",
-    "mag": "40",
-    "alive": "30",
-    "diff": "80",
-    "counters": {
-      "countered_by": {
-        "id": "42",
-        "name": "Harley",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f1d7806d874283c83913f14a533bb0.png",
-        "tip": "Basically, Harley can counter Kagura because he can teleport then teleport back in his positions. Unlike Kagura that can only teleport once to her umbrella (because of the cooldown). But that does not mean Kagura cannot stand a chance against Harley. If Harley made his move first before Kagura, she will stagger and get low health before she can attack Harley. There are also cases that when Kagura threw her umbrella, Harley then used his 3rd Skill to Kagura, slowing her down and making her very vulnerable. Kagura can't use her 2nd Skill: Active 1 which is her jump that removes debuff when she doesn't have her umbrella. That's why be careful when fighting Harley."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Kagura can deal an amount of Killing damage to Layla as she has low defense, unless Layla has balanced offense and defense gear set. Kagura can fastly kill Layla when doing her combo. But if Layla survives, she will deal large damage to Kagura and lifesteal."
-      },
-      "best_mate": {
-        "id": "21",
-        "name": "Hayabusa",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-        "tip": "Hayabusa is Kagura's childhood playmate, and they also make a good team. First attacker will be the assassin to slow the enemy down, then when Hayabusa casts his 3rd skill, Kagura can assist to deal damage to the enemy and end it."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_634196d9234babcc3072155d4fefaf0c.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "18",
+      "15"
+    ],
+    "weak": [
+      "118",
+      "58"
+    ],
+    "assist": [
+      "93",
+      "6"
+    ]
   },
   {
     "id": "62",
     "name": "Kaja",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7fe2a243687bb024b5728ea4bbf422fe.png",
-    "type": "Support",
-    "phy": "60",
-    "mag": "60",
-    "alive": "30",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "58",
-        "name": "Martis",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f6b745cc6347b4666c8ae31e5bb8edaa.png",
-        "tip": "Kaja’s ultimate will more than likely hit Sun’s doppelganger, rather than sun himself. Martis and Johnson are also not easily controlled, making Kaja’s ultimate rather useless against these heroes."
-      },
-      "counters": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": "The short costing time of Kaja’s ultimate can stop fast-moving enemies in their tracks."
-      },
-      "best_mate": {
-        "id": "10",
-        "name": "Franco",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_07605801972ede9147e9769ac7991aa0.png",
-        "tip": "Initiator heroes with crowd control form great synergy with Kaja."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_87a88d7acc62a25869a5316147f3ce6a.png",
+    "roles": [
+      "support",
+      "fighter"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "17",
+      "47",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "18",
+      "52",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "15",
+      "109",
+      "0"
+    ]
+  },
+  {
+    "id": "128",
+    "name": "Kalea",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_64/100_9c5f2904026ba88b7aba8c9b2722f4ad.png",
+    "roles": [
+      "support",
+      "fighter"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "18",
+      "61"
+    ],
+    "weak": [
+      "48",
+      "19"
+    ],
+    "assist": [
+      "15",
+      "42",
+      "13"
+    ]
   },
   {
     "id": "8",
     "name": "Karina",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-    "type": "Assassin",
-    "phy": "70",
-    "mag": "10",
-    "alive": "50",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "Akai’s ultimate can effectively stop assassins from attacking."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "Karina’High Mobility make her a nightmare to marksmans and mages who have no displacement skills."
-      },
-      "best_mate": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Diggie’s ultimate can help out Karina in a pinch, and Cyclops’ ultimate can create more opportunities for Karina to deal damage."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18/100_4685e0fb17e2fabaf9cb23f8db8fa262.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "18",
+      "60",
+      "0"
+    ],
+    "weak": [
+      "9",
+      "78",
+      "0"
+    ],
+    "assist": [
+      "6",
+      "76",
+      "0"
+    ]
   },
   {
     "id": "40",
     "name": "Karrie",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2ae89c203ad1488fa1af6b7e51dae488.png",
-    "type": "Marksman",
-    "phy": "80",
-    "mag": "10",
-    "alive": "30",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "26",
-        "name": "Chou",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a3dd4a2b8bd5b8f25a8dd520f2c1c71a.png",
-        "tip": "Almost all this hero skill can stun the enemy , so while this hero stunned you , you can't do your job ."
-      },
-      "counters": {
-        "id": "33",
-        "name": "Cyclops",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_cef4d89fd02965d3aae272c30990dbe8.png",
-        "tip": "Karrie can kill this hero with easy , because this hero need to get in close range to Karrie to hit Karrie with huge damage , and Karrie can quickly kill this hero before it reach Karrie ."
-      },
-      "best_mate": {
-        "id": "20",
-        "name": "Lolita",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_007ce553513122fdab39684dbbe215e3.png",
-        "tip": "This hero is a total nature enemy to Karrie , because this hero have skill that can block any damage that Karrie do , basic attack , Spinning Lightwheel , Phantom Step , almost everything ! "
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_4a4cb5e4c5df81e1fea1b75ab3b774b7.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "6",
+      "117",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "115",
+      "18",
+      "5",
+      "0"
+    ],
+    "assist": [
+      "3",
+      "109",
+      "0"
+    ]
   },
   {
     "id": "98",
     "name": "Khaleed",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ac05d090c11fe4aefa6a7d004493fb65.jpg",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "50",
-    "alive": "80",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "Akai,Chou,Yi Sun-shin"
-      },
-      "counters": {
-        "id": "27",
-        "name": "Sun",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_802a9c5f922e63054fcf11aa7d012482.png",
-        "tip": "Sun,Dyrroth,Karrie"
-      },
-      "best_mate": {
-        "id": "93",
-        "name": "Atlas",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f68d5c30c0198006b2c85b7a5cb48b.png",
-        "tip": "Atlas,Angela,Vale"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_216ea76d9188164c58950885b3962ba1.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Roam",
+      "Exp Lane"
+    ],
+    "strong": [
+      "33",
+      "115",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "83",
+      "26",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "39",
+      "8",
+      "0"
+    ]
   },
   {
     "id": "78",
     "name": "Khufra",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_398cd0a73db63a4b098ab28de5953a0d.png",
-    "type": "Tank",
-    "phy": "20",
-    "mag": "100",
-    "alive": "90",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "If Khufra gets out of the \"Bouncing Ball\" state, he will be more easier to get killed. So, he is countered by heroes with knock-up effects."
-      },
-      "counters": {
-        "id": "17",
-        "name": "Fanny",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_523a730c11b8c22fc6c3fcc5575c29a2.png",
-        "tip": "Khufra's 2nd skill \"Bouncing Ball\" counters those heroes who are fragile and good at blink skills."
-      },
-      "best_mate": {
-        "id": "66",
-        "name": "Vale",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_de9363822c6d50d5dde8500a05b9657b.png",
-        "tip": "Khufra's Ult \"Tyrant's Rage\" needs some time to release. Within this duration if his teammates can provide crowd controls, Khufra can make full use of his skills."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_5e137ba2f4b8c5a6cd113926f8e8387b.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "118",
+      "47",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "117",
+      "104",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "15",
+      "52",
+      "0"
+    ]
   },
   {
     "id": "71",
     "name": "Kimmy",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c504661df2f22fd56f566402b00f91cd.png",
-    "type": "Marksman",
-    "phy": "100",
-    "mag": "10",
-    "alive": "20",
-    "diff": "90",
-    "counters": {
-      "countered_by": {
-        "id": "47",
-        "name": "Lancelot",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e20549844522450e535e614538699eb9.png?w=150-150-ffe4db",
-        "tip": "Countered by heroes with high mobility and strong CC."
-      },
-      "counters": {
-        "id": "57",
-        "name": "Valir",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_11c3284b5ea83dfd377f4d1b9724c960.jpg",
-        "tip": "Counters heroes with low mobility."
-      },
-      "best_mate": {
-        "id": "62",
-        "name": "Kaja",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7fe2a243687bb024b5728ea4bbf422fe.png",
-        "tip": "Heroes with CC are all good teammates."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_642/100_3fa938873a71f33898f26b19db654b7d.png",
+    "roles": [
+      "Marksman",
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane",
+      "Gold Lane"
+    ],
+    "strong": [
+      "79",
+      "91"
+    ],
+    "weak": [
+      "3",
+      "47"
+    ],
+    "assist": [
+      "77",
+      "29"
+    ]
   },
   {
     "id": "47",
     "name": "Lancelot",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e20549844522450e535e614538699eb9.png?w=150-150-ffe4db",
-    "type": "Assassin",
-    "phy": "50",
-    "mag": "10",
-    "alive": "40",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "Natalia has a skill that can silence you (unable to use skill). This will help to kill Lancelot before Lancelot can use his skills and additional to that Natalia can be Invinsible everytime she goes to bushes."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Marksman has a low amount of HP, during late game Lancelot can instantly kill."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Mages has a high damage capacity for a short period of time. This will help Lancelot to instantly kill the enemy using his Ultimate."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_aa4070a1eb5a53e1824bc9b2d9a47ed2.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "91",
+      "52",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "74",
+      "106",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "93",
+      "6",
+      "0"
+    ]
   },
   {
     "id": "37",
     "name": "Lapu-Lapu",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_8b60cceca5b04e97da7372f12bfeb612.jpg",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "40",
-    "alive": "80",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "Akai can prevent you from casting your ultimate. Your ultimate takes time to channel and cast if they play well, they will keep an eye on you."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Layla is very easy to kill even with her haas claw which he may not be able to use since you could just burst the ultimate with a stun."
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "If you know tigreal is about to cast his ultimate . You might as well target him with your ultimate as he will gather the enemy team near him. He will set for you."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_b72b473b98494269cedbba84d4888409.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "15",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "53",
+      "31",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "6",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "18",
     "name": "Layla",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-    "type": "Marksman",
-    "phy": "80",
-    "mag": "10",
-    "alive": "10",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "15",
-        "name": "Eudora",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ed32e3c71ecd41652fc54a7efd02aba4.jpg",
-        "tip": "Eudora can deal massive damages against the Marksman, especially to Layla."
-      },
-      "counters": {
-        "id": "26",
-        "name": "Chou",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a3dd4a2b8bd5b8f25a8dd520f2c1c71a.png",
-        "tip": "With Layla's Malefic Gun and her Void Projectile, she can easily slow down Chou and track him down. Layla is like a hunter whenever she wants to hunt Chou down."
-      },
-      "best_mate": {
-        "id": "10",
-        "name": "Franco",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_07605801972ede9147e9769ac7991aa0.png",
-        "tip": "Franco should be the one hooking through their foes, pushing their foes into them while the Layla will try to attack it."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_6efe9abc2047f59d45fa1c88fb1261b7.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "6",
+      "70"
+    ],
+    "weak": [
+      "8",
+      "84"
+    ],
+    "assist": [
+      "74",
+      "70"
+    ]
   },
   {
     "id": "67",
     "name": "Leomord",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/5b4e0506472b28e1c6a02384c3054e68.png?w=150-150-797b82",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "30",
-    "alive": "70",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "62",
-        "name": "Kaja",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7fe2a243687bb024b5728ea4bbf422fe.png",
-        "tip": "Mounted Leomord is highly mobile, but he would still be controlled to death if he rushes into the crowds of enemies willy nilly."
-      },
-      "counters": {
-        "id": "53",
-        "name": "Lesley",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/da570e4daad77939a40f93c3c1034b83.png?w=150-150-320f16",
-        "tip": "Mounted Leomord could deal handsome damage with his combo of spells. Combine the combo with passive effects and basic attacks afterwards, and he could put high pressure to vulnerable classes."
-      },
-      "best_mate": {
-        "id": "19",
-        "name": "Minotaur",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1ec5d92a9e0981838a6b362cd21cbdb0.jpg?w=100-100-3c0d15",
-        "tip": "Heroes with crowd-control work best with him as they could help create more room for Leomord to deal damage."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_6c205605c520867a534e4e74588a7208.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "46",
+      "52",
+      "101",
+      "91"
+    ],
+    "weak": [
+      "106",
+      "10",
+      "9",
+      "5"
+    ],
+    "assist": [
+      "52",
+      "38",
+      "0"
+    ]
   },
   {
     "id": "53",
     "name": "Lesley",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/da570e4daad77939a40f93c3c1034b83.png?w=150-150-320f16",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "20",
-    "alive": "10",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Lesley is easily targeted by assassins, and Lolita’s ultimate can grant her a shield, while slowing and stunning Lesley."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "When Odette activates her ultimate skill, she becomes the perfect target for Lesley’s ultimate."
-      },
-      "best_mate": {
-        "id": "9",
-        "name": "Akai",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/25141fb8aa27cfbe9f030449721b11af.png?w=150-150-4f3225",
-        "tip": "Lesley’s damage output is high, but she lacks spacing abilities, and she is often rendered vulnerable to attack, especially when using her ultimate. She depends on teammates who can provide her with adequate protection, such as Lolita, with her shield, and Akai, with his knockback skill."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_2bd608ac82a1af4783c5d0fff0c280dc.png",
+    "roles": [
+      "Marksman",
+      "assassin"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "41",
+      "117",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "84",
+      "47",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "19",
+      "87",
+      "0"
+    ]
   },
   {
     "id": "84",
     "name": "Ling",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_cdbe15a03ad4518f37d89c9e1cbf5c4e.png",
-    "type": "Assassin",
-    "phy": "60",
-    "mag": "30",
-    "alive": "50",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Gord, Kimmy, Odette "
-      },
-      "counters": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Diggie, Terizla, Kaja"
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "Angela, Minotaur"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_92/100_4405561c38db556d9cdc6a57b8642e66.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "18",
+      "60",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "15",
+      "54",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "78",
+      "0"
+    ]
   },
   {
     "id": "20",
     "name": "Lolita",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_007ce553513122fdab39684dbbe215e3.png",
-    "type": "Support",
-    "phy": "10",
-    "mag": "90",
-    "alive": "100",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "25",
-        "name": "Kagura",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/b7bedaacdacd3de349e538f72fe640c9.png?w=150-150-423c5f",
-        "tip": "Kagura is a really slippery mage with multiple escape abilities. If you stun her with skill 1, she can get away easily. Her ultimate and teleporting to umbrella can cancel your ultimate, cancelling your most powerful skill. The only way to not get your ultimate interrupted is to pay attention to her skill usage. Make sure she have used both her umbrella teleport and dash, so she have no chance to cancel or escape your ultimate."
-      },
-      "counters": {
-        "id": "33",
-        "name": "Cyclops",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_cef4d89fd02965d3aae272c30990dbe8.png",
-        "tip": "You can block each and every single attack so he is generally not a huge threat."
-      },
-      "best_mate": {
-        "id": "39",
-        "name": "Roger",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d2f1ce4289d7399177b7f8a25bdf593d.png",
-        "tip": "Laning with him is really good because you both have crowd control and damage to kill anyone."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_55de18c865efe8e360b3b9ae463d76a2.png",
+    "roles": [
+      "support",
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "71",
+      "33"
+    ],
+    "weak": [
+      "84",
+      "103"
+    ],
+    "assist": [
+      "60",
+      "18"
+    ]
+  },
+  {
+    "id": "127",
+    "name": "Lukas",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_20/100_454c13b2de7b7d1a20fbf553c620510d.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Jungle"
+    ],
+    "strong": [
+      "60",
+      "121"
+    ],
+    "weak": [
+      "17",
+      "57",
+      "116"
+    ],
+    "assist": [
+      "93",
+      "6",
+      "41"
+    ]
   },
   {
     "id": "68",
     "name": "Lunox",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_823bd0fce2a95b8452d52750df8d35f5.png",
-    "type": "Mage",
-    "phy": "90",
-    "mag": "20",
-    "alive": "30",
-    "diff": "90",
-    "counters": {
-      "countered_by": {
-        "id": "58",
-        "name": "Martis",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f6b745cc6347b4666c8ae31e5bb8edaa.png",
-        "tip": "Lunox could only protect herself for a short moment. Stable damage dealer with ability to blink are great threats to her."
-      },
-      "counters": {
-        "id": "47",
-        "name": "Lancelot",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e20549844522450e535e614538699eb9.png?w=150-150-ffe4db",
-        "tip": "Power of Chaos: Brilliance makes Lunox less fearful of assassins. He could deal with assassins’ counters quite well."
-      },
-      "best_mate": {
-        "id": "10",
-        "name": "Franco",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_07605801972ede9147e9769ac7991aa0.png",
-        "tip": "Heroes with control skill are good partners for Lunox"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_69d35cd0c549a9bdbcf9fbfddf3122a5.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "101",
+      "86",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "122",
+      "84",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "10",
+      "19",
+      "0"
+    ]
   },
   {
     "id": "96",
     "name": "Luo Yi",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c9f30c0ebde489a34b70ba1064c6fb02.jpg",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "40",
-    "alive": "20",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "91",
-        "name": "Cecilion",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a66ec3b1b8036839538cc0ade8aff50c.jpg",
-        "tip": "Cecilion, Hayabusa"
-      },
-      "counters": {
-        "id": "57",
-        "name": "Valir",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_11c3284b5ea83dfd377f4d1b9724c960.jpg",
-        "tip": "Valir, Sun"
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tigreal, Lolita"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_74fe63bd31cc092aed923543a115b7bd.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "15",
+      "23",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "59",
+      "117",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "109",
+      "8",
+      "0"
+    ]
   },
   {
     "id": "86",
     "name": "Lylia",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_bd89e9f00f56e708f4c9adecf0c57c64.png",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "20",
-    "alive": "50",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Saber, Minotaur, Akai"
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Layla, Gord, Vexana"
-      },
-      "best_mate": {
-        "id": "66",
-        "name": "Vale",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_de9363822c6d50d5dde8500a05b9657b.png",
-        "tip": "Vale, Tigreal, Ruby"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_5814b1901de2d5713e04b47e36d305e0.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "92",
+      "49",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "122",
+      "84",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "19",
+      "10",
+      "0"
+    ]
+  },
+  {
+    "id": "132",
+    "name": "Marcel",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_60_2/100_dd980a8816698f1503cdb76201d17dd0.png",
+    "roles": [
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "18",
+      "38"
+    ],
+    "weak": [
+      "84",
+      "83"
+    ],
+    "assist": [
+      "60",
+      "121"
+    ]
   },
   {
     "id": "58",
     "name": "Martis",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f6b745cc6347b4666c8ae31e5bb8edaa.png",
-    "type": "Fighter",
-    "phy": "30",
-    "mag": "50",
-    "alive": "60",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "48",
-        "name": "Diggie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_84b30de71c6315ecc936a8b4d5076efc.png",
-        "tip": "Diggie's anti-control skill and shields can perfectly counter Martis' core mechanics."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "Martis' multi-stage gap-closer, as well as his control ability, greatly limit Odette's damage options."
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tigreal’s powerful group control can create the best opportunity for Martis to launch an attack and control more enemies."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_9691f86f84a553ea3982014738905f3f.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle",
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "46",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "72",
+      "117",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "28",
+      "98",
+      "0"
+    ]
   },
   {
     "id": "88",
     "name": "Masha",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_9d0de850dd87bd7780be02ec20cad693.png",
-    "type": "Fighter",
-    "phy": "70",
-    "mag": "30",
-    "alive": "50",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "73",
-        "name": "Harith",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-        "tip": "Harith、Harley、Sun"
-      },
-      "counters": {
-        "id": "54",
-        "name": "Jawhead",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_9bddad128d45821b7fd6abb9773d7c53.png",
-        "tip": "Jawhead、Hanabi、Kimmy"
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "Angela、Terizla、Johnson"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_6fcd3a37b34ea16ca6b485b88220e400.png",
+    "roles": [
+      "fighter",
+      "tank"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "121",
+      "18",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "123",
+      "72",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "14",
+      "0"
+    ]
   },
   {
     "id": "102",
     "name": "Mathilda",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_74d09f52db9256502ecf2c32211a8102.jpg",
-    "type": "Support",
-    "phy": "20",
-    "mag": "40",
-    "alive": "80",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "89",
-        "name": "Wanwan",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d744e6f02ba1d9b5f246a5532cc2b201.png",
-        "tip": "Wanwan"
-      },
-      "counters": {
-        "id": "96",
-        "name": "Luo Yi",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c9f30c0ebde489a34b70ba1064c6fb02.jpg",
-        "tip": "Luo Yi"
-      },
-      "best_mate": {
-        "id": "93",
-        "name": "Atlas",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f68d5c30c0198006b2c85b7a5cb48b.png",
-        "tip": "Atlas"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_c3d601a8f6a69409359083ba599f0bb6.png",
+    "roles": [
+      "support",
+      "assassin"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "23",
+      "66",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "10",
+      "74",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "3",
+      "15",
+      "0"
+    ]
   },
   {
     "id": "114",
     "name": "Melissa",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/ade52e885298e4a35320d3ab5900892b.png?w=150-150-453f3b",
-    "type": "Marksman",
-    "phy": "90",
-    "mag": "40",
-    "alive": "20",
-    "diff": "40",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_8044c8e2e966533e8978b20f4ecb5cd9.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "27",
+      "16",
+      "0"
+    ],
+    "weak": [
+      "115",
+      "5",
+      "0"
+    ],
+    "assist": [
+      "6",
+      "19",
+      "0"
+    ]
   },
   {
     "id": "19",
     "name": "Minotaur",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1ec5d92a9e0981838a6b362cd21cbdb0.jpg?w=100-100-3c0d15",
-    "type": "Tank",
-    "phy": "10",
-    "mag": "80",
-    "alive": "100",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Go for hero that do good poke and kiting such as Gord, Miya, Clint, Bruno, Layla, Nana and for his biggest counter"
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "His Ultimate can interrupt Odette's Ultimate."
-      },
-      "best_mate": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "He can protect marksman or mage will with his CS."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_3b7cb3a2be4264d3927f3b5a5050117a.png",
+    "roles": [
+      "tank",
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "103",
+      "116"
+    ],
+    "weak": [
+      "18",
+      "53"
+    ],
+    "assist": [
+      "79",
+      "114"
+    ]
   },
   {
     "id": "74",
     "name": "Minsitthar",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/4ca3844586ef2cce730279ba44b6313b.png?w=150-150-31231d",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "80",
-    "alive": "60",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "68",
-        "name": "Lunox",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_823bd0fce2a95b8452d52750df8d35f5.png",
-        "tip": "Minsitthar is countred by heroes with high burst."
-      },
-      "counters": {
-        "id": "73",
-        "name": "Harith",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-        "tip": "Minsitthar's Ult can perform a \"Grounded\" effect and counters those who are good at blink skills."
-      },
-      "best_mate": {
-        "id": "60",
-        "name": "Hanabi",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e03a3e6f2eb41243b9d9d1cc1f89cadd.png?w=150-150-070b18",
-        "tip": "Heroes with high burst damage can cooperate well with his Ult."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_dbfdfa2d0a3cc95cbc197d0a14d5ecd1.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Roam"
+    ],
+    "strong": [
+      "97",
+      "120",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "16",
+      "108",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "114",
+      "60",
+      "0"
+    ]
   },
   {
     "id": "1",
     "name": "Miya",
-    "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "40",
-    "alive": "10",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "21",
-        "name": "Hayabusa",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-        "tip": "Miya is very squishy, and without the aid of support heroes, is susceptible to assassins."
-      },
-      "counters": {
-        "id": "49",
-        "name": "Hylos",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f3ddb1088279d711417234034024223d.png",
-        "tip": "Miya’s damage is very high, so tanks who lack high damage will find it difficult to deal with her in the late game. "
-      },
-      "best_mate": {
-        "id": "20",
-        "name": "Lolita",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_007ce553513122fdab39684dbbe215e3.png",
-        "tip": "Miya is very fragile and requires the protection of her teammates to reach her full damage potential. Lolita can help her to achieve this."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_32c0d9d3a727a9052754296af6251435.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "3",
+      "15",
+      "27"
+    ],
+    "weak": [
+      "52",
+      "101",
+      "0"
+    ],
+    "assist": [
+      "6",
+      "70",
+      "0"
+    ]
   },
   {
     "id": "31",
     "name": "Moskov",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/2f37c7bb49843330b8b972f11b60da08.png?w=150-150-3f498a",
-    "type": "Marksman",
-    "phy": "60",
-    "mag": "60",
-    "alive": "20",
-    "diff": "50",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_9cf1a5936ac506d5e1b911be097acfb7.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "72",
+      "2",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "47",
+      "24",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "117",
+      "41",
+      "0"
+    ]
   },
   {
     "id": "5",
     "name": "Nana",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_08d0332be76ff7bdd894f7c7227be56c.png",
-    "type": "Mage",
-    "phy": "60",
-    "mag": "100",
-    "alive": "50",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "The Silence and her damage could shred you before you can even do anything."
-      },
-      "counters": {
-        "id": "17",
-        "name": "Fanny",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_523a730c11b8c22fc6c3fcc5575c29a2.png",
-        "tip": "With so many Fanny roaming around, your “2” would come in handy in disabling her"
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Mages like Aurora, Due to her High damage kit, pairing her up with Nana would allow her to easily land her skills and making those 2 a pretty annoying combo to lane against."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_ce58cae711d0907a722de0e65fbb85b7.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "15",
+      "75",
+      "0"
+    ],
+    "weak": [
+      "16",
+      "24",
+      "0"
+    ],
+    "assist": [
+      "14",
+      "10",
+      "0"
+    ]
   },
   {
     "id": "24",
     "name": "Natalia",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-    "type": "Assassin",
-    "phy": "60",
-    "mag": "60",
-    "alive": "10",
-    "diff": "90",
-    "counters": {
-      "countered_by": {
-        "id": "30",
-        "name": "Yi Sun-shin",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1b5d6197b9e0e82e606b3cf962804fa5.jpg",
-        "tip": "Yi Sun-Shin's Ultimate Skill can notify Natalia’s whereabouts, not only eliminating her Invisibility at crucial times in Team Fight, but also continuously informing her teammates about Natalia's presence, so that the entire team gets information about the paths that are passed by Natalia."
-      },
-      "counters": {
-        "id": "13",
-        "name": "Clint",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_324e2b04393700944b2b54f2f6c939b5.jpg",
-        "tip": "Generally, Marksman is Natalia's main food, except for Miya who has the Ultimate Skill which works like Purify to neutralize the effects of Silence from Natalia. Likewise with Irithel who has an AoE Skill and a Basic Attack that will become AoE when the Ultimate Skill is active, this will easily show where Natalia is hiding."
-      },
-      "best_mate": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Saber and Chou can cause a Stun effect on the target or Cyclops which can lock the target to stay in position, then continue with Silencing for 2 seconds from Natalia, resulting in a deadly combo to hunt down opponents who don't suspect our presence."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_ee09a1367736f8a46641f07f5d1d6618.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle",
+      "Roam"
+    ],
+    "strong": [
+      "119",
+      "43"
+    ],
+    "weak": [
+      "74",
+      "62"
+    ],
+    "assist": [
+      "30",
+      "38"
+    ]
   },
   {
     "id": "107",
     "name": "Natan",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/d48d72c81c740e59b3a67ed83a74c128.png?w=150-150-6d5846",
-    "type": "Marksman",
-    "phy": "60",
-    "mag": "20",
-    "alive": "20",
-    "diff": "20",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_6736ef8c230d82576c3710e9fc248e11.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "6",
+      "41",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "15",
+      "0"
+    ],
+    "assist": [
+      "32",
+      "28",
+      "0"
+    ]
   },
   {
     "id": "122",
     "name": "Nolan",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/a00c000fd13db499e4bd43766dc56101.png?w=150-150-fffffe",
-    "type": "Assassin",
-    "phy": "60",
-    "mag": "20",
-    "alive": "30",
-    "diff": "60",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_0495066df0d828c149e7fe89aa63078b.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "60",
+      "15",
+      "0"
+    ],
+    "weak": [
+      "72",
+      "117"
+    ],
+    "assist": [
+      "6",
+      "41",
+      "0"
+    ]
   },
   {
     "id": "119",
     "name": "Novaria",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/233e528d55a4c6083bd914c2768ac50d.png?w=150-150-704da9",
-    "type": "Mage",
-    "phy": "90",
-    "mag": "30",
-    "alive": "30",
-    "diff": "60",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_12c811236741ae8e3fbdaa2d884b30a2.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "15",
+      "46",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "21"
+    ],
+    "assist": [
+      "105",
+      "18",
+      "0"
+    ]
+  },
+  {
+    "id": "130",
+    "name": "Obsidia",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18/100_92bcc9ad2c4c8165a888d34f086a4d28.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "21",
+      "22",
+      "47"
+    ],
+    "weak": [
+      "12",
+      "18"
+    ],
+    "assist": [
+      "55",
+      "34"
+    ]
   },
   {
     "id": "46",
     "name": "Odette",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "70",
-    "alive": "30",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "Aurora can stop your Ultimate Skill remotely using its freezing Ultimate."
-      },
-      "counters": {
-        "id": "33",
-        "name": "Cyclops",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_cef4d89fd02965d3aae272c30990dbe8.png",
-        "tip": "Odette can't actually counter opponents, but she can fight a Hero who doesn't have Stun Skills and without high mobility."
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Thanks to Grock’s wall, it can stop opponents from escaping from your Ultimate Skill."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_47/100_6fd1d8e4d436d1de3102a7880cd61cbd.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "18",
+      "43",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "19",
+      "111",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "32",
+      "54",
+      "0"
+    ]
   },
   {
     "id": "103",
     "name": "Paquito",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f3695c153689c30f8ebfd334931e0525.jpg",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "40",
-    "alive": "60",
-    "diff": "80",
-    "counters": {
-      "countered_by": {
-        "id": "73",
-        "name": "Harith",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_6df4352d8f0d6ce429ad308d323c6206.png",
-        "tip": "Harith, Wanwan, Helcurt"
-      },
-      "counters": {
-        "id": "40",
-        "name": "Karrie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2ae89c203ad1488fa1af6b7e51dae488.png",
-        "tip": "Karrie, Sun, Selena"
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tigreal, Luo Yi, Angela"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_1986ebcc24fc3eb28f59f079c15be612.png",
+    "roles": [
+      "fighter",
+      "assassin"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "23",
+      "18",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "10",
+      "62",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "14",
+      "0"
+    ]
   },
   {
     "id": "52",
     "name": "Pharsa",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_212e59ee7c8490397278ba68c8063a19.png",
-    "type": "Mage",
-    "phy": "90",
-    "mag": "50",
-    "alive": "20",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "50",
-        "name": "Zhask",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ca13970038ce4d7590d2f271b6c6f7f5.png",
-        "tip": "When Pharsa gets too close to these heroes, she becomes very vulnerable."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "The range of Pharsa’s ultimate is larger than Odette’s, so when Odette uses her ultimate, Pharsa can safely use her ultimate to attack Odette."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "The delay on Pharsa’s ultimate can make it hard for her to hit enemies. Teaming up with heroes who have control skills can greatly increase her hit rate."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_cccf53dbeacc789288ebc1fb63fcf7dd.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "18",
+      "60",
+      "115",
+      "0"
+    ],
+    "weak": [
+      "10",
+      "16",
+      "74",
+      "0"
+    ],
+    "assist": [
+      "93",
+      "10",
+      "0"
+    ]
   },
   {
     "id": "106",
     "name": "Phoveus",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/255c86f3a2ed403b6e889f5a9f43bae4.png?w=150-150-443f42",
-    "type": "Fighter",
-    "phy": "70",
-    "mag": "30",
-    "alive": "80",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "53",
-        "name": "Lesley",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/da570e4daad77939a40f93c3c1034b83.png?w=150-150-320f16",
-        "tip": ""
-      },
-      "counters": {
-        "id": "89",
-        "name": "Wanwan",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d744e6f02ba1d9b5f246a5532cc2b201.png",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "93",
-        "name": "Atlas",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f68d5c30c0198006b2c85b7a5cb48b.png",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_06/100_6bfe8ca7e60623a5261eac20e2b39d34.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "89",
+      "120",
+      "26"
+    ],
+    "weak": [
+      "36",
+      "57",
+      "38"
+    ],
+    "assist": [
+      "41",
+      "19",
+      "6"
+    ]
   },
   {
     "id": "94",
     "name": "Popol and Kupa",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ca29a7735b2c9ae8cd38d745d4d18bcd.jpg",
-    "type": "Marksman",
-    "phy": "70",
-    "mag": "70",
-    "alive": "30",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "51",
-        "name": "Helcurt",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2baf1efb2d414acedf4a89b6fa330ad2.png",
-        "tip": "Helcurt, Hanzo and Gusion"
-      },
-      "counters": {
-        "id": "40",
-        "name": "Karrie",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2ae89c203ad1488fa1af6b7e51dae488.png",
-        "tip": "Karrie, Masha and Franco"
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Grock, Diggie and Aurora"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_30e98c9005e54b1625712892560ad9ab.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Jungle",
+      "Gold Lane"
+    ],
+    "strong": [
+      "53",
+      "100",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "56",
+      "8",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "28",
+      "98",
+      "0"
+    ]
   },
   {
     "id": "14",
     "name": "Rafaela",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_549ab8159821398b48e7e79ceb298396.png",
-    "type": "Support",
-    "phy": "20",
-    "mag": "70",
-    "alive": "60",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "42",
-        "name": "Harley",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a2f1d7806d874283c83913f14a533bb0.png",
-        "tip": "His ultimate's slowdown may put Rafaela's into a dangerous situation and can easily kill her with the right combos."
-      },
-      "counters": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "Rafaela's Holy of Retribution can easily force Natalia out of her invisible mode so she can't attacks teammates from behind."
-      },
-      "best_mate": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "Both are pretty slow and squishy, but if they use their passives correctly, may be a deadly duo. Miya's passive make her basic attacks faster while Rafaela's passive can catch up a enemies easily for Miya to finish off."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_f22e22659e8b1acfb665aec8eaffabd7.png",
+    "roles": [
+      "support"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "88",
+      "99"
+    ],
+    "weak": [
+      "84",
+      "21"
+    ],
+    "assist": [
+      "22",
+      "37"
+    ]
   },
   {
     "id": "39",
     "name": "Roger",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d2f1ce4289d7399177b7f8a25bdf593d.png",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "10",
-    "alive": "60",
-    "diff": "50",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Roger can be killed quite easily when under control effects."
-      },
-      "counters": {
-        "id": "21",
-        "name": "Hayabusa",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3de2f55e701a340a02f1828e79cdb9fa.png?w=150-150-1f1820",
-        "tip": "If this kind of burst hero can’t take Roger down quickly, Roger’s fast attack speed and lifesteal can make short work of them."
-      },
-      "best_mate": {
-        "id": "14",
-        "name": "Rafaela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_549ab8159821398b48e7e79ceb298396.png",
-        "tip": "Roger deals high damage alone, and the control and acceleration skills of these teammates can help him deal even more."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_168335bcb95f73c6d653ec4971420923.png",
+    "roles": [
+      "fighter",
+      "Marksman"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "60",
+      "46",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "74",
+      "78",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "52",
+      "38",
+      "0"
+    ]
   },
   {
     "id": "29",
     "name": "Ruby",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/c92a3a9d1e83af0503646a8ac26934eb.png?w=150-150-857a9b",
-    "type": "Fighter",
-    "phy": "20",
-    "mag": "90",
-    "alive": "90",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "26",
-        "name": "Chou",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a3dd4a2b8bd5b8f25a8dd520f2c1c71a.png",
-        "tip": "His 2nd skill makes him immune to CC and may be a problem if you want to stun him before he stuns and ults you.<br>"
-      },
-      "counters": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "You can cancel his 3rd skill with your 2nd skill or Ult (Gets canceled with any stun). Also, you can interrupt his 2nd skill when he finishes the first charge with your 2nd skill and jump away"
-      },
-      "best_mate": {
-        "id": "37",
-        "name": "Lapu-Lapu",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_8b60cceca5b04e97da7372f12bfeb612.jpg",
-        "tip": "Ruby ults and stuns, while Lapu ults and bursts."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_5b9d38f9f2e7ca03f9f489de19656bc9.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "64",
+      "80",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "89",
+      "43",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "52",
+      "75",
+      "0"
+    ]
   },
   {
     "id": "3",
     "name": "Saber",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-    "type": "",
-    "phy": "",
-    "mag": "",
-    "alive": "",
-    "diff": "",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_b5980d535886303ad116fba3463c76ce.png",
+    "roles": [
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle",
+      "Roam"
+    ],
+    "strong": [
+      "18",
+      "15",
+      "0"
+    ],
+    "weak": [
+      "34",
+      "76",
+      "0"
+    ],
+    "assist": [
+      "75",
+      "33",
+      "0"
+    ]
   },
   {
     "id": "63",
     "name": "Selena",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_0956f8d25d39312d0da5dca2cfca074c.png",
-    "type": "Assassin",
-    "phy": "70",
-    "mag": "100",
-    "alive": "30",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "3",
-        "name": "Saber",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/35a5d68d1704e2c4c6323abd4859a622.jpg?w=100-100-4b3f67",
-        "tip": "Saber's ultimate is a very strong CC. Once Selena is surrounded by enemies and becomes targeted by Saber, it won't be easy for Selena to flee."
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": "Layla doesn't have blink skills, so once hit by Selena's Abyssal Arrow, it won't be easy for Layla to flee."
-      },
-      "best_mate": {
-        "id": "62",
-        "name": "Kaja",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_7fe2a243687bb024b5728ea4bbf422fe.png",
-        "tip": "His ultimate controls the enemy for Selena. He can also use his 2nd to protect her."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_547ce6e3351ef7a46c02b51d0c4e452c.png",
+    "roles": [
+      "assassin",
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane",
+      "Roam"
+    ],
+    "strong": [
+      "23",
+      "18",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "60",
+      "89",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "115",
+      "105",
+      "0"
+    ]
   },
   {
     "id": "90",
     "name": "Silvanna",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_743db67971d02b6a9a8065d9cedade23.png",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "70",
-    "alive": "50",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "57",
-        "name": "Valir",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_11c3284b5ea83dfd377f4d1b9724c960.jpg",
-        "tip": "Eudora, Gusion, Valir"
-      },
-      "counters": {
-        "id": "31",
-        "name": "Moskov",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/2f37c7bb49843330b8b972f11b60da08.png?w=150-150-3f498a",
-        "tip": "Moskov, Claude, Kimmy"
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tigreal, Ruby, Gatotkaca"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_fe98dd2e19bb6c29591763d1d11a3eb7.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "57",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "58",
+      "0",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "93",
+      "6",
+      "0"
+    ]
+  },
+  {
+    "id": "131",
+    "name": "Sora",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_40/100_4749a1f7fe99cbedfc5ef23fc1287d6c.png",
+    "roles": [
+      "fighter",
+      "assassin"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "1",
+      "60"
+    ],
+    "weak": [
+      "57",
+      "17",
+      "120"
+    ],
+    "assist": [
+      "41",
+      "6",
+      "19"
+    ]
   },
   {
     "id": "27",
     "name": "Sun",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_802a9c5f922e63054fcf11aa7d012482.png",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "10",
-    "alive": "50",
-    "diff": "30",
-    "counters": {
-      "countered_by": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": ""
-      },
-      "counters": {
-        "id": "18",
-        "name": "Layla",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_a05a03db633cc03ef3f733d2786073c4.jpg",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_eb0864090b1d5307dfeba628de0d294a.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane",
+      "Jungle"
+    ],
+    "strong": [
+      "10",
+      "41",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "29",
+      "0",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "70",
+      "6",
+      "0"
+    ]
+  },
+  {
+    "id": "126",
+    "name": "Suyou",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_20/100_422ffc7849e8bb01629d2423054ed410.png",
+    "roles": [
+      "assassin",
+      "fighter"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "121",
+      "115"
+    ],
+    "weak": [
+      "114",
+      "77"
+    ],
+    "assist": [
+      "14",
+      "6"
+    ]
   },
   {
     "id": "82",
     "name": "Terizla",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_45c908d0d59990c13d229ab22db05ebb.png",
-    "type": "Fighter",
-    "phy": "30",
-    "mag": "40",
-    "alive": "90",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "79",
-        "name": "Granger",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c7e48401ff0d33cb91ff1b4a59b3c0cf.png",
-        "tip": "Granger, Kagura and Esmeralda"
-      },
-      "counters": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Gord, Selena and Badang"
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "Tigreal, Angela and Vale"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_fcfbde52476bad8c8e67951240de854c.png",
+    "roles": [
+      "fighter",
+      "tank"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "16",
+      "27",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "120",
+      "53",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "41",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "72",
     "name": "Thamuz",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_5348df62801bc2fe1c093f8607c2e4a2.png",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "20",
-    "alive": "70",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "19",
-        "name": "Minotaur",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1ec5d92a9e0981838a6b362cd21cbdb0.jpg?w=100-100-3c0d15",
-        "tip": "Both physical attack immunity and forced displacement pose a very high threat to thamuz"
-      },
-      "counters": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "The lack of displacement of the continuous damage heroes in the face of thamuz's pursuit of lack of response."
-      },
-      "best_mate": {
-        "id": "55",
-        "name": "Angela",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_feffcc9c39731586e645dbef2ce70afd.png",
-        "tip": "Both group control and immune control can greatly enhance their characteristics."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18/100_3e7e133556af2f5d82f49fa8624b6bd5.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "16",
+      "27",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "40",
+      "43",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "55",
+      "14",
+      "0"
+    ]
   },
   {
     "id": "6",
     "name": "Tigreal",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-    "type": "Tank",
-    "phy": "10",
-    "mag": "100",
-    "alive": "80",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "15",
-        "name": "Eudora",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ed32e3c71ecd41652fc54a7efd02aba4.jpg",
-        "tip": "It is obvious why she is here, she has a stun that lasts enough to let the enemy team lower your hp faster if you don't take care, Tigreal is pretty hard, but not inmortal like Argus with his Ulti. Keep an eye on it."
-      },
-      "counters": {
-        "id": "1",
-        "name": "Miya",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_a844f9aa51baefa6878801edd85fec5e.png",
-        "tip": "The only mobility Miya has is her Ultimate, and it has a big cooldown, making Tigreal able to reach her while escaping by using Flicker and 2nd ability, and even only his 2nd would be enough."
-      },
-      "best_mate": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Tigreal put all the enemies together with his skill combination and gord with his stun and ultimate kills them all while Tigreal has all of them stunned. The most of the times my friend gets Triple Kill/Maniac and even once he reached Savage by doing this combo. A nice team."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_4e0005dbfb1376beaccc54ef7aa39375.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Roam"
+    ],
+    "strong": [
+      "16",
+      "22",
+      "0"
+    ],
+    "weak": [
+      "61",
+      "50",
+      "0"
+    ],
+    "assist": [
+      "38",
+      "46",
+      "0"
+    ]
   },
   {
     "id": "59",
     "name": "Uranus",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_03f3e7982542f805a4ec9e5659ed217e.png",
-    "type": "Tank",
-    "phy": "20",
-    "mag": "20",
-    "alive": "100",
-    "diff": "30",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_04a36899ac866eecb1d3a9c436cfb1d9.png",
+    "roles": [
+      "tank"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "6",
+      "10",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "18",
+      "53",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "105",
+      "60",
+      "0"
+    ]
   },
   {
     "id": "66",
     "name": "Vale",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_de9363822c6d50d5dde8500a05b9657b.png",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "70",
-    "alive": "20",
-    "diff": "20",
-    "counters": {
-      "countered_by": {
-        "id": "56",
-        "name": "Gusion",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/0226b7cc6015fb50aa8ff4e1c9cf8c62.png?w=150-150-242539",
-        "tip": ""
-      },
-      "counters": {
-        "id": "60",
-        "name": "Hanabi",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e03a3e6f2eb41243b9d9d1cc1f89cadd.png?w=150-150-070b18",
-        "tip": ""
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": ""
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_344849c04f420fda542682b73c3f31d1.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "82",
+      "35",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "21",
+      "84",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "20",
+      "70",
+      "0"
+    ]
   },
   {
     "id": "110",
     "name": "Valentina",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3fcfa9c74ac47800a3e13a5985d76e55.png?w=150-150-debef7",
-    "type": "Mage",
-    "phy": "90",
-    "mag": "80",
-    "alive": "50",
-    "diff": "80",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_7923ebf470d0e963e9978cb21eb25780.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "60",
+      "76",
+      "0"
+    ],
+    "weak": [
+      "21",
+      "24",
+      "69"
+    ],
+    "assist": [
+      "92",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "57",
     "name": "Valir",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_11c3284b5ea83dfd377f4d1b9724c960.jpg",
-    "type": "Mage",
-    "phy": "70",
-    "mag": "70",
-    "alive": "20",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "8",
-        "name": "Karina",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/1691dbbde8237768590768a90510d5a6.jpg?w=100-100-f7fcc4",
-        "tip": "Because Valir lacks life-saving skills, it's hard for him to handle assassins with multi-stage dash skills."
-      },
-      "counters": {
-        "id": "52",
-        "name": "Pharsa",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_212e59ee7c8490397278ba68c8063a19.png",
-        "tip": "Valir's Searing Torrent can completely restrain Pharsa's Feathered Air Strike, preventing her from maintaining sustained damage."
-      },
-      "best_mate": {
-        "id": "36",
-        "name": "Aurora",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/737f20a2934bbae1c5fd1b129dcbe066.jpg?w=200-200-fefefe",
-        "tip": "With Aurora using Coldness Destroy to freeze enemies, Valir can maximize his damage output."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_cd4c780c0ed639e2889c1131e56638ec.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "2",
+      "117",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "47",
+      "17",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "98",
+      "95",
+      "0"
+    ]
   },
   {
     "id": "38",
     "name": "Vexana",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/2334082b961a77941bc0f87e598bfabb.png?w=150-150-233238",
-    "type": "Mage",
-    "phy": "90",
-    "mag": "50",
-    "alive": "20",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "47",
-        "name": "Lancelot",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/e20549844522450e535e614538699eb9.png?w=150-150-ffe4db",
-        "tip": "Lancelot has a very high mobility. With its skills and his ultimate, Lancelot can quickly dash over the enemy or run away from them. In this way, Lancelot counters Vexana because his skills deal alot of damage in just a single skill.  Lancelot's Thorned Rose counters Vexana in a way such that he is invulnerable for a very short time, tendency, Vexana's skills will miss and will not do much damage."
-      },
-      "counters": {
-        "id": "46",
-        "name": "Odette",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/071fd5539ac4ba53b1dc27195cd6d4bd.png?w=150-150-fff8da",
-        "tip": "Odette's ultimate takes time to deal more damage. But with Vexana's Charmed Scepter, her ultimate can be cancelled quickly. In this way, Odette is now useless and will rely on her abilities."
-      },
-      "best_mate": {
-        "id": "6",
-        "name": "Tigreal",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_23a7a603ff9d20074777d52e2eb202f3.jpg",
-        "tip": "He is one of the best clash initiators in the game. He has hard crowd control and take enemies wherever direction he wants."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_39c9058219c59535e9ed07645c8d9dd3.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "18",
+      "43",
+      "115",
+      "0"
+    ],
+    "weak": [
+      "3",
+      "109",
+      "8",
+      "0"
+    ],
+    "assist": [
+      "93",
+      "105",
+      "0"
+    ]
   },
   {
     "id": "89",
     "name": "Wanwan",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_d744e6f02ba1d9b5f246a5532cc2b201.png",
-    "type": "Marksman",
-    "phy": "60",
-    "mag": "30",
-    "alive": "20",
-    "diff": "60",
-    "counters": {
-      "countered_by": {
-        "id": "78",
-        "name": "Khufra",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_398cd0a73db63a4b098ab28de5953a0d.png",
-        "tip": "Khufra"
-      },
-      "counters": {
-        "id": "52",
-        "name": "Pharsa",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_212e59ee7c8490397278ba68c8063a19.png",
-        "tip": "Pharsa, Gord and Saber"
-      },
-      "best_mate": {
-        "id": "70",
-        "name": "Belerick",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f9b01617505b9562d3bbc75e9d392c91.jpg",
-        "tip": "Belerick, Diggie and Estes"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_47/100_c042bfb106853182a8c38ae5386ceb77.png",
+    "roles": [
+      "Marksman"
+    ],
+    "lanes": [
+      "Gold Lane"
+    ],
+    "strong": [
+      "117",
+      "96",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "47",
+      "23",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "10",
+      "70",
+      "0"
+    ]
   },
   {
     "id": "83",
     "name": "X.Borg",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1d4d7dfe38cb5e0fcfcf06b8af6b2103.png",
-    "type": "Fighter",
-    "phy": "30",
-    "mag": "10",
-    "alive": "80",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "74",
-        "name": "Minsitthar",
-        "icon": "https://akmweb.youngjoygame.com/web/madmin/image/4ca3844586ef2cce730279ba44b6313b.png?w=150-150-31231d",
-        "tip": "Minsitthar, Diggie, Zhask"
-      },
-      "counters": {
-        "id": "49",
-        "name": "Hylos",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_f3ddb1088279d711417234034024223d.png",
-        "tip": "Hylos, Argus, Dyrroth"
-      },
-      "best_mate": {
-        "id": "54",
-        "name": "Jawhead",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_9bddad128d45821b7fd6abb9773d7c53.png",
-        "tip": "Jawhead, Angela, Johnson"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_cc433460d0b2053a3d3a18b46462bfb2.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "82",
+      "108",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "58",
+      "85",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "8",
+      "58",
+      "0"
+    ]
   },
   {
     "id": "115",
     "name": "Xavier",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/3773d63a9d3f37b16106ad6eb7d32a39.png?w=150-150-fffffe",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "80",
-    "alive": "20",
-    "diff": "30",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_50a5b0dd98ed2378d9f618e5ef0d47b2.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "60",
+      "76",
+      "0"
+    ],
+    "weak": [
+      "97",
+      "21",
+      "24"
+    ],
+    "assist": [
+      "92",
+      "93",
+      "0"
+    ]
   },
   {
     "id": "30",
     "name": "Yi Sun-shin",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1b5d6197b9e0e82e606b3cf962804fa5.jpg",
-    "type": "Assassin",
-    "phy": "90",
-    "mag": "20",
-    "alive": "40",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "24",
-        "name": "Natalia",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_50b8723a3ca11dd18d34d26948aef12b.png",
-        "tip": "The Silence and her damage could shred you before you can even do anything, honestly speaking though she checks ALMOST EVERYONE with the silence"
-      },
-      "counters": {
-        "id": "34",
-        "name": "Estes",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_42b2d76fe927ce57a1d29e220e2b5eea.png",
-        "tip": "Estes, Thanks to your Global Ult, you’re pretty much guaranteed to apply some debuffs on the enemy, so long as you grab Deadly Blade, You’re pretty much checking Estes or any heroes that are relying on Lifesteal and SpellVamp to carry the game"
-      },
-      "best_mate": {
-        "id": "44",
-        "name": "Grock",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_47c9a9a373919fd9cc0c68ff7788b32a.png",
-        "tip": "Mino or Grock or Tanks in general, they are the ideal partners, Having them being about to take a few hits or 2, will allow you to do more damage to the enemy as they soak up CCs and damage for you"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_3fe7fdb5f2aedef505f3728c28572e2e.png",
+    "roles": [
+      "assassin",
+      "Marksman"
+    ],
+    "lanes": [
+      "Jungle"
+    ],
+    "strong": [
+      "59",
+      "82",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "10",
+      "62",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "28",
+      "98",
+      "0"
+    ]
   },
   {
     "id": "113",
     "name": "Yin",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/64b128105615ba7902959147acfb803a.png?w=150-150-240603",
-    "type": "Fighter",
-    "phy": "60",
-    "mag": "80",
-    "alive": "50",
-    "diff": "40",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_92/100_95836476311e2026077d87eb2373a281.png",
+    "roles": [
+      "fighter",
+      "assassin"
+    ],
+    "lanes": [
+      "Jungle",
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "91",
+      "0"
+    ],
+    "weak": [
+      "117",
+      "77",
+      "0"
+    ],
+    "assist": [
+      "102",
+      "14",
+      "0"
+    ]
   },
   {
     "id": "95",
     "name": "Yu Zhong",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/d53f0e10d58b1841219073c026febc51.jpg?w=200-200-2e2425",
-    "type": "Fighter",
-    "phy": "40",
-    "mag": "70",
-    "alive": "70",
-    "diff": "70",
-    "counters": {
-      "countered_by": {
-        "id": "2",
-        "name": "Balmond",
-        "icon": "https://indoch.s3.ml.moonlian.com/web/madmin/image_be884c14d560f6bc5827e2a663439f94.png",
-        "tip": "Balmond, Ruby, Baxia"
-      },
-      "counters": {
-        "id": "16",
-        "name": "Zilong",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-        "tip": "Zilong, Ling, Lancelot"
-      },
-      "best_mate": {
-        "id": "96",
-        "name": "Luo Yi",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_c9f30c0ebde489a34b70ba1064c6fb02.jpg",
-        "tip": "Luo Yi, Angela, Estes"
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_92/100_7d5ad4d511f5257137028f19e9ee973f.png",
+    "roles": [
+      "fighter"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "108",
+      "16",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "53",
+      "40",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "38",
+      "115",
+      "0"
+    ]
   },
   {
     "id": "101",
     "name": "Yve",
-    "icon": "https://akmweb.youngjoygame.com/web/madmin/image/a5287c3bf2d77b64314528d437ec365b.png?w=150-150-3a2a57",
-    "type": "Mage",
-    "phy": "80",
-    "mag": "40",
-    "alive": "40",
-    "diff": "70",
-    "counters": {}
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_92/100_d8cc30b9d273a81bd838afc691852b6f.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "117",
+      "99",
+      "108"
+    ],
+    "weak": [
+      "113",
+      "3",
+      "8"
+    ],
+    "assist": [
+      "19",
+      "41",
+      "93"
+    ]
+  },
+  {
+    "id": "129",
+    "name": "Zetian",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_1_9_90/100_22dc8b16ea98a735027c3141b74ef841.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "2",
+      "16"
+    ],
+    "weak": [
+      "110"
+    ],
+    "assist": [
+      "112",
+      "14"
+    ]
   },
   {
     "id": "50",
     "name": "Zhask",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ca13970038ce4d7590d2f271b6c6f7f5.png",
-    "type": "Mage",
-    "phy": "100",
-    "mag": "40",
-    "alive": "10",
-    "diff": "40",
-    "counters": {
-      "countered_by": {
-        "id": "23",
-        "name": "Gord",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_24b9fa9519483b3d2168261b0fb6c0cf.png",
-        "tip": "Gord can cause high damage to Zhask outside of his summoned minions’ range."
-      },
-      "counters": {
-        "id": "7",
-        "name": "Alucard",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2f53289ddd423fa9bc95d380b6d79719.jpg",
-        "tip": "When entering a fight, this kind of hero will take a lot of damage from Zhask’s Nightmaric Spawn."
-      },
-      "best_mate": {
-        "id": "20",
-        "name": "Lolita",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_007ce553513122fdab39684dbbe215e3.png",
-        "tip": "Lolita’s shield can protect Zhask, allowing him to maintain high damage, especially when using his ultimate."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_7e69b480400b37dd75614f0c8d033c37.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "64",
+      "103",
+      "0",
+      "0"
+    ],
+    "weak": [
+      "52",
+      "91",
+      "0",
+      "0"
+    ],
+    "assist": [
+      "70",
+      "20",
+      "0"
+    ]
+  },
+  {
+    "id": "125",
+    "name": "Zhuxin",
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_92/100_13cfeec4bec7a27a09677e519f1ef9d2.png",
+    "roles": [
+      "mage"
+    ],
+    "lanes": [
+      "Mid Lane"
+    ],
+    "strong": [
+      "33",
+      "94"
+    ],
+    "weak": [
+      "3",
+      "17"
+    ],
+    "assist": [
+      "123",
+      "71",
+      "70"
+    ]
   },
   {
     "id": "16",
     "name": "Zilong",
-    "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_3bbb2c2b8a78d0d63ecd62d74048fcf4.jpg",
-    "type": "Fighter",
-    "phy": "50",
-    "mag": "60",
-    "alive": "20",
-    "diff": "10",
-    "counters": {
-      "countered_by": {
-        "id": "7",
-        "name": "Alucard",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_2f53289ddd423fa9bc95d380b6d79719.jpg",
-        "tip": "It’s very hard for Zilong to beat these heroes in 1v1 battles."
-      },
-      "counters": {
-        "id": "30",
-        "name": "Yi Sun-shin",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_1b5d6197b9e0e82e606b3cf962804fa5.jpg",
-        "tip": "Heroes without displacement skills are very vulnerable to Zilong’s skillset."
-      },
-      "best_mate": {
-        "id": "15",
-        "name": "Eudora",
-        "icon": "https://akmwebstatic.yuanzhanapp.com/web/madmin/image_ed32e3c71ecd41652fc54a7efd02aba4.jpg",
-        "tip": "Zilong’s first skill can flip enemies back to Eudora, allowing Eudora to release her full damage potential."
-      }
-    }
+    "icon": "https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage_2_1_18_2/100_6ed2ac1fc08f2b5118b579b188289ca1.png",
+    "roles": [
+      "fighter",
+      "assassin"
+    ],
+    "lanes": [
+      "Exp Lane"
+    ],
+    "strong": [
+      "18",
+      "86"
+    ],
+    "weak": [
+      "10",
+      "5"
+    ],
+    "assist": [
+      "52",
+      "60"
+    ]
   }
 ]
