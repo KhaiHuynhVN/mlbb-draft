@@ -79,8 +79,8 @@
         .hero-card-sub.compat { color: #81c784; }
         .hero-card-wr { font-size: 10px; color: #4fc3f7; margin-top: 1px; }
 
-        .hero-card .tooltip { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a1f3a; border: 1px solid #3a4080; border-radius: 8px; padding: 10px 14px; width: 260px; z-index: 10; pointer-events: none; margin-bottom: 8px; font-size: 11px; line-height: 1.5; }
-        .hero-card:hover .tooltip { display: block; }
+        .hero-card .tooltip { display: none; position: fixed; background: #1a1f3a; border: 1px solid #3a4080; border-radius: 8px; padding: 10px 14px; width: 260px; z-index: 9999; pointer-events: none; font-size: 11px; line-height: 1.5; }
+        .hero-card .tooltip.show { display: block; }
         .tooltip .t-name { font-size: 14px; font-weight: 700; color: #ffd740; }
         .tooltip .t-role { color: #7882a4; }
         .tooltip .t-lane { color: #4fc3f7; margin-top: 2px; }
@@ -391,6 +391,33 @@ function removePick(team,i) { (team==="blue"?bluePicks:redPicks)[i]=null; render
 function resetDraft() { bluePicks=[null,null,null,null,null]; redPicks=[null,null,null,null,null]; renderSlots(); }
 document.getElementById("pickerOverlay").addEventListener("click", e => { if(e.target===document.getElementById("pickerOverlay")) closePicker(); });
 document.addEventListener("keydown", e => { if(e.key==="Escape") closePicker(); });
+
+// Tooltip positioning with fixed position to avoid overflow clipping
+document.addEventListener("mouseover", e => {
+    const card = e.target.closest(".hero-card");
+    if(!card) return;
+    const tip = card.querySelector(".tooltip");
+    if(!tip) return;
+    const rect = card.getBoundingClientRect();
+    tip.classList.add("show");
+    // Position above card, centered
+    let left = rect.left + rect.width/2 - 130;
+    let top = rect.top - tip.offsetHeight - 8;
+    // If goes above viewport, show below
+    if(top < 4) top = rect.bottom + 8;
+    // Keep within viewport horizontally
+    if(left < 4) left = 4;
+    if(left + 260 > window.innerWidth - 4) left = window.innerWidth - 264;
+    tip.style.left = left + "px";
+    tip.style.top = top + "px";
+});
+document.addEventListener("mouseout", e => {
+    const card = e.target.closest(".hero-card");
+    if(!card) return;
+    const tip = card.querySelector(".tooltip");
+    if(tip) tip.classList.remove("show");
+});
+
 init();
 </script>
 </body>
