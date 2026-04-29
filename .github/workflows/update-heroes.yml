@@ -1,0 +1,78 @@
+name: Update MLBB Hero Data
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Chạy mỗi ngày lúc 6:00 UTC
+  workflow_dispatch: # Cho phép chạy thủ công
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch hero list and details
+        run: |
+          python3 << 'PY'
+          import json, urllib.request, ssl, concurrent.futures
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ctx.verify_mode = ssl.CERT_NONE
+
+          API = "https://mapi.mobilelegends.com/hero"
+
+          def api_get(path):
+              with urllib.request.urlopen(API + path, context=ctx, timeout=15) as r:
+                  return json.loads(r.read())
+
+          hero_list = api_get("/list")["data"]
+
+          def fetch_detail(h):
+              hid = h["heroid"]
+              try:
+                  return hid, api_get(f"/detail?id={hid}")["data"]
+              except:
+                  return hid, None
+
+          results = {}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+              for hid, data in ex.map(lambda h: fetch_detail(h), hero_list):
+                  results[hid] = data
+
+          all_data = []
+          for h in hero_list:
+              hid = h["heroid"]
+              icon = ("https:" + h["key"]) if h["key"].startswith("//") else h["key"]
+              detail = results.get(hid)
+              entry = {"id": hid, "name": h["name"], "icon": icon, "type": "", "phy": "", "mag": "", "alive": "", "diff": "", "counters": {}}
+              if detail:
+                  entry["type"] = detail.get("type", "")
+                  entry["phy"] = detail.get("phy", "")
+                  entry["mag"] = detail.get("mag", "")
+                  entry["alive"] = detail.get("alive", "")
+                  entry["diff"] = detail.get("diff", "")
+                  c = detail.get("counters") or {}
+                  counters = {}
+                  for key, src_key, tip_key in [("countered_by","countered","by_restrain_tips"), ("counters","counters","restrain_hero_tips"), ("best_mate","best","best_mate_tips")]:
+                      src = c.get(src_key) or {}
+                      if src.get("heroid"):
+                          ci = src.get("icon", "")
+                          if ci.startswith("//"): ci = "https:" + ci
+                          counters[key] = {"id": src["heroid"], "name": src.get("name",""), "icon": ci, "tip": src.get(tip_key, "")}
+                  entry["counters"] = counters
+              all_data.append(entry)
+
+          all_data.sort(key=lambda x: x["name"])
+          json.dump(all_data, open("heroes.json", "w"), ensure_ascii=False, indent=2)
+          print(f"Updated: {len(all_data)} heroes")
+          PY
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add heroes.json
+          git diff --cached --quiet || (git commit -m "chore: update hero data $(date -u +%Y-%m-%d)" && git push)

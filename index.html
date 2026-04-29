@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Draft Pick</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0e1a;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(180deg, #1a1f3a 0%, #0a0e1a 100%);
+            border-bottom: 2px solid #2a3060;
+        }
+        .header h1 {
+            font-size: 28px;
+            background: linear-gradient(90deg, #4fc3f7, #ab47bc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+        }
+        .header p { color: #8892b0; font-size: 13px; margin-top: 6px; }
+
+        .draft-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team { flex: 1; max-width: 400px; }
+        .team-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 10px 10px 0 0;
+            letter-spacing: 2px;
+        }
+        .team-blue .team-title { background: linear-gradient(135deg, #1565c0, #0d47a1); color: #90caf9; }
+        .team-red .team-title { background: linear-gradient(135deg, #c62828, #b71c1c); color: #ef9a9a; }
+
+        .pick-slots {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+            background: #111630;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid #1e2550;
+            border-top: none;
+        }
+
+        .pick-slot {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 14px;
+            background: #161b3a;
+            border: 2px solid #252b55;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-height: 72px;
+        }
+        .pick-slot:hover { border-color: #4a5090; background: #1c2248; }
+        .pick-slot.active { border-color: #ffd740; box-shadow: 0 0 15px rgba(255, 215, 64, 0.2); }
+        .pick-slot.filled { border-color: #4caf50; }
+        .team-red .pick-slot.filled { border-color: #ef5350; }
+
+        .slot-number {
+            width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; flex-shrink: 0;
+        }
+        .team-blue .slot-number { background: #1565c0; }
+        .team-red .slot-number { background: #c62828; }
+
+        .slot-avatar {
+            width: 50px; height: 50px; border-radius: 8px;
+            background: #252b55; display: flex; align-items: center;
+            justify-content: center; overflow: hidden; flex-shrink: 0;
+        }
+        .slot-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .slot-avatar .placeholder { font-size: 22px; color: #4a5090; }
+
+        .slot-info { flex: 1; min-width: 0; }
+        .slot-info .hero-name { font-size: 15px; font-weight: 600; color: #e0e6ff; }
+        .slot-info .hero-role { font-size: 12px; color: #7882a4; margin-top: 2px; }
+        .slot-info .hint { font-size: 12px; color: #4a5090; font-style: italic; }
+
+        .slot-remove {
+            width: 26px; height: 26px; border-radius: 50%; border: none;
+            background: #3a2040; color: #ef5350; font-size: 14px;
+            cursor: pointer; display: none; align-items: center;
+            justify-content: center; flex-shrink: 0; transition: background 0.2s;
+        }
+        .slot-remove:hover { background: #5a2040; }
+        .pick-slot.filled .slot-remove { display: flex; }
+
+        .vs-divider {
+            display: flex; align-items: center; justify-content: center;
+            font-size: 36px; font-weight: 900; color: #ffd740;
+            text-shadow: 0 0 20px rgba(255, 215, 64, 0.4);
+            padding-top: 60px; letter-spacing: 4px;
+        }
+
+        /* Picker Modal */
+        .picker-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0, 0, 0, 0.85); z-index: 1000;
+            justify-content: center; align-items: center; padding: 20px;
+        }
+        .picker-overlay.show { display: flex; }
+
+        .picker-modal {
+            background: #111630; border: 1px solid #2a3060; border-radius: 16px;
+            width: 100%; max-width: 900px; max-height: 85vh;
+            display: flex; flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .picker-header {
+            padding: 18px 24px; border-bottom: 1px solid #1e2550;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .picker-header h2 { font-size: 18px; color: #e0e6ff; flex-shrink: 0; }
+
+        .picker-search {
+            flex: 1; padding: 10px 16px; background: #0a0e1a;
+            border: 1px solid #252b55; border-radius: 8px;
+            color: #fff; font-size: 14px; outline: none; transition: border-color 0.2s;
+        }
+        .picker-search:focus { border-color: #4fc3f7; }
+        .picker-search::placeholder { color: #4a5090; }
+
+        .picker-close {
+            width: 36px; height: 36px; border-radius: 50%; border: none;
+            background: #1e2550; color: #8892b0; font-size: 20px;
+            cursor: pointer; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0;
+        }
+        .picker-close:hover { background: #2a3060; color: #fff; }
+
+        .picker-counter-info {
+            padding: 10px 24px; background: #1a1040;
+            border-bottom: 1px solid #1e2550; font-size: 13px;
+            color: #ce93d8; display: none;
+        }
+        .picker-counter-info.show { display: block; }
+
+        .picker-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px; padding: 20px; overflow-y: auto; flex: 1;
+        }
+
+        .hero-card {
+            display: flex; flex-direction: column; align-items: center;
+            padding: 10px 6px; background: #161b3a; border: 2px solid #252b55;
+            border-radius: 10px; cursor: pointer; transition: all 0.2s; position: relative;
+        }
+        .hero-card:hover { border-color: #4fc3f7; background: #1c2248; transform: translateY(-2px); }
+        .hero-card.disabled { opacity: 0.3; pointer-events: none; }
+        .hero-card.counter-pick { border-color: #ff9800; box-shadow: 0 0 10px rgba(255, 152, 0, 0.3); }
+        .hero-card.counter-pick::after { content: '⚔️'; position: absolute; top: 4px; right: 4px; font-size: 12px; }
+
+        .hero-card-avatar {
+            width: 60px; height: 60px; border-radius: 8px;
+            overflow: hidden; background: #252b55; margin-bottom: 6px;
+        }
+        .hero-card-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-card-name { font-size: 11px; text-align: center; color: #c0c8e8; line-height: 1.2; word-break: break-word; }
+
+        .loading-overlay {
+            position: fixed; inset: 0; background: #0a0e1a;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; z-index: 2000;
+        }
+        .loading-overlay.hidden { display: none; }
+        .spinner {
+            width: 50px; height: 50px; border: 4px solid #252b55;
+            border-top-color: #4fc3f7; border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-text { margin-top: 16px; color: #8892b0; font-size: 14px; }
+
+        .reset-btn {
+            display: block; margin: 0 auto 30px; padding: 12px 32px;
+            background: linear-gradient(135deg, #1e2550, #2a3060);
+            border: 1px solid #3a4080; border-radius: 8px;
+            color: #8892b0; font-size: 14px; cursor: pointer; transition: all 0.2s;
+        }
+        .reset-btn:hover { background: linear-gradient(135deg, #2a3060, #3a4080); color: #fff; }
+
+        .hero-detail-panel {
+            display: none; padding: 16px 24px; border-top: 1px solid #1e2550;
+            background: #0d1228; max-height: 200px; overflow-y: auto;
+        }
+        .hero-detail-panel.show { display: block; }
+        .hero-detail-panel h3 { font-size: 16px; color: #ffd740; margin-bottom: 8px; }
+        .detail-row { display: flex; gap: 20px; flex-wrap: wrap; }
+        .detail-stat { font-size: 12px; color: #8892b0; }
+        .detail-stat span { color: #4fc3f7; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .draft-container { flex-direction: column; align-items: center; gap: 10px; }
+            .vs-divider { padding-top: 0; font-size: 24px; }
+            .team { max-width: 100%; }
+            .picker-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <div class="loading-text">Đang tải danh sách tướng...</div>
+</div>
+
+<div class="header">
+    <h1>MLBB DRAFT PICK</h1>
+    <p>Chọn tướng cho team bạn → Xem tướng khắc chế cho team đối thủ</p>
+</div>
+
+<div class="draft-container">
+    <div class="team team-blue" id="teamBlue">
+        <div class="team-title">🔵 TEAM CỦA BẠN</div>
+        <div class="pick-slots" id="blueSlots"></div>
+    </div>
+    <div class="vs-divider">VS</div>
+    <div class="team team-red" id="teamRed">
+        <div class="team-title">🔴 TEAM ĐỐI THỦ</div>
+        <div class="pick-slots" id="redSlots"></div>
+    </div>
+</div>
+
+<button class="reset-btn" onclick="resetDraft()">🔄 Reset Draft</button>
+
+<div class="picker-overlay" id="pickerOverlay">
+    <div class="picker-modal">
+        <div class="picker-header">
+            <h2 id="pickerTitle">Chọn tướng</h2>
+            <input type="text" class="picker-search" id="pickerSearch" placeholder="Tìm tướng..." oninput="filterHeroes()">
+            <button class="picker-close" onclick="closePicker()">✕</button>
+        </div>
+        <div class="picker-counter-info" id="counterInfo"></div>
+        <div class="picker-grid" id="pickerGrid"></div>
+        <div class="hero-detail-panel" id="heroDetail"></div>
+    </div>
+</div>
+
+<script>
+    let allHeroes = [];
+    let heroMap = {};
+    let bluePicks = [null, null, null, null, null];
+    let redPicks = [null, null, null, null, null];
+    let activeSlot = null;
+
+    async function init() {
+        try {
+            const res = await fetch("heroes.json");
+            allHeroes = await res.json();
+            heroMap = {};
+            allHeroes.forEach(h => heroMap[h.id] = h);
+            renderSlots();
+            document.getElementById("loadingOverlay").classList.add("hidden");
+        } catch (e) {
+            console.error("Failed to load heroes:", e);
+            document.querySelector(".loading-text").textContent =
+                "Lỗi tải dữ liệu. Vui lòng refresh trang.";
+        }
+    }
+
+    function renderSlots() {
+        renderTeamSlots("blue", bluePicks, "blueSlots");
+        renderTeamSlots("red", redPicks, "redSlots");
+    }
+
+    function renderTeamSlots(team, picks, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+        picks.forEach((pick, i) => {
+            const slot = document.createElement("div");
+            slot.className = "pick-slot" + (pick ? " filled" : "") +
+                (activeSlot && activeSlot.team === team && activeSlot.index === i ? " active" : "");
+            slot.onclick = () => openPicker(team, i);
+
+            const num = document.createElement("div");
+            num.className = "slot-number";
+            num.textContent = i + 1;
+
+            const avatar = document.createElement("div");
+            avatar.className = "slot-avatar";
+            if (pick) {
+                const img = document.createElement("img");
+                img.src = pick.icon;
+                img.alt = pick.name;
+                img.loading = "lazy";
+                avatar.appendChild(img);
+            } else {
+                const ph = document.createElement("div");
+                ph.className = "placeholder";
+                ph.textContent = "+";
+                avatar.appendChild(ph);
+            }
+
+            const info = document.createElement("div");
+            info.className = "slot-info";
+            if (pick) {
+                info.innerHTML = `<div class="hero-name">${pick.name}</div>
+                    <div class="hero-role">${pick.type || ""}</div>`;
+            } else {
+                const hint = team === "red" && bluePicks.some(p => p)
+                    ? "Click để chọn tướng khắc chế"
+                    : "Click để chọn tướng";
+                info.innerHTML = `<div class="hint">${hint}</div>`;
+            }
+
+            slot.appendChild(num);
+            slot.appendChild(avatar);
+            slot.appendChild(info);
+
+            if (pick) {
+                const removeBtn = document.createElement("button");
+                removeBtn.className = "slot-remove";
+                removeBtn.textContent = "✕";
+                removeBtn.onclick = (e) => { e.stopPropagation(); removePick(team, i); };
+                slot.appendChild(removeBtn);
+            }
+
+            container.appendChild(slot);
+        });
+    }
+
+    function openPicker(team, index) {
+        activeSlot = { team, index };
+        renderSlots();
+
+        const overlay = document.getElementById("pickerOverlay");
+        const title = document.getElementById("pickerTitle");
+        const counterInfoEl = document.getElementById("counterInfo");
+        const detailPanel = document.getElementById("heroDetail");
+        const searchInput = document.getElementById("pickerSearch");
+
+        searchInput.value = "";
+        detailPanel.classList.remove("show");
+        detailPanel.innerHTML = "";
+
+        if (team === "blue") {
+            title.textContent = "🔵 Chọn tướng cho Team bạn";
+            counterInfoEl.classList.remove("show");
+        } else {
+            title.textContent = "🔴 Chọn tướng khắc chế cho Team đối thủ";
+            const pickedBlue = bluePicks.filter(p => p);
+            if (pickedBlue.length > 0) {
+                counterInfoEl.textContent = "⚔️ Tướng có viền cam là tướng khắc chế team bạn đã pick: " +
+                    pickedBlue.map(p => p.name).join(", ");
+                counterInfoEl.classList.add("show");
+            } else {
+                counterInfoEl.classList.remove("show");
+            }
+        }
+
+        overlay.classList.add("show");
+        searchInput.focus();
+        renderPickerGrid();
+    }
+
+    function getCounterHeroIds() {
+        const counterIds = new Set();
+        bluePicks.filter(p => p).forEach(hero => {
+            const c = hero.counters || {};
+            if (c.countered_by) counterIds.add(c.countered_by.id);
+        });
+        return counterIds;
+    }
+
+    function renderPickerGrid() {
+        const grid = document.getElementById("pickerGrid");
+        const search = document.getElementById("pickerSearch").value.toLowerCase();
+        const team = activeSlot.team;
+
+        const pickedIds = new Set([
+            ...bluePicks.filter(p => p).map(p => p.id),
+            ...redPicks.filter(p => p).map(p => p.id)
+        ]);
+
+        const counterIds = team === "red" ? getCounterHeroIds() : new Set();
+
+        let filtered = allHeroes.filter(h => h.name.toLowerCase().includes(search));
+
+        if (team === "red" && counterIds.size > 0) {
+            filtered.sort((a, b) => {
+                const ac = counterIds.has(a.id) ? 0 : 1;
+                const bc = counterIds.has(b.id) ? 0 : 1;
+                if (ac !== bc) return ac - bc;
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+        grid.innerHTML = "";
+        filtered.forEach(hero => {
+            const card = document.createElement("div");
+            card.className = "hero-card";
+            if (pickedIds.has(hero.id)) card.classList.add("disabled");
+            if (team === "red" && counterIds.has(hero.id)) card.classList.add("counter-pick");
+
+            card.innerHTML = `
+                <div class="hero-card-avatar">
+                    <img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="hero-card-name">${hero.name}</div>
+            `;
+
+            card.onclick = () => selectHero(hero);
+            grid.appendChild(card);
+        });
+    }
+
+    function selectHero(hero) {
+        if (!activeSlot) return;
+        const picks = activeSlot.team === "blue" ? bluePicks : redPicks;
+        picks[activeSlot.index] = hero;
+        showHeroDetail(hero);
+        renderSlots();
+        closePicker();
+    }
+
+    function showHeroDetail(hero) {
+        const panel = document.getElementById("heroDetail");
+        let html = `<h3>${hero.name} - ${hero.type || ""}</h3>`;
+        html += `<div class="detail-row">
+            <div class="detail-stat">Physical: <span>${hero.phy || "-"}</span></div>
+            <div class="detail-stat">Magic: <span>${hero.mag || "-"}</span></div>
+            <div class="detail-stat">Durability: <span>${hero.alive || "-"}</span></div>
+            <div class="detail-stat">Difficulty: <span>${hero.diff || "-"}</span></div>
+        </div>`;
+
+        const c = hero.counters || {};
+        if (c.best_mate || c.counters || c.countered_by) {
+            html += `<div style="margin-top:8px; font-size:12px; color:#8892b0;">`;
+            if (c.best_mate) html += `Đồng đội tốt nhất: <span style="color:#4caf50">${c.best_mate.name}</span> · `;
+            if (c.counters) html += `Khắc chế: <span style="color:#ff9800">${c.counters.name}</span> · `;
+            if (c.countered_by) html += `Bị khắc chế bởi: <span style="color:#ef5350">${c.countered_by.name}</span>`;
+            html += `</div>`;
+        }
+
+        panel.innerHTML = html;
+        panel.classList.add("show");
+    }
+
+    function closePicker() {
+        document.getElementById("pickerOverlay").classList.remove("show");
+        document.getElementById("heroDetail").classList.remove("show");
+        activeSlot = null;
+        renderSlots();
+    }
+
+    function removePick(team, index) {
+        if (team === "blue") bluePicks[index] = null;
+        else redPicks[index] = null;
+        renderSlots();
+    }
+
+    function filterHeroes() { renderPickerGrid(); }
+
+    function resetDraft() {
+        bluePicks = [null, null, null, null, null];
+        redPicks = [null, null, null, null, null];
+        renderSlots();
+    }
+
+    document.getElementById("pickerOverlay").addEventListener("click", (e) => {
+        if (e.target === document.getElementById("pickerOverlay")) closePicker();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePicker(); });
+
+    init();
+</script>
+</body>
+</html>
