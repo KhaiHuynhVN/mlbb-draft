@@ -109,12 +109,12 @@
 <body>
 <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
-    <div class="loading-text" id="loadingText">Đang tải danh sách tướng...</div>
+    <div class="loading-text">Đang tải danh sách tướng...</div>
 </div>
 
 <div class="header">
     <h1>MLBB DRAFT PICK</h1>
-    <p>Chọn tướng cho cả 2 team → Xem gợi ý tướng khắc chế & đồng đội phù hợp</p>
+    <p>Chọn tướng cho cả 2 team → Xem gợi ý khắc chế & đồng đội phù hợp (data từ Ranked)</p>
     <div class="update-info" id="updateInfo"></div>
 </div>
 
@@ -136,7 +136,7 @@
     <div class="picker-modal">
         <div class="picker-header">
             <h2 id="pickerTitle">Chọn tướng</h2>
-            <input type="text" class="picker-search" id="pickerSearch" placeholder="Tìm tướng..." oninput="renderPickerContent()">
+            <input type="text" class="picker-search" id="pickerSearch" placeholder="Tìm tướng..." oninput="renderPicker()">
             <button class="picker-close" onclick="closePicker()">✕</button>
         </div>
         <div class="picker-scroll" id="pickerScroll"></div>
@@ -144,186 +144,170 @@
 </div>
 
 <script>
-let allHeroes=[], heroMap={}, bluePicks=[null,null,null,null,null], redPicks=[null,null,null,null,null], activeSlot=null;
+let H=[], M={}, bP=[null,null,null,null,null], rP=[null,null,null,null,null], aS=null;
 
 async function init() {
     try {
-        const res = await fetch("heroes.json");
-        allHeroes = await res.json();
-        heroMap = {};
-        allHeroes.forEach(h => heroMap[h.id] = h);
-        document.getElementById("updateInfo").textContent = allHeroes.length + " tướng";
+        const r = await fetch("heroes.json");
+        H = await r.json();
+        M = {}; H.forEach(h => M[h.id]=h);
+        document.getElementById("updateInfo").textContent = H.length + " tướng · Data từ Ranked All Ranks";
         renderSlots();
         document.getElementById("loadingOverlay").classList.add("hidden");
-    } catch(e) {
-        document.getElementById("loadingText").textContent = "Lỗi tải dữ liệu.";
-    }
+    } catch(e) { document.querySelector(".loading-text").textContent = "Lỗi tải dữ liệu."; }
 }
 
-// Build full counter map: who counters heroId?
-function getCountersFor(heroId) {
+// Get all heroes that counter heroId using: best_counter from stats + relation weak + reverse best_counter
+function getCountersFor(hid) {
     const s = new Set();
-    const hero = heroMap[heroId];
-    // From relation: hero.weak = heroes that counter this hero
-    if (hero?.weak) hero.weak.forEach(id => { if(id!=="0") s.add(id); });
-    // From relation: any hero whose strong includes heroId
-    allHeroes.forEach(h => { if(h.strong?.includes(heroId)) s.add(h.id); });
-    // From stats: countered_by_stats
-    if (hero?.countered_by_stats) hero.countered_by_stats.forEach(c => s.add(c.id));
+    const hero = M[hid];
+    if (!hero) return s;
+    // 1. This hero's most_countered_by (enemies that beat this hero)
+    (hero.most_countered_by||[]).forEach(c => s.add(c.id));
+    // 2. Relation weak
+    (hero.weak||[]).forEach(id => { if(id!=="0") s.add(id); });
+    // 3. Any hero whose best_counter includes this hero
+    H.forEach(h => {
+        if ((h.best_counter||[]).some(c => c.id === hid)) s.add(h.id);
+    });
     return s;
 }
 
-// Get best teammates for heroes already picked on same team
-function getBestWith(teamPicks) {
-    const scores = {}; // heroId -> { score, withWhich }
+// Get compatibility for team picks
+function getCompatFor(teamPicks) {
+    const scores = {};
     teamPicks.filter(p=>p).forEach(hero => {
-        (hero.best_with || []).forEach(bw => {
-            if (!scores[bw.id]) scores[bw.id] = { score: 0, withWhich: [], totalWR: 0 };
-            scores[bw.id].score++;
-            scores[bw.id].withWhich.push(hero.name);
-            scores[bw.id].totalWR += bw.win_rate;
+        (hero.compatible||[]).forEach(c => {
+            if(!scores[c.id]) scores[c.id] = {score:0, with:[], wr:0};
+            scores[c.id].score++;
+            scores[c.id].with.push(hero.name);
+            scores[c.id].wr += c.wr;
         });
-        // Also from relation assist
-        (hero.assist || []).forEach(id => {
+        (hero.assist||[]).forEach(id => {
             if(id==="0") return;
-            if (!scores[id]) scores[id] = { score: 0, withWhich: [], totalWR: 0 };
-            scores[id].score++;
-            if(!scores[id].withWhich.includes(hero.name)) scores[id].withWhich.push(hero.name);
-            scores[id].totalWR += 1;
+            if(!scores[id]) scores[id] = {score:0, with:[], wr:0};
+            if(!scores[id].with.includes(hero.name)) { scores[id].score++; scores[id].with.push(hero.name); scores[id].wr += 1; }
         });
     });
     return scores;
 }
 
 function renderSlots() {
-    renderTeamSlots("blue", bluePicks, "blueSlots");
-    renderTeamSlots("red", redPicks, "redSlots");
+    rTeam("blue", bP, "blueSlots");
+    rTeam("red", rP, "redSlots");
 }
 
-function renderTeamSlots(team, picks, cid) {
+function rTeam(team, picks, cid) {
     const c = document.getElementById(cid);
     c.innerHTML = "";
-    const enemy = team==="blue" ? redPicks : bluePicks;
-    const hasEnemy = enemy.some(p=>p);
-    const hasFriend = picks.some(p=>p);
+    const enemy = team==="blue" ? rP : bP;
+    const hasE = enemy.some(p=>p), hasF = picks.some(p=>p);
 
     picks.forEach((pick, i) => {
-        const slot = document.createElement("div");
-        slot.className = "pick-slot" + (pick?" filled":"") + (activeSlot?.team===team&&activeSlot?.index===i?" active":"");
-        slot.onclick = () => openPicker(team, i);
+        const s = document.createElement("div");
+        s.className = "pick-slot"+(pick?" filled":"")+(aS?.team===team&&aS?.index===i?" active":"");
+        s.onclick = () => openPicker(team, i);
 
-        const num = document.createElement("div");
-        num.className = "slot-number";
-        num.textContent = i+1;
+        const n = document.createElement("div"); n.className="slot-number"; n.textContent=i+1;
+        const a = document.createElement("div"); a.className="slot-avatar";
+        if(pick) { const img=document.createElement("img"); img.src=pick.icon; img.alt=pick.name; img.loading="lazy"; a.appendChild(img); }
+        else { const ph=document.createElement("div"); ph.className="placeholder"; ph.textContent="+"; a.appendChild(ph); }
 
-        const avatar = document.createElement("div");
-        avatar.className = "slot-avatar";
-        if(pick) { const img=document.createElement("img"); img.src=pick.icon; img.alt=pick.name; img.loading="lazy"; avatar.appendChild(img); }
-        else { const ph=document.createElement("div"); ph.className="placeholder"; ph.textContent="+"; avatar.appendChild(ph); }
-
-        const info = document.createElement("div");
-        info.className = "slot-info";
+        const info = document.createElement("div"); info.className="slot-info";
         if(pick) {
             const wr = pick.win_rate ? ` · WR ${pick.win_rate}%` : "";
             info.innerHTML = `<div class="hero-name">${pick.name}</div><div class="hero-role">${(pick.roles||[]).join(", ")}</div><div class="hero-stats">${(pick.lanes||[]).join(", ")}${wr}</div>`;
         } else {
-            let hint = "Click để chọn tướng";
-            if(hasEnemy) hint = "Click để chọn tướng khắc chế";
-            else if(hasFriend) hint = "Click để chọn đồng đội phù hợp";
+            let hint = hasE ? "Click để chọn tướng khắc chế" : hasF ? "Click để chọn đồng đội phù hợp" : "Click để chọn tướng";
             info.innerHTML = `<div class="hint">${hint}</div>`;
         }
 
-        slot.appendChild(num); slot.appendChild(avatar); slot.appendChild(info);
+        s.appendChild(n); s.appendChild(a); s.appendChild(info);
         if(pick) {
             const rb = document.createElement("button"); rb.className="slot-remove"; rb.textContent="✕";
             rb.onclick = e => { e.stopPropagation(); removePick(team,i); };
-            slot.appendChild(rb);
+            s.appendChild(rb);
         }
-        c.appendChild(slot);
+        c.appendChild(s);
     });
 }
 
 function openPicker(team, index) {
-    activeSlot = {team, index};
+    aS = {team, index};
     renderSlots();
     document.getElementById("pickerSearch").value = "";
     document.getElementById("pickerOverlay").classList.add("show");
     document.getElementById("pickerSearch").focus();
     document.getElementById("pickerTitle").textContent = team==="blue" ? "🔵 Chọn tướng cho Team bạn" : "🔴 Chọn tướng cho Team đối thủ";
-    renderPickerContent();
+    renderPicker();
 }
 
-function renderPickerContent() {
+function renderPicker() {
     const scroll = document.getElementById("pickerScroll");
     const search = document.getElementById("pickerSearch").value.toLowerCase();
-    const team = activeSlot.team;
-    const myPicks = team==="blue" ? bluePicks : redPicks;
-    const enemyPicks = (team==="blue" ? redPicks : bluePicks).filter(p=>p);
+    const team = aS.team;
+    const myPicks = team==="blue" ? bP : rP;
+    const enemyPicks = (team==="blue" ? rP : bP).filter(p=>p);
     const friendPicks = myPicks.filter(p=>p);
+    const pickedIds = new Set([...bP.filter(p=>p).map(p=>p.id), ...rP.filter(p=>p).map(p=>p.id)]);
+    let filtered = H.filter(h => h.name.toLowerCase().includes(search));
 
-    const pickedIds = new Set([...bluePicks.filter(p=>p).map(p=>p.id), ...redPicks.filter(p=>p).map(p=>p.id)]);
-    let filtered = allHeroes.filter(h => h.name.toLowerCase().includes(search));
-
-    // Counter scores for enemy
-    const counterScores = {};
+    // Counter scores
+    const cScores = {};
     enemyPicks.forEach(enemy => {
         const cids = getCountersFor(enemy.id);
         cids.forEach(cid => {
             if(pickedIds.has(cid)) return;
-            if(!counterScores[cid]) counterScores[cid] = {score:0, vs:[]};
-            counterScores[cid].score++;
-            counterScores[cid].vs.push(enemy.name);
+            if(!cScores[cid]) cScores[cid] = {score:0, vs:[]};
+            cScores[cid].score++;
+            cScores[cid].vs.push(enemy.name);
         });
     });
 
-    // Compatibility scores for same team
-    const compatScores = getBestWith(friendPicks);
+    // Compat scores
+    const cpScores = getCompatFor(friendPicks);
 
     scroll.innerHTML = "";
 
-    // Section: Per-enemy counters
+    // Per-enemy counter sections
     if(enemyPicks.length > 0) {
         enemyPicks.forEach(enemy => {
             const cids = getCountersFor(enemy.id);
-            const counterHeroes = filtered.filter(h => cids.has(h.id) && !pickedIds.has(h.id));
-            if(!counterHeroes.length) return;
-            // Sort by stats win rate impact
-            counterHeroes.sort((a,b) => {
-                const sa = counterScores[a.id]?.score||0, sb = counterScores[b.id]?.score||0;
-                return sb-sa || a.name.localeCompare(b.name);
-            });
+            const ch = filtered.filter(h => cids.has(h.id) && !pickedIds.has(h.id));
+            if(!ch.length) return;
+            ch.sort((a,b) => (cScores[b.id]?.score||0)-(cScores[a.id]?.score||0) || a.name.localeCompare(b.name));
 
             const sec = document.createElement("div"); sec.className="picker-section";
-            sec.innerHTML = `⚔️ Khắc chế <strong style="color:#ff9800">${enemy.name}</strong> <span class="badge badge-counter">${counterHeroes.length}</span>`;
+            sec.innerHTML = `⚔️ Khắc chế <strong style="color:#ff9800">${enemy.name}</strong> <span class="badge badge-counter">${ch.length}</span>`;
             scroll.appendChild(sec);
             const grid = document.createElement("div"); grid.className="picker-grid";
-            counterHeroes.slice(0,10).forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+            ch.slice(0,10).forEach(h => grid.appendChild(mkCard(h, pickedIds, cScores, cpScores)));
             scroll.appendChild(grid);
         });
 
         // Top multi-counters
-        const top = filtered.filter(h => counterScores[h.id]?.score>=2 && !pickedIds.has(h.id))
-            .sort((a,b) => counterScores[b.id].score - counterScores[a.id].score).slice(0,10);
+        const top = filtered.filter(h => cScores[h.id]?.score>=2 && !pickedIds.has(h.id))
+            .sort((a,b) => cScores[b.id].score - cScores[a.id].score).slice(0,10);
         if(top.length) {
             const sec = document.createElement("div"); sec.className="picker-section";
             sec.innerHTML = `🏆 Khắc chế nhiều tướng nhất <span class="badge badge-counter">Top ${top.length}</span>`;
             scroll.appendChild(sec);
             const grid = document.createElement("div"); grid.className="picker-grid";
-            top.forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+            top.forEach(h => grid.appendChild(mkCard(h, pickedIds, cScores, cpScores)));
             scroll.appendChild(grid);
         }
     }
 
-    // Section: Best teammates
-    if(friendPicks.length > 0 && Object.keys(compatScores).length > 0) {
-        const topCompat = filtered.filter(h => compatScores[h.id] && !pickedIds.has(h.id))
-            .sort((a,b) => (compatScores[b.id]?.totalWR||0) - (compatScores[a.id]?.totalWR||0)).slice(0,10);
-        if(topCompat.length) {
+    // Compatibility section
+    if(friendPicks.length > 0) {
+        const topCp = filtered.filter(h => cpScores[h.id] && !pickedIds.has(h.id))
+            .sort((a,b) => (cpScores[b.id]?.wr||0)-(cpScores[a.id]?.wr||0)).slice(0,10);
+        if(topCp.length) {
             const sec = document.createElement("div"); sec.className="picker-section";
-            sec.innerHTML = `👥 Đồng đội phù hợp nhất <span class="badge badge-compat">Top ${topCompat.length}</span>`;
+            sec.innerHTML = `👥 Đồng đội phù hợp nhất <span class="badge badge-compat">Top ${topCp.length}</span>`;
             scroll.appendChild(sec);
             const grid = document.createElement("div"); grid.className="picker-grid";
-            topCompat.forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+            topCp.forEach(h => grid.appendChild(mkCard(h, pickedIds, cScores, cpScores)));
             scroll.appendChild(grid);
         }
     }
@@ -334,36 +318,35 @@ function renderPickerContent() {
     scroll.appendChild(sec);
     const grid = document.createElement("div"); grid.className="picker-grid";
     filtered.sort((a,b) => {
-        const sa = counterScores[a.id]?.score||0, sb = counterScores[b.id]?.score||0;
+        const sa = cScores[a.id]?.score||0, sb = cScores[b.id]?.score||0;
         if(sb!==sa) return sb-sa;
         return a.name.localeCompare(b.name);
     });
-    filtered.forEach(h => grid.appendChild(mkCard(h, pickedIds, counterScores, compatScores)));
+    filtered.forEach(h => grid.appendChild(mkCard(h, pickedIds, cScores, cpScores)));
     scroll.appendChild(grid);
 }
 
-function mkCard(hero, pickedIds, counterScores, compatScores) {
+function mkCard(hero, pickedIds, cScores, cpScores) {
     const card = document.createElement("div");
     card.className = "hero-card";
     if(pickedIds.has(hero.id)) card.classList.add("disabled");
-    const cs = counterScores[hero.id];
-    const cp = compatScores[hero.id];
+    const cs = cScores[hero.id], cp = cpScores[hero.id];
     if(cs?.score>0) card.classList.add("counter-pick");
     else if(cp?.score>0) card.classList.add("compat-pick");
 
     let sub = "";
     if(cs?.vs?.length) sub = `<div class="hero-card-sub counter">⚔️ vs ${cs.vs.join(", ")}</div>`;
-    else if(cp?.withWhich?.length) sub = `<div class="hero-card-sub compat">👥 + ${cp.withWhich.join(", ")}</div>`;
+    else if(cp?.with?.length) sub = `<div class="hero-card-sub compat">👥 + ${cp.with.join(", ")}</div>`;
 
     const wr = hero.win_rate ? `<div class="hero-card-wr">WR ${hero.win_rate}%</div>` : "";
 
     // Tooltip
     const roles = (hero.roles||[]).join(", ");
     const lanes = (hero.lanes||[]).join(", ");
-    const strongN = (hero.strong||[]).filter(x=>x!=="0").map(id=>heroMap[id]?.name||id).join(", ")||"-";
-    const weakN = (hero.weak||[]).filter(x=>x!=="0").map(id=>heroMap[id]?.name||id).join(", ")||"-";
-    const bestN = (hero.best_with||[]).map(b=>`${heroMap[b.id]?.name||b.id} (+${b.win_rate}%)`).join(", ")||"-";
-    const cbyN = (hero.countered_by_stats||[]).map(b=>`${heroMap[b.id]?.name||b.id} (${b.win_rate}%)`).join(", ")||"-";
+    const bcN = (hero.best_counter||[]).map(c=>`${M[c.id]?.name||c.id} (+${c.wr}%)`).join(", ")||"-";
+    const mcN = (hero.most_countered_by||[]).map(c=>`${M[c.id]?.name||c.id} (${c.wr}%)`).join(", ")||"-";
+    const cpN = (hero.compatible||[]).map(c=>`${M[c.id]?.name||c.id} (+${c.wr}%)`).join(", ")||"-";
+    const ncN = (hero.not_compatible||[]).map(c=>`${M[c.id]?.name||c.id} (${c.wr}%)`).join(", ")||"-";
 
     card.innerHTML = `
         <div class="tooltip">
@@ -372,10 +355,10 @@ function mkCard(hero, pickedIds, counterScores, compatScores) {
             <div class="t-lane">🗺️ ${lanes}</div>
             <div class="t-wr">WR: <span>${hero.win_rate||0}%</span> · Ban: <span>${hero.ban_rate||0}%</span> · Pick: <span>${hero.pick_rate||0}%</span></div>
             <div class="t-counter">
-                <div style="color:#ff9800">⚔️ Khắc chế: ${strongN}</div>
-                <div style="color:#ef5350">💀 Bị khắc chế: ${weakN}</div>
-                <div style="color:#4caf50">👥 Đồng đội tốt: ${bestN}</div>
-                <div style="color:#e57373">📊 Thua nhiều vs: ${cbyN}</div>
+                <div style="color:#ff9800">⚔️ Best Counter: ${bcN}</div>
+                <div style="color:#ef5350">💀 Most Countered By: ${mcN}</div>
+                <div style="color:#4caf50">👥 Compatible: ${cpN}</div>
+                <div style="color:#e57373">❌ Not Compatible: ${ncN}</div>
             </div>
         </div>
         <div class="hero-card-avatar"><img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'"></div>
@@ -385,14 +368,14 @@ function mkCard(hero, pickedIds, counterScores, compatScores) {
     return card;
 }
 
-function selectHero(hero) { if(!activeSlot) return; (activeSlot.team==="blue"?bluePicks:redPicks)[activeSlot.index]=hero; renderSlots(); closePicker(); }
-function closePicker() { document.getElementById("pickerOverlay").classList.remove("show"); activeSlot=null; renderSlots(); }
-function removePick(team,i) { (team==="blue"?bluePicks:redPicks)[i]=null; renderSlots(); }
-function resetDraft() { bluePicks=[null,null,null,null,null]; redPicks=[null,null,null,null,null]; renderSlots(); }
+function selectHero(hero) { if(!aS) return; (aS.team==="blue"?bP:rP)[aS.index]=hero; renderSlots(); closePicker(); }
+function closePicker() { document.getElementById("pickerOverlay").classList.remove("show"); aS=null; renderSlots(); }
+function removePick(team,i) { (team==="blue"?bP:rP)[i]=null; renderSlots(); }
+function resetDraft() { bP=[null,null,null,null,null]; rP=[null,null,null,null,null]; renderSlots(); }
 document.getElementById("pickerOverlay").addEventListener("click", e => { if(e.target===document.getElementById("pickerOverlay")) closePicker(); });
 document.addEventListener("keydown", e => { if(e.key==="Escape") closePicker(); });
 
-// Tooltip positioning with fixed position to avoid overflow clipping
+// Tooltip positioning
 document.addEventListener("mouseover", e => {
     const card = e.target.closest(".hero-card");
     if(!card) return;
@@ -400,12 +383,9 @@ document.addEventListener("mouseover", e => {
     if(!tip) return;
     const rect = card.getBoundingClientRect();
     tip.classList.add("show");
-    // Position above card, centered
     let left = rect.left + rect.width/2 - 130;
     let top = rect.top - tip.offsetHeight - 8;
-    // If goes above viewport, show below
     if(top < 4) top = rect.bottom + 8;
-    // Keep within viewport horizontally
     if(left < 4) left = 4;
     if(left + 260 > window.innerWidth - 4) left = window.innerWidth - 264;
     tip.style.left = left + "px";

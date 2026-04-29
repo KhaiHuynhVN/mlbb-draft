@@ -16,21 +16,18 @@ jobs:
       - name: Fetch hero data from Moonton API
         run: |
           python3 << 'PY'
-          import json, urllib.request, ssl, concurrent.futures, sys
-
-          ctx = ssl.create_default_context()
-          ctx.check_hostname = False
-          ctx.verify_mode = ssl.CERT_NONE
+          import json, subprocess, sys
 
           API = "https://api.gms.moontontech.com/api/gms/source/2669606"
-          HEADERS = {"Content-Type":"application/json;charset=UTF-8","x-appid":"2669606","x-actid":"2669607","x-lang":"en"}
 
           def api_post(endpoint, body):
-              req = urllib.request.Request(f"{API}/{endpoint}", data=json.dumps(body).encode(), method="POST", headers=HEADERS)
-              with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
-                  return json.loads(r.read())
+              r = subprocess.run(["curl", "-sk", "-X", "POST", f"{API}/{endpoint}",
+                  "-H", "Content-Type: application/json;charset=UTF-8",
+                  "-H", "x-appid: 2669606", "-H", "x-actid: 2669607", "-H", "x-lang: en",
+                  "-d", json.dumps(body)], capture_output=True, text=True, timeout=20)
+              return json.loads(r.stdout)
 
-          # Fetch hero list
+          # Hero list
           list_data = api_post("2756564", {
               "pageSize":200,"pageIndex":1,
               "filters":[{"field":"<hero.data.sortid>","operator":"hasAnyOf","value":[1,2,3,4,5,6]},{"field":"<hero.data.roadsort>","operator":"hasAnyOf","value":[1,2,3,4,5]}],
@@ -38,41 +35,55 @@ jobs:
               "fields":["id","hero_id","hero.data.name","hero.data.smallmap","hero.data.sortid","hero.data.roadsort"],"object":[]
           })
           records = list_data["data"]["records"]
+          ids = [rec["data"]["hero_id"] for rec in records]
           print(f"Heroes: {len(records)}")
 
-          # Fetch stats per hero
-          def fetch_stats(hero_id):
+          # Matchup stats (source 2756565) - camp_type "0"=enemy, "1"=teammate
+          matchups = {}
+          for i, hid in enumerate(ids):
               try:
-                  d = api_post("2756567", {"pageSize":20,"pageIndex":1,"filters":[{"field":"main_heroid","operator":"eq","value":hero_id},{"field":"bigrank","operator":"eq","value":101},{"field":"match_type","operator":"eq","value":1}],"sorts":[]})
-                  recs = d["data"]["records"]
-                  return hero_id, recs[0]["data"] if recs else None
-              except: return hero_id, None
+                  d = api_post("2756565", {"pageSize":5,"pageIndex":1,"filters":[
+                      {"field":"main_heroid","operator":"eq","value":hid},
+                      {"field":"bigrank","operator":"eq","value":101}
+                  ],"sorts":[]})
+                  result = {"enemy": None, "teammate": None}
+                  for rec in d["data"]["records"]:
+                      ct = str(rec["data"].get("camp_type",""))
+                      if ct == "0": result["enemy"] = rec["data"]
+                      elif ct == "1": result["teammate"] = rec["data"]
+                  matchups[hid] = result
+              except:
+                  matchups[hid] = {"enemy": None, "teammate": None}
+              if (i+1) % 30 == 0: print(f"  {i+1}/{len(ids)}...")
 
-          stats = {}
-          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
-              for hid, data in ex.map(lambda r: fetch_stats(r["data"]["hero_id"]), records):
-                  if data: stats[hid] = data
-          print(f"Stats: {len(stats)}/{len(records)}")
+          got_e = sum(1 for v in matchups.values() if v["enemy"])
+          print(f"Stats: enemy={got_e}, teammate={sum(1 for v in matchups.values() if v['teammate'])}")
 
-          def parse_list(arr, key):
+          def pl(arr, key):
               if not arr: return []
               return [s["data"][key] for s in arr if isinstance(s, dict) and s.get("data",{}).get(key)]
 
+          def ps(sl):
+              if not sl: return []
+              return [{"id": str(s["heroid"]), "wr": round(s.get("increase_win_rate",0)*100,2)} for s in sl]
+
           heroes = []
           for rec in records:
-              d = rec["data"]; hd = d.get("hero",{}).get("data",{}); rel = d.get("relation",{}); hid = d["hero_id"]; st = stats.get(hid,{})
-              best_with = [{"id":str(sh["heroid"]),"win_rate":round(sh.get("increase_win_rate",0)*100,2),"head":sh.get("hero",{}).get("data",{}).get("head","")} for sh in st.get("sub_hero",[])]
-              countered_by = [{"id":str(sh["heroid"]),"win_rate":round(sh.get("increase_win_rate",0)*100,2),"head":sh.get("hero",{}).get("data",{}).get("head","")} for sh in st.get("sub_hero_last",[])]
+              d = rec["data"]; hd = d.get("hero",{}).get("data",{}); rel = d.get("relation",{}); hid = d["hero_id"]
+              m = matchups.get(hid, {}); enemy = m.get("enemy") or {}; teammate = m.get("teammate") or {}
               heroes.append({
-                  "id":str(hid),"name":hd.get("name",""),"icon":hd.get("smallmap",""),
-                  "roles":parse_list(hd.get("sortid"),"sort_title"),"lanes":parse_list(hd.get("roadsort"),"road_sort_title"),
-                  "strong":[str(x) for x in (rel.get("strong",{}).get("target_hero_id") or [])],
-                  "weak":[str(x) for x in (rel.get("weak",{}).get("target_hero_id") or [])],
-                  "assist":[str(x) for x in (rel.get("assist",{}).get("target_hero_id") or [])],
-                  "win_rate":round((st.get("main_hero_win_rate") or 0)*100,2),
-                  "ban_rate":round((st.get("main_hero_ban_rate") or 0)*100,2),
-                  "pick_rate":round((st.get("main_hero_appearance_rate") or 0)*100,2),
-                  "best_with":best_with,"countered_by_stats":countered_by,
+                  "id": str(hid), "name": hd.get("name",""), "icon": hd.get("smallmap",""),
+                  "roles": pl(hd.get("sortid"), "sort_title"), "lanes": pl(hd.get("roadsort"), "road_sort_title"),
+                  "strong": [str(x) for x in (rel.get("strong",{}).get("target_hero_id") or [])],
+                  "weak": [str(x) for x in (rel.get("weak",{}).get("target_hero_id") or [])],
+                  "assist": [str(x) for x in (rel.get("assist",{}).get("target_hero_id") or [])],
+                  "win_rate": round((enemy.get("main_hero_win_rate") or teammate.get("main_hero_win_rate") or 0)*100,2),
+                  "ban_rate": round((enemy.get("main_hero_ban_rate") or teammate.get("main_hero_ban_rate") or 0)*100,2),
+                  "pick_rate": round((enemy.get("main_hero_appearance_rate") or teammate.get("main_hero_appearance_rate") or 0)*100,2),
+                  "best_counter": ps(enemy.get("sub_hero")),
+                  "most_countered_by": ps(enemy.get("sub_hero_last")),
+                  "compatible": ps(teammate.get("sub_hero")),
+                  "not_compatible": ps(teammate.get("sub_hero_last")),
               })
           heroes.sort(key=lambda x: x["name"])
           json.dump(heroes, open("heroes.json","w"), ensure_ascii=False, indent=2)
