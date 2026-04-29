@@ -13,7 +13,6 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-
         .header {
             text-align: center;
             padding: 20px;
@@ -30,49 +29,26 @@
         .header p { color: #8892b0; font-size: 13px; margin-top: 6px; }
 
         .draft-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
-            padding: 30px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex; justify-content: center; align-items: flex-start;
+            gap: 40px; padding: 30px 20px; max-width: 1400px; margin: 0 auto;
         }
-
-        .team { flex: 1; max-width: 400px; }
+        .team { flex: 1; max-width: 420px; }
         .team-title {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 12px;
-            border-radius: 10px 10px 0 0;
-            letter-spacing: 2px;
+            text-align: center; font-size: 18px; font-weight: 700;
+            padding: 12px; border-radius: 10px 10px 0 0; letter-spacing: 2px;
         }
         .team-blue .team-title { background: linear-gradient(135deg, #1565c0, #0d47a1); color: #90caf9; }
         .team-red .team-title { background: linear-gradient(135deg, #c62828, #b71c1c); color: #ef9a9a; }
 
         .pick-slots {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 15px;
-            background: #111630;
-            border-radius: 0 0 10px 10px;
-            border: 1px solid #1e2550;
-            border-top: none;
+            display: flex; flex-direction: column; gap: 10px; padding: 15px;
+            background: #111630; border-radius: 0 0 10px 10px;
+            border: 1px solid #1e2550; border-top: none;
         }
-
         .pick-slot {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 10px 14px;
-            background: #161b3a;
-            border: 2px solid #252b55;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-            min-height: 72px;
+            display: flex; align-items: center; gap: 14px; padding: 10px 14px;
+            background: #161b3a; border: 2px solid #252b55; border-radius: 10px;
+            cursor: pointer; transition: all 0.2s; min-height: 72px;
         }
         .pick-slot:hover { border-color: #4a5090; background: #1c2248; }
         .pick-slot.active { border-color: #ffd740; box-shadow: 0 0 15px rgba(255, 215, 64, 0.2); }
@@ -88,9 +64,9 @@
         .team-red .slot-number { background: #c62828; }
 
         .slot-avatar {
-            width: 50px; height: 50px; border-radius: 8px;
-            background: #252b55; display: flex; align-items: center;
-            justify-content: center; overflow: hidden; flex-shrink: 0;
+            width: 50px; height: 50px; border-radius: 8px; background: #252b55;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; flex-shrink: 0;
         }
         .slot-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .slot-avatar .placeholder { font-size: 22px; color: #4a5090; }
@@ -104,7 +80,7 @@
             width: 26px; height: 26px; border-radius: 50%; border: none;
             background: #3a2040; color: #ef5350; font-size: 14px;
             cursor: pointer; display: none; align-items: center;
-            justify-content: center; flex-shrink: 0; transition: background 0.2s;
+            justify-content: center; flex-shrink: 0;
         }
         .slot-remove:hover { background: #5a2040; }
         .pick-slot.filled .slot-remove { display: flex; }
@@ -113,7 +89,7 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 36px; font-weight: 900; color: #ffd740;
             text-shadow: 0 0 20px rgba(255, 215, 64, 0.4);
-            padding-top: 60px; letter-spacing: 4px;
+            padding-top: 60px; letter-spacing: 4px; flex-shrink: 0;
         }
 
         /* Picker Modal */
@@ -126,43 +102,56 @@
 
         .picker-modal {
             background: #111630; border: 1px solid #2a3060; border-radius: 16px;
-            width: 100%; max-width: 900px; max-height: 85vh;
+            width: 100%; max-width: 950px; max-height: 90vh;
             display: flex; flex-direction: column;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
-
         .picker-header {
             padding: 18px 24px; border-bottom: 1px solid #1e2550;
             display: flex; align-items: center; gap: 16px;
         }
         .picker-header h2 { font-size: 18px; color: #e0e6ff; flex-shrink: 0; }
-
         .picker-search {
             flex: 1; padding: 10px 16px; background: #0a0e1a;
             border: 1px solid #252b55; border-radius: 8px;
-            color: #fff; font-size: 14px; outline: none; transition: border-color 0.2s;
+            color: #fff; font-size: 14px; outline: none;
         }
         .picker-search:focus { border-color: #4fc3f7; }
         .picker-search::placeholder { color: #4a5090; }
-
         .picker-close {
             width: 36px; height: 36px; border-radius: 50%; border: none;
             background: #1e2550; color: #8892b0; font-size: 20px;
-            cursor: pointer; display: flex; align-items: center;
-            justify-content: center; flex-shrink: 0;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
         }
         .picker-close:hover { background: #2a3060; color: #fff; }
 
-        .picker-counter-info {
-            padding: 10px 24px; background: #1a1040;
-            border-bottom: 1px solid #1e2550; font-size: 13px;
-            color: #ce93d8; display: none;
+        /* Counter sections in picker */
+        .picker-section {
+            padding: 10px 20px 4px; font-size: 13px; font-weight: 600;
+            color: #8892b0; border-bottom: 1px solid #1a1f40;
+            display: flex; align-items: center; gap: 8px;
         }
-        .picker-counter-info.show { display: block; }
+        .picker-section .badge {
+            display: inline-block; padding: 2px 8px; border-radius: 10px;
+            font-size: 11px; font-weight: 700;
+        }
+        .badge-counter { background: #ff980020; color: #ff9800; }
+        .badge-all { background: #4fc3f720; color: #4fc3f7; }
+
+        .counter-tag {
+            display: inline-block; padding: 1px 6px; border-radius: 4px;
+            font-size: 9px; font-weight: 700; margin-left: 4px;
+            vertical-align: middle;
+        }
+        .counter-tag.vs { background: #ff980030; color: #ffb74d; }
+
+        .picker-scroll {
+            overflow-y: auto; flex: 1; padding-bottom: 10px;
+        }
 
         .picker-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 10px; padding: 20px; overflow-y: auto; flex: 1;
+            gap: 10px; padding: 10px 20px;
         }
 
         .hero-card {
@@ -172,15 +161,18 @@
         }
         .hero-card:hover { border-color: #4fc3f7; background: #1c2248; transform: translateY(-2px); }
         .hero-card.disabled { opacity: 0.3; pointer-events: none; }
-        .hero-card.counter-pick { border-color: #ff9800; box-shadow: 0 0 10px rgba(255, 152, 0, 0.3); }
-        .hero-card.counter-pick::after { content: '⚔️'; position: absolute; top: 4px; right: 4px; font-size: 12px; }
+        .hero-card.counter-pick { border-color: #ff9800; box-shadow: 0 0 10px rgba(255, 152, 0, 0.25); }
 
         .hero-card-avatar {
             width: 60px; height: 60px; border-radius: 8px;
-            overflow: hidden; background: #252b55; margin-bottom: 6px;
+            overflow: hidden; background: #252b55; margin-bottom: 4px;
         }
         .hero-card-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .hero-card-name { font-size: 11px; text-align: center; color: #c0c8e8; line-height: 1.2; word-break: break-word; }
+        .hero-card-counters-info {
+            font-size: 9px; color: #ffb74d; text-align: center;
+            margin-top: 2px; line-height: 1.2;
+        }
 
         .loading-overlay {
             position: fixed; inset: 0; background: #0a0e1a;
@@ -200,25 +192,30 @@
             display: block; margin: 0 auto 30px; padding: 12px 32px;
             background: linear-gradient(135deg, #1e2550, #2a3060);
             border: 1px solid #3a4080; border-radius: 8px;
-            color: #8892b0; font-size: 14px; cursor: pointer; transition: all 0.2s;
+            color: #8892b0; font-size: 14px; cursor: pointer;
         }
         .reset-btn:hover { background: linear-gradient(135deg, #2a3060, #3a4080); color: #fff; }
 
-        .hero-detail-panel {
-            display: none; padding: 16px 24px; border-top: 1px solid #1e2550;
-            background: #0d1228; max-height: 200px; overflow-y: auto;
+        /* Detail tooltip on hover */
+        .hero-card .tooltip {
+            display: none; position: absolute; bottom: 100%; left: 50%;
+            transform: translateX(-50%); background: #1a1f3a; border: 1px solid #3a4080;
+            border-radius: 8px; padding: 10px 14px; width: 220px; z-index: 10;
+            pointer-events: none; margin-bottom: 8px;
         }
-        .hero-detail-panel.show { display: block; }
-        .hero-detail-panel h3 { font-size: 16px; color: #ffd740; margin-bottom: 8px; }
-        .detail-row { display: flex; gap: 20px; flex-wrap: wrap; }
-        .detail-stat { font-size: 12px; color: #8892b0; }
-        .detail-stat span { color: #4fc3f7; font-weight: 600; }
+        .hero-card:hover .tooltip { display: block; }
+        .tooltip .t-name { font-size: 14px; font-weight: 700; color: #ffd740; }
+        .tooltip .t-role { font-size: 11px; color: #7882a4; }
+        .tooltip .t-stats { font-size: 11px; color: #8892b0; margin-top: 4px; }
+        .tooltip .t-stats span { color: #4fc3f7; }
+        .tooltip .t-counter { font-size: 11px; margin-top: 4px; }
 
         @media (max-width: 768px) {
             .draft-container { flex-direction: column; align-items: center; gap: 10px; }
             .vs-divider { padding-top: 0; font-size: 24px; }
             .team { max-width: 100%; }
             .picker-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+            .hero-card .tooltip { display: none !important; }
         }
     </style>
 </head>
@@ -231,7 +228,7 @@
 
 <div class="header">
     <h1>MLBB DRAFT PICK</h1>
-    <p>Chọn tướng cho team bạn → Xem tướng khắc chế cho team đối thủ</p>
+    <p>Chọn tướng cho cả 2 team → Xem gợi ý tướng khắc chế cho từng tướng đối phương</p>
 </div>
 
 <div class="draft-container">
@@ -252,18 +249,17 @@
     <div class="picker-modal">
         <div class="picker-header">
             <h2 id="pickerTitle">Chọn tướng</h2>
-            <input type="text" class="picker-search" id="pickerSearch" placeholder="Tìm tướng..." oninput="filterHeroes()">
+            <input type="text" class="picker-search" id="pickerSearch" placeholder="Tìm tướng..." oninput="renderPickerContent()">
             <button class="picker-close" onclick="closePicker()">✕</button>
         </div>
-        <div class="picker-counter-info" id="counterInfo"></div>
-        <div class="picker-grid" id="pickerGrid"></div>
-        <div class="hero-detail-panel" id="heroDetail"></div>
+        <div class="picker-scroll" id="pickerScroll"></div>
     </div>
 </div>
 
 <script>
     let allHeroes = [];
-    let heroMap = {};
+    let heroMap = {};       // id -> hero
+    let counterMap = {};    // heroId -> Set of heroIds that counter it
     let bluePicks = [null, null, null, null, null];
     let redPicks = [null, null, null, null, null];
     let activeSlot = null;
@@ -273,13 +269,32 @@
             const res = await fetch("heroes.json");
             allHeroes = await res.json();
             heroMap = {};
-            allHeroes.forEach(h => heroMap[h.id] = h);
+            counterMap = {};
+            allHeroes.forEach(h => {
+                heroMap[h.id] = h;
+            });
+            // Build reverse counter map: for each hero, which heroes counter it?
+            // Source 1: if hero A has countered_by: B → B counters A
+            // Source 2: if hero A has counters: C → A counters C
+            allHeroes.forEach(h => {
+                const c = h.counters || {};
+                // B counters this hero (h)
+                if (c.countered_by) {
+                    if (!counterMap[h.id]) counterMap[h.id] = new Set();
+                    counterMap[h.id].add(c.countered_by.id);
+                }
+                // This hero (h) counters C
+                if (c.counters) {
+                    const targetId = c.counters.id;
+                    if (!counterMap[targetId]) counterMap[targetId] = new Set();
+                    counterMap[targetId].add(h.id);
+                }
+            });
             renderSlots();
             document.getElementById("loadingOverlay").classList.add("hidden");
         } catch (e) {
             console.error("Failed to load heroes:", e);
-            document.querySelector(".loading-text").textContent =
-                "Lỗi tải dữ liệu. Vui lòng refresh trang.";
+            document.querySelector(".loading-text").textContent = "Lỗi tải dữ liệu. Vui lòng refresh trang.";
         }
     }
 
@@ -291,6 +306,9 @@
     function renderTeamSlots(team, picks, containerId) {
         const container = document.getElementById(containerId);
         container.innerHTML = "";
+        const enemyPicks = team === "blue" ? redPicks : bluePicks;
+        const hasEnemy = enemyPicks.some(p => p);
+
         picks.forEach((pick, i) => {
             const slot = document.createElement("div");
             slot.className = "pick-slot" + (pick ? " filled" : "") +
@@ -319,12 +337,9 @@
             const info = document.createElement("div");
             info.className = "slot-info";
             if (pick) {
-                info.innerHTML = `<div class="hero-name">${pick.name}</div>
-                    <div class="hero-role">${pick.type || ""}</div>`;
+                info.innerHTML = `<div class="hero-name">${pick.name}</div><div class="hero-role">${pick.type || ""}</div>`;
             } else {
-                const hint = team === "red" && bluePicks.some(p => p)
-                    ? "Click để chọn tướng khắc chế"
-                    : "Click để chọn tướng";
+                const hint = hasEnemy ? "Click để chọn tướng khắc chế" : "Click để chọn tướng";
                 info.innerHTML = `<div class="hint">${hint}</div>`;
             }
 
@@ -339,7 +354,6 @@
                 removeBtn.onclick = (e) => { e.stopPropagation(); removePick(team, i); };
                 slot.appendChild(removeBtn);
             }
-
             container.appendChild(slot);
         });
     }
@@ -347,48 +361,48 @@
     function openPicker(team, index) {
         activeSlot = { team, index };
         renderSlots();
+        document.getElementById("pickerSearch").value = "";
+        document.getElementById("pickerOverlay").classList.add("show");
+        document.getElementById("pickerSearch").focus();
 
-        const overlay = document.getElementById("pickerOverlay");
         const title = document.getElementById("pickerTitle");
-        const counterInfoEl = document.getElementById("counterInfo");
-        const detailPanel = document.getElementById("heroDetail");
-        const searchInput = document.getElementById("pickerSearch");
-
-        searchInput.value = "";
-        detailPanel.classList.remove("show");
-        detailPanel.innerHTML = "";
-
         if (team === "blue") {
             title.textContent = "🔵 Chọn tướng cho Team bạn";
-            counterInfoEl.classList.remove("show");
         } else {
-            title.textContent = "🔴 Chọn tướng khắc chế cho Team đối thủ";
-            const pickedBlue = bluePicks.filter(p => p);
-            if (pickedBlue.length > 0) {
-                counterInfoEl.textContent = "⚔️ Tướng có viền cam là tướng khắc chế team bạn đã pick: " +
-                    pickedBlue.map(p => p.name).join(", ");
-                counterInfoEl.classList.add("show");
-            } else {
-                counterInfoEl.classList.remove("show");
-            }
+            title.textContent = "🔴 Chọn tướng cho Team đối thủ";
         }
-
-        overlay.classList.add("show");
-        searchInput.focus();
-        renderPickerGrid();
+        renderPickerContent();
     }
 
-    function getCounterHeroIds() {
-        const counterIds = new Set();
-        bluePicks.filter(p => p).forEach(hero => {
-            const c = hero.counters || {};
-            if (c.countered_by) counterIds.add(c.countered_by.id);
+    // Get counters for enemy team: returns Map<enemyHeroId, Set<counterHeroId>>
+    function getCountersForEnemyTeam(enemyPicks) {
+        const result = new Map();
+        enemyPicks.filter(p => p).forEach(enemy => {
+            const counters = counterMap[enemy.id];
+            if (counters && counters.size > 0) {
+                result.set(enemy.id, new Set(counters));
+            }
         });
-        return counterIds;
+        return result;
     }
 
-    function renderPickerGrid() {
-        const grid = document.getElementById("pickerGrid");
+    // Score each hero: how many enemy heroes does it counter?
+    function scoreHeroes(enemyCounterMap, pickedIds) {
+        const scores = {}; // heroId -> { score, countersWhich: [enemyName, ...] }
+        for (const [enemyId, counterSet] of enemyCounterMap) {
+            const enemyName = heroMap[enemyId]?.name || enemyId;
+            counterSet.forEach(cid => {
+                if (pickedIds.has(cid)) return;
+                if (!scores[cid]) scores[cid] = { score: 0, countersWhich: [] };
+                scores[cid].score++;
+                scores[cid].countersWhich.push(enemyName);
+            });
+        }
+        return scores;
+    }
+
+    function renderPickerContent() {
+        const scroll = document.getElementById("pickerScroll");
         const search = document.getElementById("pickerSearch").value.toLowerCase();
         const team = activeSlot.team;
 
@@ -397,73 +411,131 @@
             ...redPicks.filter(p => p).map(p => p.id)
         ]);
 
-        const counterIds = team === "red" ? getCounterHeroIds() : new Set();
+        const enemyPicks = team === "blue" ? redPicks : bluePicks;
+        const enemyCounterMap = getCountersForEnemyTeam(enemyPicks);
+        const heroScores = scoreHeroes(enemyCounterMap, pickedIds);
 
         let filtered = allHeroes.filter(h => h.name.toLowerCase().includes(search));
 
-        if (team === "red" && counterIds.size > 0) {
-            filtered.sort((a, b) => {
-                const ac = counterIds.has(a.id) ? 0 : 1;
-                const bc = counterIds.has(b.id) ? 0 : 1;
-                if (ac !== bc) return ac - bc;
-                return a.name.localeCompare(b.name);
+        scroll.innerHTML = "";
+
+        const hasEnemyPicks = enemyPicks.some(p => p);
+
+        if (hasEnemyPicks && Object.keys(heroScores).length > 0) {
+            // Section 1: Per-enemy counter suggestions
+            const enemyHeroes = enemyPicks.filter(p => p);
+            enemyHeroes.forEach(enemy => {
+                const counters = counterMap[enemy.id];
+                if (!counters || counters.size === 0) return;
+
+                const counterHeroes = filtered.filter(h => counters.has(h.id) && !pickedIds.has(h.id));
+                if (counterHeroes.length === 0) return;
+
+                const section = document.createElement("div");
+                section.className = "picker-section";
+                section.innerHTML = `⚔️ Khắc chế <strong style="color:#ff9800">${enemy.name}</strong> <span class="badge badge-counter">${counterHeroes.length} tướng</span>`;
+                scroll.appendChild(section);
+
+                const grid = document.createElement("div");
+                grid.className = "picker-grid";
+                counterHeroes.forEach(hero => {
+                    grid.appendChild(createHeroCard(hero, pickedIds, heroScores, true));
+                });
+                scroll.appendChild(grid);
             });
+
+            // Section 2: Top counters (counter nhiều tướng nhất)
+            const topCounters = filtered
+                .filter(h => heroScores[h.id] && !pickedIds.has(h.id))
+                .sort((a, b) => (heroScores[b.id]?.score || 0) - (heroScores[a.id]?.score || 0))
+                .slice(0, 10);
+
+            if (topCounters.length > 0) {
+                const section = document.createElement("div");
+                section.className = "picker-section";
+                section.innerHTML = `🏆 Top khắc chế nhiều tướng nhất <span class="badge badge-counter">Top ${topCounters.length}</span>`;
+                scroll.appendChild(section);
+
+                const grid = document.createElement("div");
+                grid.className = "picker-grid";
+                topCounters.forEach(hero => {
+                    grid.appendChild(createHeroCard(hero, pickedIds, heroScores, true));
+                });
+                scroll.appendChild(grid);
+            }
         }
 
-        grid.innerHTML = "";
-        filtered.forEach(hero => {
-            const card = document.createElement("div");
-            card.className = "hero-card";
-            if (pickedIds.has(hero.id)) card.classList.add("disabled");
-            if (team === "red" && counterIds.has(hero.id)) card.classList.add("counter-pick");
+        // Section: All heroes
+        const section = document.createElement("div");
+        section.className = "picker-section";
+        section.innerHTML = `📋 Tất cả tướng <span class="badge badge-all">${filtered.length}</span>`;
+        scroll.appendChild(section);
 
-            card.innerHTML = `
-                <div class="hero-card-avatar">
-                    <img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'">
-                </div>
-                <div class="hero-card-name">${hero.name}</div>
-            `;
+        const grid = document.createElement("div");
+        grid.className = "picker-grid";
 
-            card.onclick = () => selectHero(hero);
-            grid.appendChild(card);
+        // Sort: counters first, then alphabetical
+        filtered.sort((a, b) => {
+            const sa = heroScores[a.id]?.score || 0;
+            const sb = heroScores[b.id]?.score || 0;
+            if (sb !== sa) return sb - sa;
+            return a.name.localeCompare(b.name);
         });
+
+        filtered.forEach(hero => {
+            grid.appendChild(createHeroCard(hero, pickedIds, heroScores, false));
+        });
+        scroll.appendChild(grid);
+    }
+
+    function createHeroCard(hero, pickedIds, heroScores, isCounterSection) {
+        const card = document.createElement("div");
+        card.className = "hero-card";
+        if (pickedIds.has(hero.id)) card.classList.add("disabled");
+
+        const score = heroScores[hero.id];
+        if (score && score.score > 0) card.classList.add("counter-pick");
+
+        let counterInfo = "";
+        if (score && score.countersWhich.length > 0) {
+            counterInfo = `<div class="hero-card-counters-info">⚔️ vs ${score.countersWhich.join(", ")}</div>`;
+        }
+
+        // Tooltip
+        const c = hero.counters || {};
+        let tooltipCounter = "";
+        if (c.best_mate) tooltipCounter += `<div style="color:#4caf50">👥 ${c.best_mate.name}</div>`;
+        if (c.counters) tooltipCounter += `<div style="color:#ff9800">⚔️ Khắc chế: ${c.counters.name}</div>`;
+        if (c.countered_by) tooltipCounter += `<div style="color:#ef5350">💀 Bị khắc chế: ${c.countered_by.name}</div>`;
+
+        card.innerHTML = `
+            <div class="tooltip">
+                <div class="t-name">${hero.name}</div>
+                <div class="t-role">${hero.type || ""}</div>
+                <div class="t-stats">PHY: <span>${hero.phy || "-"}</span> · MAG: <span>${hero.mag || "-"}</span> · HP: <span>${hero.alive || "-"}</span></div>
+                <div class="t-counter">${tooltipCounter}</div>
+            </div>
+            <div class="hero-card-avatar">
+                <img src="${hero.icon}" alt="${hero.name}" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="hero-card-name">${hero.name}</div>
+            ${counterInfo}
+        `;
+
+        card.onclick = () => selectHero(hero);
+        return card;
     }
 
     function selectHero(hero) {
         if (!activeSlot) return;
         const picks = activeSlot.team === "blue" ? bluePicks : redPicks;
         picks[activeSlot.index] = hero;
-        showHeroDetail(hero);
         renderSlots();
         closePicker();
     }
 
-    function showHeroDetail(hero) {
-        const panel = document.getElementById("heroDetail");
-        let html = `<h3>${hero.name} - ${hero.type || ""}</h3>`;
-        html += `<div class="detail-row">
-            <div class="detail-stat">Physical: <span>${hero.phy || "-"}</span></div>
-            <div class="detail-stat">Magic: <span>${hero.mag || "-"}</span></div>
-            <div class="detail-stat">Durability: <span>${hero.alive || "-"}</span></div>
-            <div class="detail-stat">Difficulty: <span>${hero.diff || "-"}</span></div>
-        </div>`;
-
-        const c = hero.counters || {};
-        if (c.best_mate || c.counters || c.countered_by) {
-            html += `<div style="margin-top:8px; font-size:12px; color:#8892b0;">`;
-            if (c.best_mate) html += `Đồng đội tốt nhất: <span style="color:#4caf50">${c.best_mate.name}</span> · `;
-            if (c.counters) html += `Khắc chế: <span style="color:#ff9800">${c.counters.name}</span> · `;
-            if (c.countered_by) html += `Bị khắc chế bởi: <span style="color:#ef5350">${c.countered_by.name}</span>`;
-            html += `</div>`;
-        }
-
-        panel.innerHTML = html;
-        panel.classList.add("show");
-    }
-
     function closePicker() {
         document.getElementById("pickerOverlay").classList.remove("show");
-        document.getElementById("heroDetail").classList.remove("show");
         activeSlot = null;
         renderSlots();
     }
@@ -473,8 +545,6 @@
         else redPicks[index] = null;
         renderSlots();
     }
-
-    function filterHeroes() { renderPickerGrid(); }
 
     function resetDraft() {
         bluePicks = [null, null, null, null, null];
